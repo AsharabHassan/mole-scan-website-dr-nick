@@ -181,7 +181,7 @@ export default function HomePage() {
         subtitle="MoleScan combines advanced AI analysis with UK consultant dermatologist review to deliver structured skin lesion assessment reports within 24 hours. A safe, governed triage pathway for healthcare professionals."
         ctas={[
           { label: "For Clinics", href: "/for-clinics", variant: "primary" },
-          { label: "For NHS & ICBs", href: "/for-nhs", variant: "ghost" },
+          { label: "For NHS & ICBs", href: "/for-nhs", variant: "ghost-light" },
         ]}
       />
 

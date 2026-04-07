@@ -3,7 +3,7 @@ import Button from "@/components/ui/Button";
 interface HeroCTA {
   label: string;
   href: string;
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "ghost-light";
 }
 
 interface HeroProps {

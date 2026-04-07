@@ -49,6 +49,10 @@ export default function DemoForm({ sourcePage = "request-demo" }: DemoFormProps)
     <form action={formAction} className="space-y-6">
       <input type="hidden" name="source_page" value={sourcePage} />
 
+      <div className="absolute -left-[9999px]" aria-hidden="true">
+        <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label

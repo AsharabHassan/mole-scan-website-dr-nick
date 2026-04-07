@@ -191,7 +191,7 @@ export default function ForClinicsPage() {
           {
             label: "How It Works",
             href: "/about/how-molescan-works",
-            variant: "ghost",
+            variant: "ghost-light",
           },
         ]}
       />

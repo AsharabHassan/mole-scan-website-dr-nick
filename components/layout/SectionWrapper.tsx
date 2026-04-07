@@ -18,7 +18,7 @@ export default function SectionWrapper({
   };
 
   return (
-    <section id={id} className={`py-16 md:py-20 ${bgStyles[background]} ${className}`}>
+    <section id={id} className={`py-12 md:py-20 ${bgStyles[background]} ${className}`}>
       <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
         {children}
       </div>

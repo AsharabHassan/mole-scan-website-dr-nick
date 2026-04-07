@@ -136,7 +136,7 @@ export default function ForNHSPage() {
           {
             label: "Clinical Governance",
             href: "/about/clinical-governance",
-            variant: "ghost",
+            variant: "ghost-light",
           },
         ]}
       />

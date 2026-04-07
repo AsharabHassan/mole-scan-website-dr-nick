@@ -1,16 +1,26 @@
 "use server";
 
-import { supabase } from "./supabase";
+import { getSupabaseServer } from "./supabase-server";
 
 export type FormState = {
   success: boolean;
   message: string;
 } | null;
 
+function isValidEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
 export async function submitDemoRequest(
   _prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
+  const honeypot = formData.get("website") as string;
+  if (honeypot) {
+    // Silently reject bot submissions
+    return { success: true, message: "Thank you." };
+  }
+
   const fullName = formData.get("full_name") as string;
   const email = formData.get("email") as string;
   const phone = formData.get("phone") as string;
@@ -25,6 +35,12 @@ export async function submitDemoRequest(
       message: "Please fill in all required fields.",
     };
   }
+
+  if (!isValidEmail(email)) {
+    return { success: false, message: "Please enter a valid email address." };
+  }
+
+  const supabase = getSupabaseServer();
 
   const { error } = await supabase.from("demo_requests").insert({
     full_name: fullName,
@@ -54,6 +70,12 @@ export async function submitContactForm(
   _prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
+  const honeypot = formData.get("website") as string;
+  if (honeypot) {
+    // Silently reject bot submissions
+    return { success: true, message: "Thank you." };
+  }
+
   const fullName = formData.get("full_name") as string;
   const email = formData.get("email") as string;
   const subject = formData.get("subject") as string;
@@ -65,6 +87,12 @@ export async function submitContactForm(
       message: "Please fill in all required fields.",
     };
   }
+
+  if (!isValidEmail(email)) {
+    return { success: false, message: "Please enter a valid email address." };
+  }
+
+  const supabase = getSupabaseServer();
 
   const { error } = await supabase.from("contact_submissions").insert({
     full_name: fullName,

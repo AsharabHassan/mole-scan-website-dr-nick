@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/layout/CookieBanner";
+import { Analytics } from "@vercel/analytics/next";
 import { generateOrganizationSchema } from "@/lib/schema";
 import "./globals.css";
 
@@ -52,6 +53,7 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer />
         <CookieBanner />
+        <Analytics />
       </body>
     </html>
   );

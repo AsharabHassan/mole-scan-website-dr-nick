@@ -38,7 +38,7 @@ export function AccordionItem({ question, answer }: AccordionItemProps) {
       </button>
       <div
         className={`overflow-hidden transition-all duration-200 ${
-          isOpen ? "max-h-96 pb-5" : "max-h-0"
+          isOpen ? "max-h-[2000px] pb-5" : "max-h-0"
         }`}
       >
         <p className="text-brand-text leading-relaxed">{answer}</p>

@@ -33,6 +33,10 @@ export default function ContactForm() {
 
   return (
     <form action={formAction} className="space-y-6">
+      <div className="absolute -left-[9999px]" aria-hidden="true">
+        <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label

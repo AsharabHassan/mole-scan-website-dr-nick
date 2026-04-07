@@ -21,6 +21,10 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "ClaudeBot",
         allow: "/",
       },
+      {
+        userAgent: "Bingbot",
+        allow: "/",
+      },
     ],
     sitemap: `${BASE_URL}/sitemap.xml`,
   };
