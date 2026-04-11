@@ -1,0 +1,25 @@
+# MoleScan
+
+> Clinician-led, AI-assisted skin lesion assessment and triage platform for healthcare professionals.
+
+MoleScan combines AI-powered image analysis with UK consultant dermatologist review to deliver structured skin lesion assessment reports within 24 hours.
+
+## Key Facts
+
+- Every assessment is reviewed by a UK consultant dermatologist
+- Results delivered within 24 hours
+- Accepts smartphone and dermoscopic images
+- Designed for private clinics and NHS primary care
+- Not a medical device — a clinical workflow and triage platform
+- Operated by Dermme Health Ltd, registered in England & Wales
+
+## Pages
+
+- [Home](https://molescan.co.uk/)
+- [For Clinics](https://molescan.co.uk/for-clinics)
+- [For NHS & ICBs](https://molescan.co.uk/for-nhs)
+- [How MoleScan Works](https://molescan.co.uk/about/how-molescan-works)
+- [Clinical Governance](https://molescan.co.uk/about/clinical-governance)
+- [Resources](https://molescan.co.uk/resources)
+- [Contact](https://molescan.co.uk/contact)
+- [Request Demo](https://molescan.co.uk/request-demo)

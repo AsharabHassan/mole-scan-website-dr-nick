@@ -1,0 +1,319 @@
+{
+  "project": "MoleScan Website Infographic Images",
+  "model": "Nano Banana 2 Pro",
+  "style_guide": {
+    "primary_colors": ["#1E2A78 (Deep Blue)", "#141B4D (Deep Navy)", "#2FA4A9 (Teal)"],
+    "accent_colors": ["#6FC9C5 (Soft Teal)", "#1F7A80 (Deep Teal)", "#E8ECFF (Soft Blue)"],
+    "background": "#F7F9FC",
+    "style": "Clean medical infographic, flat design, minimal, professional healthcare aesthetic",
+    "avoid": "Photorealistic faces, stock photo feel, cluttered layouts, cartoon style"
+  },
+
+  "prompts": [
+
+    {
+      "id": "HOME-001",
+      "page": "Home",
+      "section": "Hero Banner",
+      "filename": "hero-home-ai-skin-assessment.png",
+      "dimensions": "1920x1080",
+      "prompt": "Clean medical infographic illustration, a smartphone capturing a skin lesion image connected by a flowing data line to an AI brain icon, then flowing to a clipboard with a medical report and a green checkmark. Deep blue (#1E2A78) and teal (#2FA4A9) color scheme on a white background. Flat vector style, minimal detail, professional healthcare aesthetic. No text. No faces. Soft blue (#E8ECFF) geometric shapes in the background. Wide landscape composition."
+    },
+
+    {
+      "id": "HOME-002",
+      "page": "Home",
+      "section": "How It Works - 3 Step Process",
+      "filename": "home-3-step-process.png",
+      "dimensions": "1920x600",
+      "prompt": "Horizontal infographic showing three connected steps with flowing teal (#2FA4A9) arrows between them. Step 1: a flat icon of a smartphone with a camera lens capturing a skin area. Step 2: a flat icon of a computer screen with a neural network pattern and magnifying glass. Step 3: a flat icon of a medical report document with a stethoscope. Deep blue (#1E2A78) icons on a soft blue (#E8ECFF) background. Clean flat vector style, no text, professional medical infographic. Landscape wide format."
+    },
+
+    {
+      "id": "HOME-003",
+      "page": "Home",
+      "section": "Trust Bar Background",
+      "filename": "trust-bar-icons.png",
+      "dimensions": "1920x200",
+      "prompt": "Minimal horizontal banner with four evenly spaced flat icons: a shield with a medical cross, a clock showing 24 hours, a padlock with a checkmark, and a hospital building. Teal (#2FA4A9) icons on a deep navy (#141B4D) background. Subtle dotted connection lines between icons. Ultra clean flat vector infographic style. No text. Landscape ultra-wide format."
+    },
+
+    {
+      "id": "HOME-004",
+      "page": "Home",
+      "section": "Why MoleScan - Feature Grid",
+      "filename": "feature-grid-4-icons.png",
+      "dimensions": "1200x1200",
+      "prompt": "Four-quadrant infographic grid with a thin teal (#2FA4A9) dividing cross. Top-left: a flat doctor icon with a stethoscope and a glowing checkmark. Top-right: a flat brain icon with circuit patterns and a magnifying glass. Bottom-left: a flat clock icon with 24h and a lightning bolt for speed. Bottom-right: a flat smartphone icon with a camera lens. Deep blue (#1E2A78) icons on white background with soft blue (#E8ECFF) quadrant fills. Clean medical infographic style, no text. Square format."
+    },
+
+    {
+      "id": "HOME-005",
+      "page": "Home",
+      "section": "Audience Cards - Clinics vs NHS",
+      "filename": "audience-split-clinics-nhs.png",
+      "dimensions": "1920x800",
+      "prompt": "Split infographic illustration. Left side: a modern private clinic building icon with a doctor and patient handshake, teal (#2FA4A9) tones. Right side: an NHS-style hospital complex icon with a network of connected nodes representing integrated care boards, deep blue (#1E2A78) tones. A vertical dotted line separates the two sides. Soft blue (#E8ECFF) background. Clean flat vector medical infographic style. No text, no faces. Wide landscape format."
+    },
+
+    {
+      "id": "CLINICS-001",
+      "page": "For Clinics",
+      "section": "Hero Banner",
+      "filename": "hero-clinics-doctor-workflow.png",
+      "dimensions": "1920x1080",
+      "prompt": "Medical infographic illustration showing a GP clinic workflow. A flat-style doctor figure (no face, silhouette style) at a desk with a computer screen displaying a skin assessment dashboard. A smartphone and dermoscope icon float nearby. Flowing teal (#2FA4A9) data lines connect the devices to a cloud icon. Deep blue (#1E2A78) and teal color scheme. Soft geometric background shapes in light blue (#E8ECFF). Clean flat vector style, professional, minimal. No text. Wide landscape."
+    },
+
+    {
+      "id": "CLINICS-002",
+      "page": "For Clinics",
+      "section": "The Challenge - 3 Pain Points",
+      "filename": "clinic-pain-points-infographic.png",
+      "dimensions": "1920x700",
+      "prompt": "Horizontal infographic with three problem icons. Left: a question mark inside a magnifying glass over a skin pattern representing clinical uncertainty. Center: a long winding path with a clock showing delays, representing slow referral pathways. Right: a warning triangle with a balance scale representing medicolegal risk. Each icon enclosed in a soft red-tinted circle (#FFE5E5) with deep blue (#1E2A78) icon details. White background with subtle grid lines. Flat vector medical infographic. No text. Wide landscape."
+    },
+
+    {
+      "id": "CLINICS-003",
+      "page": "For Clinics",
+      "section": "How It Works for Clinics - 4 Steps",
+      "filename": "clinic-4-step-workflow.png",
+      "dimensions": "1920x600",
+      "prompt": "Horizontal 4-step process infographic connected by flowing teal (#2FA4A9) arrows. Step 1: a hand holding a smartphone photographing a skin lesion. Step 2: a cloud upload icon with an upward arrow and encryption lock. Step 3: a split screen showing AI analysis patterns on one side and a doctor silhouette reviewing on the other. Step 4: a medical report document with a green checkmark being delivered. Deep blue (#1E2A78) and teal color scheme on white background. Flat vector clean medical style. No text. Wide landscape."
+    },
+
+    {
+      "id": "CLINICS-004",
+      "page": "For Clinics",
+      "section": "Clinic Types Grid - 6 Types",
+      "filename": "clinic-types-6-icons.png",
+      "dimensions": "1200x800",
+      "prompt": "Six flat medical icons in a 3x2 grid layout. Row 1: a private GP clinic building, an aesthetic clinic with a beauty/skin icon, a pharmacy with a mortar and pestle. Row 2: a podiatrist foot care icon, a chiropractor spine icon, a walk-in urgent care center with a plus sign. Each icon in a teal (#2FA4A9) circular badge on a soft blue (#E8ECFF) background. Clean flat vector infographic style, consistent line weight, professional medical aesthetic. No text. Landscape format."
+    },
+
+    {
+      "id": "NHS-001",
+      "page": "For NHS & ICBs",
+      "section": "Hero Banner",
+      "filename": "hero-nhs-integrated-care.png",
+      "dimensions": "1920x1080",
+      "prompt": "Medical infographic illustration showing an interconnected healthcare network. A central hub representing MoleScan (teal #2FA4A9 hexagon) connected by flowing lines to multiple NHS facility icons: hospitals, GP surgeries, community clinics. Data flow lines in teal connecting all nodes. Deep blue (#1E2A78) and teal palette on white background with soft blue (#E8ECFF) geometric patterns. Flat vector style, clean professional healthcare infographic. No text, no faces. Wide landscape."
+    },
+
+    {
+      "id": "NHS-002",
+      "page": "For NHS & ICBs",
+      "section": "Statistics Cards - Referral Challenge",
+      "filename": "nhs-statistics-infographic.png",
+      "dimensions": "1920x700",
+      "prompt": "Data visualization infographic with three stat panels. Left: a pie chart showing 54% segment in teal (#2FA4A9) and 46% in light gray, with a magnifying glass icon over it. Center: a horizontal bar chart with waiting time bars getting longer, colored in gradient from teal to deep blue (#1E2A78), with a calendar icon. Right: an upward trending line graph in red/amber showing rising referral volumes with an exclamation mark. White background, minimal grid lines, soft blue (#E8ECFF) panel backgrounds. Clean data infographic style. No text labels. Wide landscape."
+    },
+
+    {
+      "id": "NHS-003",
+      "page": "For NHS & ICBs",
+      "section": "Referral Pathway Diagram",
+      "filename": "nhs-pathway-flowchart.png",
+      "dimensions": "1920x900",
+      "prompt": "Medical pathway flowchart infographic. Starting from a patient icon at top, flowing down to a GP icon, then to a central MoleScan hub (teal #2FA4A9 rounded rectangle). From the hub, three diverging paths: left arrow (green) leading to a reassured patient with checkmark, center arrow (amber/yellow) leading to a monitoring calendar icon, right arrow (red) leading to a hospital for urgent 2-week-wait referral. Deep blue (#1E2A78) main elements, teal connections, traffic-light color coding for outcomes. White background. Clean flat vector medical flowchart. No text. Wide landscape."
+    },
+
+    {
+      "id": "NHS-004",
+      "page": "For NHS & ICBs",
+      "section": "Commissioner Benefits",
+      "filename": "nhs-commissioner-benefits.png",
+      "dimensions": "1200x800",
+      "prompt": "Four-panel infographic in a 2x2 grid. Top-left: a funnel icon filtering out items, representing reduced unnecessary referrals. Top-right: a pound/sterling coin with a downward arrow representing cost savings. Bottom-left: a clock with a green fast-forward arrow representing faster pathways. Bottom-right: a shield with a compliance checkmark representing governance standards. Teal (#2FA4A9) icons in deep blue (#1E2A78) circular frames on soft blue (#E8ECFF) background. Professional flat vector infographic. No text. Landscape format."
+    },
+
+    {
+      "id": "HOWWORKS-001",
+      "page": "How MoleScan Works",
+      "section": "Hero Banner",
+      "filename": "hero-how-it-works-pathway.png",
+      "dimensions": "1920x1080",
+      "prompt": "Infographic hero illustration showing a stylized medical assessment journey. A flowing S-curve pathway from left to right with 6 milestone markers along it, each represented by a glowing teal (#2FA4A9) circle. The path starts with a camera icon, passes through a cloud, an AI circuit brain, a doctor silhouette, a document, and ends with a decision fork. Deep blue (#1E2A78) and teal palette. Soft blue (#E8ECFF) abstract shapes in background. Clean flat vector medical infographic. No text, no faces. Wide landscape."
+    },
+
+    {
+      "id": "HOWWORKS-002",
+      "page": "How MoleScan Works",
+      "section": "Step 1 - Clinician Captures Images",
+      "filename": "step1-capture-images.png",
+      "dimensions": "800x600",
+      "prompt": "Medical infographic showing image capture. A flat-style smartphone in a hand capturing a close-up of a skin area (abstract circular shape, not realistic). A dermoscope attachment icon nearby. Multiple image thumbnails floating upward from the phone. Teal (#2FA4A9) accent elements on white background. Clean flat vector medical illustration style. No text, no realistic skin, no faces. Portrait-landscape format."
+    },
+
+    {
+      "id": "HOWWORKS-003",
+      "page": "How MoleScan Works",
+      "section": "Step 2 - Secure Upload",
+      "filename": "step2-secure-upload.png",
+      "dimensions": "800x600",
+      "prompt": "Medical infographic showing secure data transfer. A smartphone icon at the bottom sending encrypted data packets (shown as small locked envelopes) upward through a shield tunnel to a secure cloud server at the top. Encryption lock icons and shield elements along the path. Teal (#2FA4A9) and deep blue (#1E2A78) color scheme on white background. Clean flat vector infographic style. No text."
+    },
+
+    {
+      "id": "HOWWORKS-004",
+      "page": "How MoleScan Works",
+      "section": "Step 3 - AI Analysis",
+      "filename": "step3-ai-analysis.png",
+      "dimensions": "800x600",
+      "prompt": "Medical infographic showing AI-powered skin analysis. A computer screen displaying an abstract skin lesion image being scanned by a grid overlay. A neural network brain icon on the side with data connections. Risk level indicators shown as traffic light colors (green, amber, red) being assigned. Teal (#2FA4A9) circuit patterns and deep blue (#1E2A78) elements on white background. Clean flat vector medical tech infographic. No text."
+    },
+
+    {
+      "id": "HOWWORKS-005",
+      "page": "How MoleScan Works",
+      "section": "Step 4 - Dermatologist Review",
+      "filename": "step4-dermatologist-review.png",
+      "dimensions": "800x600",
+      "prompt": "Medical infographic showing expert review. A doctor silhouette (no face) with a stethoscope sitting at a dual-monitor setup. One screen shows the AI analysis results with risk indicators, the other shows the original images with annotation markers. A UK map icon subtly in the background indicating UK-based consultants. Teal (#2FA4A9) and deep blue (#1E2A78) palette on white background. Clean flat vector medical infographic. No text."
+    },
+
+    {
+      "id": "HOWWORKS-006",
+      "page": "How MoleScan Works",
+      "section": "Step 5 - Report Delivered",
+      "filename": "step5-report-delivery.png",
+      "dimensions": "800x600",
+      "prompt": "Medical infographic showing report delivery. A structured medical report document in the center with sections indicated by colored bars (green, amber, red sections). A clock icon showing 24 hours with a checkmark. An email notification icon and a secure download arrow. Teal (#2FA4A9) report accents with deep blue (#1E2A78) document frame on white background. Clean flat vector medical infographic. No text."
+    },
+
+    {
+      "id": "HOWWORKS-007",
+      "page": "How MoleScan Works",
+      "section": "Step 6 - Clinical Decision",
+      "filename": "step6-clinical-decision.png",
+      "dimensions": "800x600",
+      "prompt": "Medical infographic showing clinical decision-making. A doctor silhouette (no face) at center with three pathways branching out. Left path (green): a smiling abstract patient icon with a reassurance checkmark. Center path (amber): a calendar with a follow-up reminder bell. Right path (red): a hospital icon with an urgent referral arrow. Deep blue (#1E2A78) doctor, teal (#2FA4A9) pathway lines, traffic-light outcome colors on white background. Clean flat vector medical infographic. No text."
+    },
+
+    {
+      "id": "GOVERNANCE-001",
+      "page": "Clinical Governance",
+      "section": "Hero Banner",
+      "filename": "hero-governance-security.png",
+      "dimensions": "1920x1080",
+      "prompt": "Medical governance infographic illustration. A large shield icon in the center with four quadrants: top-left shows a medical cross for clinical safety, top-right shows a padlock for data protection, bottom-left shows a checklist clipboard for quality assurance, bottom-right shows an accessibility icon. Concentric protective rings around the shield in teal (#2FA4A9) gradients. Deep blue (#1E2A78) and teal palette on white background with soft blue (#E8ECFF) geometric patterns. Clean flat vector professional infographic. No text. Wide landscape."
+    },
+
+    {
+      "id": "GOVERNANCE-002",
+      "page": "Clinical Governance",
+      "section": "Clinical Safety Section",
+      "filename": "governance-clinical-safety.png",
+      "dimensions": "800x600",
+      "prompt": "Medical infographic showing clinical safety layers. A vertical stack of three interconnected safety layers: top layer shows a DCB standards badge with a shield, middle layer shows a CSO (Clinical Safety Officer) figure overseeing processes, bottom layer shows a consultant dermatologist reviewing every case. Connecting lines between layers showing oversight flow. Teal (#2FA4A9) and deep blue (#1E2A78) on white background. Clean flat vector governance infographic. No text."
+    },
+
+    {
+      "id": "GOVERNANCE-003",
+      "page": "Clinical Governance",
+      "section": "Data Protection Section",
+      "filename": "governance-data-protection.png",
+      "dimensions": "800x600",
+      "prompt": "Medical infographic showing data protection architecture. Concentric security circles: outer ring labeled with a GDPR shield icon, next ring shows UK flag for UK data residency, inner ring shows encryption lock icons, center shows minimised data icon (small dots). Each ring represents a protection layer. Teal (#2FA4A9) to deep blue (#1E2A78) gradient from outer to inner. White background. Clean flat vector security infographic. No text."
+    },
+
+    {
+      "id": "GOVERNANCE-004",
+      "page": "Clinical Governance",
+      "section": "Quality Assurance Section",
+      "filename": "governance-quality-assurance.png",
+      "dimensions": "800x600",
+      "prompt": "Medical infographic showing quality assurance cycle. A circular process flow with three nodes connected by arrows forming a cycle: a structured report template icon, an audit trail document with a magnifying glass, and a continuous improvement icon (upward spiral arrow). Teal (#2FA4A9) arrows and deep blue (#1E2A78) icons on white background. Clean flat vector professional infographic. No text."
+    },
+
+    {
+      "id": "RESOURCES-001",
+      "page": "Resources",
+      "section": "Article Card - 2WW Pathway",
+      "filename": "article-2ww-pathway.png",
+      "dimensions": "800x500",
+      "prompt": "Medical infographic thumbnail for an article about dermatology referral pathways. A simplified flowchart showing patient to GP to specialist with a highlighted 2-week pathway arrow. Calendar showing 14 days. Medical symbols along the path. Teal (#2FA4A9) and deep blue (#1E2A78) on soft blue (#E8ECFF) background. Clean flat vector medical editorial style. No text. Landscape card format."
+    },
+
+    {
+      "id": "RESOURCES-002",
+      "page": "Resources",
+      "section": "Article Card - AI in Dermatology",
+      "filename": "article-ai-dermatology.png",
+      "dimensions": "800x500",
+      "prompt": "Medical infographic thumbnail for an article about AI in dermatology. A brain icon with circuit patterns on one side merging with a magnifying glass over an abstract skin pattern on the other side. Binary data streams flowing between them. Teal (#2FA4A9) tech elements and deep blue (#1E2A78) medical elements on soft blue (#E8ECFF) background. Clean flat vector medical tech editorial style. No text. Landscape card format."
+    },
+
+    {
+      "id": "RESOURCES-003",
+      "page": "Resources",
+      "section": "Article Card - Skin Lesion Triage",
+      "filename": "article-skin-triage-platform.png",
+      "dimensions": "800x500",
+      "prompt": "Medical infographic thumbnail for an article about choosing a skin lesion triage platform. A checklist clipboard icon with checkmarks next to platform features, surrounded by floating comparison elements: a shield, a clock, a doctor icon, and a computer screen. Teal (#2FA4A9) and deep blue (#1E2A78) on soft blue (#E8ECFF) background. Clean flat vector medical evaluation style. No text. Landscape card format."
+    },
+
+    {
+      "id": "DEMO-001",
+      "page": "Request Demo",
+      "section": "Demo Benefits Illustration",
+      "filename": "demo-benefits-illustration.png",
+      "dimensions": "800x900",
+      "prompt": "Medical infographic illustration for a demo request page. A laptop screen showing a dashboard with skin assessment analytics, charts, and case management interface. Around it, three floating benefit icons: a play button for live demo, a person-to-person video call icon, and a customization gear icon. Teal (#2FA4A9) dashboard accents on deep blue (#1E2A78) screen frame. White background with soft blue (#E8ECFF) abstract shapes. Clean flat vector medical tech style. No text. Portrait format."
+    },
+
+    {
+      "id": "CONTACT-001",
+      "page": "Contact",
+      "section": "Contact Illustration",
+      "filename": "contact-illustration.png",
+      "dimensions": "800x900",
+      "prompt": "Clean infographic illustration for a contact page. A central envelope icon with multiple communication channels radiating out: an email icon, a phone icon, a calendar booking icon, and a chat bubble icon. Flowing teal (#2FA4A9) connection lines linking them all. A small UK map outline subtly in the background. Deep blue (#1E2A78) icons on white background with soft blue (#E8ECFF) decorative circles. Clean flat vector professional style. No text. Portrait format."
+    },
+
+    {
+      "id": "SHARED-001",
+      "page": "Shared / CTA Bands",
+      "section": "CTA Background Pattern",
+      "filename": "cta-band-pattern.png",
+      "dimensions": "1920x400",
+      "prompt": "Abstract medical technology background pattern for a call-to-action banner. Subtle interconnected hexagonal grid pattern with small medical icons (plus signs, heartbeat lines, shield shapes) at node points. Teal (#2FA4A9) to deep teal (#1F7A80) gradient background with slightly lighter pattern elements creating depth. Minimal, elegant, professional healthcare feel. No text. Ultra-wide landscape banner format."
+    },
+
+    {
+      "id": "SHARED-002",
+      "page": "Shared / Testimonials",
+      "section": "Testimonial Background",
+      "filename": "testimonial-section-bg.png",
+      "dimensions": "1920x800",
+      "prompt": "Subtle background pattern for a testimonial section. Abstract quotation mark shapes in very light teal (#2FA4A9) at 10% opacity, floating on a soft blue (#E8ECFF) background. Gentle geometric circles and rounded rectangles creating depth. Very minimal, almost transparent decorative elements. Professional clean aesthetic. No text. Wide landscape."
+    },
+
+    {
+      "id": "OG-001",
+      "page": "Meta / Social Sharing",
+      "section": "Open Graph Image",
+      "filename": "og-image-molescan.png",
+      "dimensions": "1200x630",
+      "prompt": "Professional social media sharing card infographic. A clean composition showing the MoleScan concept: a smartphone capturing a skin image on the left, a teal (#2FA4A9) flowing arrow in the middle, and a medical report with a green checkmark on the right. Deep blue (#1E2A78) background with subtle circuit patterns. Space at top for logo placement. Clean flat vector medical tech style. No text. Standard Open Graph landscape format."
+    },
+
+    {
+      "id": "FAVICON-001",
+      "page": "Meta / Branding",
+      "section": "Favicon / App Icon",
+      "filename": "favicon-molescan.png",
+      "dimensions": "512x512",
+      "prompt": "Simple app icon design. A circular magnifying glass with a subtle skin pattern inside the lens area, colored in teal (#2FA4A9). The magnifying glass handle extends to bottom-right. Deep blue (#1E2A78) background circle. Ultra minimal, recognizable at small sizes. Clean flat vector icon style. No text. Square format."
+    }
+  ],
+
+  "batch_generation_tips": {
+    "consistency": "Generate all images in the same session to maintain visual consistency across the set",
+    "negative_prompts": "Add to all: no photorealistic faces, no text overlays, no watermarks, no stock photo aesthetic, no 3D rendering, no gradients that clash with the brand palette",
+    "upscaling": "Generate at 2x resolution and downscale for crisp web display",
+    "format": "Export as PNG with transparency where applicable (steps, icons, illustrations). Use JPG for hero banners and backgrounds",
+    "style_seed": "If the model supports seed values, use the same seed for all prompts to maintain style consistency"
+  }
+}

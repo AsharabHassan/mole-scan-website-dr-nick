@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.mapmymole.com)",
+      "WebFetch(domain:www.skinanalytics.co.uk)",
+      "WebFetch(domain:skin-analytics.com)",
+      "Bash(npx create-next-app@latest molescan-website --typescript --tailwind --eslint --app --src-dir=false --import-alias \"@/*\" --use-npm --yes)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(timeout 20 npm run dev)",
+      "Bash(npm run:*)",
+      "Bash(npx tsc:*)",
+      "Bash(rm:*)",
+      "Bash(npx next:*)",
+      "Bash(python3 -c \":*)",
+      "Bash(python -c \":*)"
+    ]
+  }
+}
