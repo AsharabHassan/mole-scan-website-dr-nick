@@ -7,7 +7,7 @@ import { generateBreadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Request a Demo",
   description:
-    "See MoleScan in action. Book a no-obligation demo of our clinician-led, AI-assisted skin lesion assessment platform.",
+    "See MoleScan in action. Book a no-obligation demo of our clinician-led skin lesion assessment platform.",
 };
 
 export default function RequestDemoPage() {
@@ -24,10 +24,16 @@ export default function RequestDemoPage() {
       />
 
       <Hero
+        eyebrow="Book a Walkthrough"
         title="See MoleScan in Action"
+        titleHighlight="in Action"
         subtitle="Request a no-obligation demo and discover how MoleScan can support your skin lesion assessment pathway."
         ctas={[]}
         background="blue"
+        badges={{
+          text: "",
+          items: ["No Obligation", "Personalised Demo", "Response Within 24h"],
+        }}
       />
 
       <SectionWrapper background="white">

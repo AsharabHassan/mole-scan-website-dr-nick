@@ -1,29 +1,24 @@
 import type { Metadata } from "next";
-import Hero from "@/components/sections/Hero";
+import NHSHero from "@/components/sections/NHSHero";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import PathwayDiagram from "@/components/sections/PathwayDiagram";
 import FAQSection from "@/components/sections/FAQSection";
 import CTABand from "@/components/sections/CTABand";
 import Card from "@/components/ui/Card";
-import { generateBreadcrumbSchema } from "@/lib/schema";
+import AnimatedStat from "@/components/ui/AnimatedStat";
+import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "NHS Skin Cancer Triage Solution — Reduce 2WW Referrals",
   description:
-    "Help primary care triage skin lesions effectively. Reduce unnecessary 2-week-wait referrals with AI-assisted assessment and consultant dermatologist review.",
+    "Help primary care triage skin lesions effectively. Reduce unnecessary 2-week-wait referrals with expert clinical assessment and dermatologist review.",
   openGraph: {
     title: "NHS Skin Cancer Triage Solution — Reduce 2WW Referrals — MoleScan™",
     description:
-      "Help primary care triage skin lesions effectively. Reduce unnecessary 2-week-wait referrals with AI-assisted assessment.",
+      "Help primary care triage skin lesions effectively. Reduce unnecessary 2-week-wait referrals with expert clinical assessment.",
   },
 };
-
-const nhsProblemStats = [
-  { stat: "54%", label: "of urgent skin cancer referrals are for benign lesions" },
-  { stat: "6+ weeks", label: "average wait for non-urgent dermatology appointments" },
-  { stat: "Rising", label: "year-on-year increase in 2WW skin cancer referrals" },
-];
 
 const commissionerBenefits = [
   {
@@ -54,7 +49,7 @@ const commissionerBenefits = [
     ),
     title: "Patient Safety First",
     description:
-      "Every assessment is reviewed by a UK consultant dermatologist. Urgent cases are flagged for fast-track referral, ensuring no melanoma is missed.",
+      "Every assessment is reviewed by a UK GP or dermatologist. Urgent cases are flagged for fast-track referral, ensuring no melanoma is missed.",
   },
   {
     icon: (
@@ -72,18 +67,47 @@ const complianceItems = [
   {
     title: "Clinical Safety",
     description: "Aligned with DCB0129 and DCB0160 clinical safety standards.",
+    icon: (
+      <div className="w-10 h-10 rounded-lg bg-brand-soft-blue flex items-center justify-center text-brand-teal shadow-sm">
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      </div>
+    ),
   },
   {
     title: "Data Governance",
     description: "Fully GDPR compliant. UK data residency. Encrypted in transit and at rest.",
+    icon: (
+      <div className="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600 shadow-sm">
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+      </div>
+    ),
   },
   {
     title: "DTAC Alignment",
     description: "Designed to meet Digital Technology Assessment Criteria requirements.",
+    icon: (
+      <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 shadow-sm">
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+    ),
   },
   {
     title: "Accessibility",
     description: "Built to WCAG 2.2 AA standards. Compatible with NHS service requirements.",
+    icon: (
+      <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 shadow-sm">
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        </svg>
+      </div>
+    ),
   },
 ];
 
@@ -96,7 +120,7 @@ const faqs = [
   {
     question: "Is MoleScan a medical device?",
     answer:
-      "MoleScan is a clinical workflow and triage platform, not a standalone diagnostic medical device. It supports clinician decision-making by combining AI-assisted pre-screening with UK consultant dermatologist review. The final clinical decision always rests with the treating clinician.",
+      "MoleScan is a clinical workflow and triage platform, not a standalone diagnostic medical device. It supports clinician decision-making by providing structured clinical triage with UK GP and dermatologist review. The final clinical decision always rests with the treating clinician.",
   },
   {
     question: "What data governance standards does MoleScan meet?",
@@ -111,7 +135,7 @@ const faqs = [
   {
     question: "What evidence supports MoleScan's approach?",
     answer:
-      "MoleScan's approach combines two established clinical methodologies: AI-assisted image analysis for risk stratification, and expert dermatologist teledermatology review. Both methods have strong evidence bases in the published literature. Contact us for our full evidence summary.",
+      "MoleScan's approach combines two established clinical methodologies: structured dermoscopic image assessment for risk stratification, and expert dermatologist teledermatology review. Both methods have strong evidence bases in the published literature. Contact us for our full evidence summary.",
   },
 ];
 
@@ -120,6 +144,7 @@ export default function ForNHSPage() {
     { name: "Home", url: "/" },
     { name: "For NHS & ICBs", url: "/for-nhs" },
   ]);
+  const faqSchema = generateFAQSchema(faqs);
 
   return (
     <>
@@ -128,22 +153,11 @@ export default function ForNHSPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <Hero
-        title="Reduce Unnecessary Dermatology Referrals. Ensure No Urgent Case Is Missed."
-        subtitle="MoleScan helps NHS primary care triage skin lesions effectively with AI-assisted assessment and UK consultant dermatologist review — reducing 2-week-wait pressure while maintaining patient safety."
-        ctas={[
-          { label: "Request Demo", href: "/request-demo", variant: "primary" },
-          {
-            label: "Clinical Governance",
-            href: "/about/clinical-governance",
-            variant: "ghost-light",
-          },
-        ]}
-      />
+      <NHSHero />
 
-      {/* NHS Problem Stats */}
-      <SectionWrapper background="white">
-        <div className="text-center mb-12">
+      {/* NHS Problem Stats - Animated Counters */}
+      <SectionWrapper background="white" id="stats">
+        <div className="text-center mb-14">
           <h2 className="mb-4">The Dermatology Referral Challenge</h2>
           <p className="text-brand-text/70 text-lg max-w-3xl mx-auto">
             NHS dermatology services face sustained pressure from rising 2-week-wait
@@ -153,22 +167,36 @@ export default function ForNHSPage() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {nhsProblemStats.map((item, index) => (
-            <Card key={index} className="text-center p-8">
-              <div className="text-4xl font-bold text-brand-teal mb-2">
-                {item.stat}
-              </div>
-              <p className="text-brand-text/70">{item.label}</p>
-            </Card>
-          ))}
+          <Card className="p-10 text-center">
+            <AnimatedStat
+              value={95}
+              suffix="%"
+              label="of urgent skin cancer referrals are for benign lesions"
+            />
+          </Card>
+          <Card className="p-10 text-center">
+            <AnimatedStat
+              value={6}
+              suffix="+ weeks"
+              label="average wait for non-urgent dermatology appointments"
+            />
+          </Card>
+          <Card className="p-10 text-center">
+            <div className="text-5xl md:text-6xl font-bold font-display text-brand-teal mb-3">
+              Rising
+            </div>
+            <p className="text-brand-text/70 text-base leading-relaxed">
+              year-on-year increase in 2WW skin cancer referrals
+            </p>
+          </Card>
         </div>
       </SectionWrapper>
 
-      <SectionWrapper background="soft-blue">
+      <SectionWrapper background="soft-blue" id="pathway">
         <PathwayDiagram />
       </SectionWrapper>
 
-      <SectionWrapper background="white">
+      <SectionWrapper background="white" id="commissioner-benefits">
         <FeatureGrid
           title="Benefits for Commissioners"
           subtitle="MoleScan supports NHS transformation goals by enabling structured, governed skin lesion triage at the primary care level."
@@ -178,8 +206,8 @@ export default function ForNHSPage() {
       </SectionWrapper>
 
       {/* Compliance & Standards */}
-      <SectionWrapper background="soft-blue">
-        <div className="text-center mb-12">
+      <SectionWrapper background="soft-blue" id="compliance">
+        <div className="text-center mb-14">
           <h2 className="mb-4">Compliance & Standards</h2>
           <p className="text-brand-text/70 text-lg max-w-2xl mx-auto">
             MoleScan is designed to meet the governance and safety standards
@@ -189,15 +217,22 @@ export default function ForNHSPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {complianceItems.map((item, index) => (
             <Card key={index}>
-              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-              <p className="text-brand-text/70">{item.description}</p>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 mt-0.5" aria-hidden="true">
+                  {item.icon}
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                  <p className="text-brand-text/70">{item.description}</p>
+                </div>
+              </div>
             </Card>
           ))}
         </div>
       </SectionWrapper>
 
-      <SectionWrapper background="white">
-        <FAQSection faqs={faqs} />
+      <SectionWrapper background="white" id="nhs-faqs">
+        <FAQSection faqs={faqs} schemaScript={JSON.stringify(faqSchema)} />
       </SectionWrapper>
 
       <CTABand

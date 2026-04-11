@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import Hero from "@/components/sections/Hero";
+import ClinicsHero from "@/components/sections/ClinicsHero";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepProcess from "@/components/sections/StepProcess";
 import FAQSection from "@/components/sections/FAQSection";
 import CTABand from "@/components/sections/CTABand";
-import { generateBreadcrumbSchema } from "@/lib/schema";
+import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "AI Skin Lesion Assessment for Private Clinics",
+  title: "Skin Lesion Assessment for Private Clinics",
   description:
-    "Give your clinic a safe, structured mole assessment pathway. AI-assisted triage reviewed by consultant dermatologists. No special equipment required.",
+    "Give your clinic a safe, structured mole assessment pathway. Expert triage reviewed by GPs and dermatologists. Dermoscopic imaging for clinical accuracy.",
   openGraph: {
-    title: "AI Skin Lesion Assessment for Private Clinics — MoleScan™",
+    title: "Skin Lesion Assessment for Private Clinics — MoleScan™",
     description:
-      "Give your clinic a safe, structured mole assessment pathway. AI-assisted triage reviewed by consultant dermatologists.",
+      "Give your clinic a safe, structured mole assessment pathway. Expert triage reviewed by GPs and dermatologists.",
   },
 };
 
@@ -60,7 +60,7 @@ const benefits = [
     ),
     title: "Structured Reports in 24 Hours",
     description:
-      "Receive a consultant dermatologist-reviewed report for every submission within 24 hours. Clear, actionable outcomes: reassure, monitor, or refer.",
+      "Receive a dermatologist-reviewed report for every submission within 24 hours. Clear, actionable outcomes: reassure, monitor, or refer.",
   },
   {
     icon: (
@@ -68,9 +68,9 @@ const benefits = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
       </svg>
     ),
-    title: "No Special Equipment Required",
+    title: "Dermoscopic Imaging",
     description:
-      "Start with smartphone images. Dermoscopic images are supported for enhanced accuracy but are not a prerequisite.",
+      "Built for dermoscopic images, ensuring the highest quality capture for accurate clinical assessment and reliable triage.",
   },
   {
     icon: (
@@ -80,7 +80,7 @@ const benefits = [
     ),
     title: "Full Audit Trail",
     description:
-      "Every assessment is logged with images, AI analysis, and consultant review. Complete governance documentation for your clinic.",
+      "Every assessment is logged with images and clinician review. Complete governance documentation for your clinic.",
   },
   {
     icon: (
@@ -90,7 +90,7 @@ const benefits = [
     ),
     title: "Patient Confidence",
     description:
-      "Offer your patients a professional skin lesion assessment backed by AI and consultant dermatology expertise. Build trust and loyalty.",
+      "Offer your patients a professional skin lesion assessment backed by expert dermatology review. Build trust and loyalty.",
   },
 ];
 
@@ -99,7 +99,7 @@ const clinicSteps = [
     number: 1,
     title: "Photograph the Lesion",
     description:
-      "During the patient consultation, capture images of the skin lesion using your smartphone or a dermoscope.",
+      "During the patient consultation, capture dermoscopic images of the skin lesion.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
@@ -120,9 +120,9 @@ const clinicSteps = [
   },
   {
     number: 3,
-    title: "AI Analysis + Consultant Review",
+    title: "Clinical Review + Dermatologist Assessment",
     description:
-      "MoleScan's AI pre-screens the image. A UK consultant dermatologist then reviews every case and provides a clinical assessment.",
+      "MoleScan's clinical team reviews the dermoscopic image. A UK GP or dermatologist then reviews every case and provides a clinical assessment.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -146,12 +146,12 @@ const faqs = [
   {
     question: "Do I need a dermoscope to use MoleScan?",
     answer:
-      "No. MoleScan accepts standard smartphone photographs. Dermoscopic images are supported and improve diagnostic accuracy, but they are not required to use the platform.",
+      "Yes. MoleScan is designed to work with dermoscopic images to ensure the highest quality assessment. A dermoscope attachment is required for image capture.",
   },
   {
     question: "Who reviews the assessments?",
     answer:
-      "Every assessment submitted through MoleScan is reviewed by a UK consultant dermatologist. The AI provides pre-screening and risk stratification to support — not replace — the clinical review.",
+      "Every assessment submitted through MoleScan is reviewed by a UK GP or dermatologist. The clinical team provides thorough assessment and risk stratification to ensure safe, responsible triage.",
   },
   {
     question: "How quickly will I receive the report?",
@@ -175,6 +175,7 @@ export default function ForClinicsPage() {
     { name: "Home", url: "/" },
     { name: "For Clinics", url: "/for-clinics" },
   ]);
+  const faqSchema = generateFAQSchema(faqs);
 
   return (
     <>
@@ -183,20 +184,9 @@ export default function ForClinicsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <Hero
-        title="Skin Lesion Assessment for Your Clinic — Backed by AI and Consultant Dermatologists"
-        subtitle="You see patients with suspicious moles. You're not a dermatologist. MoleScan gives you a safe, structured pathway to assess and triage skin lesions with confidence."
-        ctas={[
-          { label: "Request Demo", href: "/request-demo", variant: "primary" },
-          {
-            label: "How It Works",
-            href: "/about/how-molescan-works",
-            variant: "ghost-light",
-          },
-        ]}
-      />
+      <ClinicsHero />
 
-      <SectionWrapper background="white">
+      <SectionWrapper background="white" id="challenges">
         <FeatureGrid
           title="The Challenge"
           subtitle="Skin lesion assessment in non-specialist settings presents real clinical and operational challenges."
@@ -205,16 +195,16 @@ export default function ForClinicsPage() {
         />
       </SectionWrapper>
 
-      <SectionWrapper background="soft-blue">
+      <SectionWrapper background="soft-blue" id="benefits">
         <FeatureGrid
           title="How MoleScan Helps Your Clinic"
-          subtitle="A structured assessment pathway that combines AI efficiency with consultant dermatologist expertise."
+          subtitle="A structured assessment pathway with expert dermatologist review."
           features={benefits}
           columns={2}
         />
       </SectionWrapper>
 
-      <SectionWrapper background="white">
+      <SectionWrapper background="white" id="how-it-works">
         <StepProcess
           title="How It Works for Your Clinic"
           subtitle="Four simple steps from patient consultation to consultant-reviewed report."
@@ -222,7 +212,7 @@ export default function ForClinicsPage() {
         />
       </SectionWrapper>
 
-      <SectionWrapper background="soft-blue">
+      <SectionWrapper background="soft-blue" id="who-uses">
         <div className="text-center mb-12">
           <h2 className="mb-4">Built for Healthcare Professionals</h2>
           <p className="text-brand-text/70 text-lg max-w-2xl mx-auto">
@@ -240,7 +230,7 @@ export default function ForClinicsPage() {
           ].map((type) => (
             <div
               key={type}
-              className="bg-white rounded-lg p-4 text-center text-sm font-medium text-brand-deep-blue shadow-sm"
+              className="bg-white rounded-xl p-5 text-center text-sm font-semibold text-brand-deep-blue shadow-card border border-gray-100/60 transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 hover:border-brand-teal/20"
             >
               {type}
             </div>
@@ -248,8 +238,8 @@ export default function ForClinicsPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper background="white">
-        <FAQSection faqs={faqs} />
+      <SectionWrapper background="white" id="faqs">
+        <FAQSection faqs={faqs} schemaScript={JSON.stringify(faqSchema)} />
       </SectionWrapper>
 
       <CTABand

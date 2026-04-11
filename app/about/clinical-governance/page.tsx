@@ -9,7 +9,7 @@ import { generateBreadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Clinical Governance",
   description:
-    "How MoleScan ensures clinical safety, data protection, and quality assurance. DCB0129 alignment, GDPR compliance, consultant dermatologist oversight.",
+    "How MoleScan ensures clinical safety, data protection, and quality assurance. DCB0129 alignment, GDPR compliance, GP and dermatologist oversight.",
   openGraph: {
     title: "Clinical Governance — MoleScan™",
     description:
@@ -32,9 +32,9 @@ const governanceSections = [
           "MoleScan maintains a designated Clinical Safety Officer (CSO) responsible for overseeing the clinical safety case, hazard management, and incident reporting processes.",
       },
       {
-        heading: "Consultant Dermatologist Review",
+        heading: "Dermatologist Review",
         description:
-          "Every assessment is reviewed by a UK consultant dermatologist before a report is issued. No clinical output is delivered based on AI analysis alone. This human oversight is the cornerstone of MoleScan's safety model.",
+          "Every assessment is reviewed by a UK GP or dermatologist before a report is issued. No clinical output is delivered without clinician review. This human oversight is the cornerstone of MoleScan's safety model.",
       },
     ],
   },
@@ -74,7 +74,7 @@ const governanceSections = [
       {
         heading: "Audit Trail",
         description:
-          "A complete audit trail is maintained for every assessment, including image capture, AI analysis, consultant review, and report delivery timestamps.",
+          "A complete audit trail is maintained for every assessment, including image capture, clinical review, and report delivery timestamps.",
       },
       {
         heading: "Continuous Improvement",
@@ -104,7 +104,7 @@ const faqs = [
   {
     question: "Is MoleScan a registered medical device?",
     answer:
-      "MoleScan is a clinical workflow and triage platform that supports clinician decision-making. It is not currently classified or registered as a standalone medical device. The platform combines AI-assisted pre-screening with UK consultant dermatologist review, with the final clinical decision always resting with the treating clinician.",
+      "MoleScan is a clinical workflow and triage platform that supports clinician decision-making. It is not currently classified or registered as a standalone medical device. The platform provides structured clinical triage with UK GP and dermatologist review, with the final clinical decision always resting with the treating clinician.",
   },
   {
     question: "How does MoleScan handle clinical incidents?",
@@ -117,9 +117,9 @@ const faqs = [
       "A summary of MoleScan's Clinical Safety Case is available on request. Please contact us or request a demo to discuss clinical governance documentation.",
   },
   {
-    question: "How are the consultant dermatologists vetted?",
+    question: "How are the dermatologists vetted?",
     answer:
-      "All MoleScan consultant dermatologists are registered with the General Medical Council (GMC), hold current specialist registration in dermatology, and undergo credential verification before joining the platform.",
+      "All MoleScan GPs and dermatologists are registered with the General Medical Council (GMC), and dermatologists hold current specialist registration in dermatology. All clinicians undergo credential verification before joining the platform.",
   },
 ];
 
@@ -138,12 +138,18 @@ export default function ClinicalGovernancePage() {
       />
 
       <Hero
+        eyebrow="Safety & Compliance"
         title="Clinical Governance"
+        titleHighlight="Governance"
         subtitle="MoleScan is built on a foundation of clinical safety, data protection, and quality assurance. Every assessment is clinician-led, consultant-reviewed, and fully governed."
         ctas={[
           { label: "Request Demo", href: "/request-demo", variant: "primary" },
         ]}
         background="blue"
+        badges={{
+          text: "",
+          items: ["DCB0129 Aligned", "GDPR Compliant", "GMC-Registered Clinicians"],
+        }}
       />
 
       {governanceSections.map((section, sectionIndex) => (

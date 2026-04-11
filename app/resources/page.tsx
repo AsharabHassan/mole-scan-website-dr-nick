@@ -9,7 +9,7 @@ import { generateBreadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Resources — Skin Lesion Assessment Guides & Insights",
   description:
-    "Clinical guides, insights, and articles on AI-assisted dermatology, skin cancer pathways, and skin lesion assessment best practices.",
+    "Clinical guides, insights, and articles on dermoscopic imaging, skin cancer pathways, and skin lesion assessment best practices.",
 };
 
 const articles = [
@@ -21,10 +21,10 @@ const articles = [
     readTime: "5 min read",
   },
   {
-    title: "AI in Dermatology: What Clinicians Need to Know",
+    title: "Dermoscopic Imaging: What Clinicians Need to Know",
     excerpt:
-      "A practical guide to understanding how AI is being used in skin lesion assessment, what it can and cannot do, and how clinician-led platforms like MoleScan combine AI with human expertise.",
-    category: "AI in Dermatology",
+      "A practical guide to understanding how dermoscopic imaging is used in skin lesion assessment, what it can and cannot show, and how clinician-led platforms like MoleScan leverage dermoscopy with human expertise.",
+    category: "Dermoscopy",
     readTime: "7 min read",
   },
   {
@@ -50,10 +50,16 @@ export default function ResourcesPage() {
       />
 
       <Hero
+        eyebrow="Guides & Insights"
         title="Resources"
-        subtitle="Clinical guides, insights, and articles on AI-assisted dermatology, skin cancer pathways, and skin lesion assessment best practices."
+        titleHighlight="Resources"
+        subtitle="Clinical guides, insights, and articles on dermoscopic imaging, skin cancer pathways, and skin lesion assessment best practices."
         ctas={[]}
         background="blue"
+        badges={{
+          text: "",
+          items: ["NHS Pathways", "Dermoscopy", "Clinical Practice"],
+        }}
       />
 
       <SectionWrapper background="white">

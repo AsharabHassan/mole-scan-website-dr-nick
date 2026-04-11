@@ -29,8 +29,8 @@ export default function ClinicalSafetyStatementPage() {
           <h2>Clinician-Led Assessment</h2>
           <p>
             MoleScan is a clinician-led platform. Every assessment is initiated by
-            a healthcare professional and reviewed by a UK consultant
-            dermatologist. The AI component provides decision support — it does not
+            a healthcare professional and reviewed by a UK GP or
+            dermatologist. The platform provides clinical decision support — it does not
             make autonomous clinical decisions.
           </p>
           <p>
@@ -64,7 +64,7 @@ export default function ClinicalSafetyStatementPage() {
           <p>
             MoleScan is a clinical workflow and triage platform. It is not a
             diagnostic device. It supports clinicians in assessing and triaging
-            skin lesions by providing AI-assisted pre-screening and UK consultant
+            skin lesions by providing structured clinical triage and UK GP and
             dermatologist review. Final diagnosis requires clinical assessment and,
             where indicated, histopathological confirmation.
           </p>

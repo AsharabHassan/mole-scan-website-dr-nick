@@ -8,7 +8,7 @@ export function generateOrganizationSchema() {
     url: SITE_URL,
     logo: `${SITE_URL}/images/logo.svg`,
     description:
-      "Clinician-led, AI-assisted skin lesion assessment and triage platform for healthcare professionals.",
+      "Clinician-led skin lesion assessment and triage platform for healthcare professionals.",
     parentOrganization: {
       "@type": "Organization",
       name: "Dermme Health Ltd",
@@ -30,13 +30,13 @@ export function generateServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "MoleScan AI-Assisted Skin Lesion Assessment",
+    name: "MoleScan Clinician-Led Skin Lesion Assessment",
     provider: {
       "@type": "Organization",
       name: "MoleScan",
       url: SITE_URL,
     },
-    serviceType: "AI-assisted clinical triage",
+    serviceType: "Clinician-led clinical triage",
     areaServed: {
       "@type": "Country",
       name: "United Kingdom",
@@ -46,7 +46,7 @@ export function generateServiceSchema() {
       audienceType: "Clinician",
     },
     description:
-      "Clinician-led skin lesion assessment combining AI analysis with UK consultant dermatologist review. Results within 24 hours.",
+      "Clinician-led skin lesion assessment with UK GP and dermatologist review. Dermoscopic imaging with results within 24 hours.",
   };
 }
 

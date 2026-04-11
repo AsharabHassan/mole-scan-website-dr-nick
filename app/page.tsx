@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Hero from "@/components/sections/Hero";
+import HomepageHero from "@/components/sections/HomepageHero";
 import TrustBar from "@/components/sections/TrustBar";
 import StepProcess from "@/components/sections/StepProcess";
 import AudienceCard from "@/components/sections/AudienceCard";
@@ -10,19 +10,19 @@ import SectionWrapper from "@/components/layout/SectionWrapper";
 import { generateServiceSchema, generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "MoleScan™ — Clinician-Led, AI-Assisted Skin Lesion Assessment",
+  title: "MoleScan™ — Clinician-Led Skin Lesion Assessment",
   description:
-    "AI-powered skin lesion assessment reviewed by UK consultant dermatologists. Results within 24 hours. For private clinics and NHS. Request a demo.",
+    "Clinician-led skin lesion assessment reviewed by UK GPs and dermatologists. Dermoscopic imaging with results within 24 hours. For private clinics and NHS. Request a demo.",
   openGraph: {
-    title: "MoleScan™ — Clinician-Led, AI-Assisted Skin Lesion Assessment",
+    title: "MoleScan™ — Clinician-Led Skin Lesion Assessment",
     description:
-      "AI-powered skin lesion assessment reviewed by UK consultant dermatologists. Results within 24 hours.",
+      "Clinician-led skin lesion assessment reviewed by UK GPs and dermatologists. Dermoscopic imaging with results within 24 hours.",
   },
 };
 
 const trustItems = [
   {
-    label: "UK Consultant Dermatologists",
+    label: "UK GPs & Dermatologists",
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -60,7 +60,7 @@ const howItWorksSteps = [
     number: 1,
     title: "Capture",
     description:
-      "Clinician photographs the skin lesion using a smartphone or dermoscope. No specialist equipment required.",
+      "Clinician photographs the skin lesion using a dermoscope, capturing high-quality dermoscopic images for expert review.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
@@ -70,9 +70,9 @@ const howItWorksSteps = [
   },
   {
     number: 2,
-    title: "AI-Assisted Triage",
+    title: "Expert Triage",
     description:
-      "MoleScan's AI analyses the image, providing risk stratification to support the clinical review process.",
+      "MoleScan's clinical team reviews the dermoscopic image, providing risk stratification to support the clinical review process.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -83,7 +83,7 @@ const howItWorksSteps = [
     number: 3,
     title: "Dermatologist Report",
     description:
-      "Every case is reviewed by a UK consultant dermatologist. You receive a structured report within 24 hours.",
+      "Every case is reviewed by a UK GP or dermatologist. You receive a structured report within 24 hours.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -101,7 +101,7 @@ const differentiators = [
     ),
     title: "Clinician-Led",
     description:
-      "Every assessment is initiated by a healthcare professional and reviewed by a UK consultant dermatologist. Human expertise at every step.",
+      "Every assessment is initiated by a healthcare professional and reviewed by a UK GP or dermatologist. Human expertise at every step.",
   },
   {
     icon: (
@@ -109,9 +109,9 @@ const differentiators = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
-    title: "AI-Assisted Analysis",
+    title: "Expert Clinical Analysis",
     description:
-      "Advanced AI provides risk stratification and pre-screening, enabling faster and more consistent triage across every submission.",
+      "Dermoscopic image analysis by experienced clinicians provides accurate risk stratification and consistent triage across every submission.",
   },
   {
     icon: (
@@ -129,9 +129,9 @@ const differentiators = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
       </svg>
     ),
-    title: "No Special Equipment",
+    title: "Dermoscopic Imaging",
     description:
-      "Works with smartphone images. Dermoscopic images supported for enhanced accuracy, but not required to get started.",
+      "Purpose-built for dermoscopic images, ensuring the highest quality capture for accurate clinical assessment.",
   },
 ];
 
@@ -145,7 +145,7 @@ const testimonials = [
   },
   {
     quote:
-      "Having a consultant dermatologist review every case gives us the confidence to offer mole assessments as part of our service.",
+      "Having a dermatologist review every case gives us the confidence to offer mole assessments as part of our service.",
     name: "James Clarke",
     role: "Clinic Manager",
     organisation: "Example Aesthetics",
@@ -176,14 +176,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <Hero
-        title="Clinician-Led, AI-Assisted Skin Lesion Assessment"
-        subtitle="MoleScan combines advanced AI analysis with UK consultant dermatologist review to deliver structured skin lesion assessment reports within 24 hours. A safe, governed triage pathway for healthcare professionals."
-        ctas={[
-          { label: "For Clinics", href: "/for-clinics", variant: "primary" },
-          { label: "For NHS & ICBs", href: "/for-nhs", variant: "ghost-light" },
-        ]}
-      />
+      <HomepageHero />
 
       <TrustBar items={trustItems} />
 
@@ -208,9 +201,9 @@ export default function HomePage() {
             title="For Private Clinics"
             description="Give your clinic a safe, structured pathway for assessing suspicious skin lesions — without referring every case."
             bulletPoints={[
-              "AI-assisted triage with consultant dermatologist review",
+              "Expert triage with GP and dermatologist review",
               "Results within 24 hours",
-              "No special equipment required",
+              "Dermoscopic imaging for clinical accuracy",
               "Full audit trail for clinical governance",
             ]}
             ctaLabel="Learn More"

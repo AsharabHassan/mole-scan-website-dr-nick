@@ -24,7 +24,9 @@ export default function ContactPage() {
       />
 
       <Hero
+        eyebrow="Get in Touch"
         title="Contact Us"
+        titleHighlight="Contact"
         subtitle="Have a question about MoleScan? Get in touch and our team will get back to you."
         ctas={[]}
         background="blue"
