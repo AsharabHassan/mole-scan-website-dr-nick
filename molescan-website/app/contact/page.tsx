@@ -30,6 +30,7 @@ export default function ContactPage() {
         subtitle="Have a question about MoleScan? Get in touch and our team will get back to you."
         ctas={[]}
         background="blue"
+        backgroundImage="/images/hero-bg-contact.png"
       />
 
       <SectionWrapper background="white">

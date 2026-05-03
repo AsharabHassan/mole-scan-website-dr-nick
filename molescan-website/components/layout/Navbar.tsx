@@ -61,7 +61,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center group">
             <Image
               src="/images/molescan-logo-v2.png"
-              alt="MoleScan — clinician-led skin lesion assessment platform logo"
+              alt="MoleScan — dermatologist-led skin lesion assessment platform logo"
               width={130}
               height={48}
               className="rounded-lg transition-transform duration-300 group-hover:scale-105 object-contain"

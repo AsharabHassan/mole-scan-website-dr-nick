@@ -70,7 +70,7 @@ export default function Footer() {
             <div className="mb-6 flex items-center gap-5">
               <Image
                 src="/images/molescan-logo-white.png"
-                alt="MoleScan — clinician-led skin lesion assessment platform logo"
+                alt="MoleScan — dermatologist-led skin lesion assessment platform logo"
                 width={140}
                 height={50}
                 className="rounded-lg object-contain"
@@ -88,7 +88,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
-              Clinician-led skin lesion assessment and triage
+              Dermatologist-led skin lesion assessment and triage
               platform. Supporting structured, safe, and responsible pathways
               for healthcare professionals across the UK.
             </p>

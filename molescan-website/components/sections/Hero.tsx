@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+import HeroFeatureBar from "@/components/sections/HeroFeatureBar";
 import { useInView } from "@/components/hooks/useInView";
 
 interface HeroCTA {
@@ -32,6 +33,10 @@ interface HeroProps {
   eyebrow?: string;
   /** Trust/compliance badges shown below CTAs */
   badges?: HeroBadge;
+  /** Optional background image URL for the hero section */
+  backgroundImage?: string;
+  /** Optional feature bar items at the bottom of the hero */
+  featureBar?: { icon: "shield" | "clock" | "chart" | "lock" | "check" | "users"; label: string; desc: string }[];
 }
 
 export default function Hero({
@@ -43,6 +48,8 @@ export default function Hero({
   image,
   eyebrow,
   badges,
+  backgroundImage,
+  featureBar,
 }: HeroProps) {
   const [ref, inView] = useInView<HTMLElement>({ threshold: 0.1 });
 
@@ -66,8 +73,8 @@ export default function Hero({
     <section
       ref={ref}
       id="hero"
-      className={`${bgStyle} animate-gradient text-white relative overflow-hidden ${
-        image ? "min-h-[75vh] flex items-center" : "py-20 md:py-28"
+      className={`${bgStyle} animate-gradient text-white relative overflow-hidden flex flex-col ${
+        image ? "min-h-[75vh]" : ""
       }`}
     >
       {/* Decorative background */}
@@ -79,6 +86,18 @@ export default function Hero({
             backgroundSize: "32px 32px",
           }}
         />
+        {/* Background image */}
+        {backgroundImage && (
+          <div
+            className="absolute inset-0 opacity-[0.15]"
+            style={{
+              backgroundImage: `url('${backgroundImage}')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}
+          />
+        )}
         <div className="absolute -top-28 -right-28 w-[420px] h-[420px] bg-brand-teal/8 rounded-full blur-[120px] animate-float" />
         <div className="absolute -bottom-36 -left-16 w-[340px] h-[340px] bg-indigo-500/5 rounded-full blur-[100px] animate-float delay-500" />
         <div className="absolute top-1/2 right-1/4 w-36 h-36 bg-white/[0.015] rounded-full blur-2xl animate-pulse-soft" />
@@ -89,7 +108,7 @@ export default function Hero({
         <div className="absolute top-0 right-0 w-[45%] h-full bg-gradient-to-l from-brand-teal/5 to-transparent" />
       </div>
 
-      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-28 flex-1 flex items-center">
         <div
           className={`${
             image
@@ -237,10 +256,14 @@ export default function Hero({
         </div>
       </div>
 
-      {/* Bottom gradient fade */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"
-        aria-hidden="true"
+      <HeroFeatureBar
+        inView={inView}
+        items={featureBar || [
+          { icon: "shield", label: "Dermatologist-Led", desc: "Every case reviewed by UK specialist dermatologists" },
+          { icon: "clock", label: "24-Hour Reports", desc: "Structured results delivered within one working day" },
+          { icon: "lock", label: "GDPR Compliant", desc: "UK data residency with full encryption" },
+          { icon: "check", label: "100% Expert Reviewed", desc: "No assessment without dermatologist oversight" },
+        ]}
       />
     </section>
   );

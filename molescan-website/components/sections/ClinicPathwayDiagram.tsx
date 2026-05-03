@@ -3,86 +3,93 @@
 import Image from "next/image";
 import { useInView } from "@/components/hooks/useInView";
 
-interface PathwayDiagramProps {
+interface ClinicPathwayDiagramProps {
   title?: string;
 }
 
 const stepsRow1 = [
   {
     num: 1,
-    title: "Patient concerned about a mole",
-    desc: "A patient notices a new or changing mole and decides to seek medical advice from their GP surgery.",
-    image: "/images/pathway/step1.png",
+    title: "Client attends aesthetic clinic",
+    desc: "A client arrives at your clinic for a scheduled aesthetic, beauty, or skin treatment appointment.",
+    image: "/images/clinic-pathway/step1.png",
   },
   {
     num: 2,
-    title: "Patient calls GP surgery",
-    desc: "The patient contacts their local GP surgery to request an appointment for a skin concern assessment.",
-    image: "/images/pathway/step2.png",
+    title: "Practitioner notices a mole in the treatment area",
+    desc: "During the appointment, the practitioner spots a mole or skin lesion in or near the treatment zone that needs checking.",
+    image: "/images/clinic-pathway/step2.png",
   },
   {
     num: 3,
-    title: "Appointment booked with Nurse / HCA",
-    desc: "A dedicated MoleScan appointment is scheduled with a trained Nurse or Healthcare Assistant.",
-    image: "/images/pathway/step3.png",
+    title: "Practitioner recommends MoleScan analysis before any treatment",
+    desc: "Instead of cancelling or guessing, the practitioner pauses and recommends a MoleScan assessment. Safety first — get it checked.",
+    image: "/images/clinic-pathway/step3.png",
   },
   {
     num: 4,
-    title: "Nurse / HCA appointment",
-    desc: "The patient attends a brief, focused consultation with their Nurse or HCA at the GP surgery.",
-    image: "/images/pathway/step4.png",
+    title: "Questions answered & dermoscopic images captured",
+    desc: "The practitioner answers a few pre-determined clinical questions, captures dermoscopic images, and uploads everything to MoleScan.",
+    image: "/images/clinic-pathway/step4-v2.png",
+    subItems: ["Pre-determined questions", "Dermoscopic images", "Upload to MoleScan"],
   },
   {
     num: 5,
-    title: "Nurse / HCA captures information & dermoscopic images",
-    desc: "Clinical details are recorded and high-quality dermoscopic images are captured using a smartphone attachment.",
-    image: "/images/pathway/step5.png",
-    subItems: ["Pre-determined questions", "Dermoscopic images", "Upload to MoleScan"],
+    title: "Case prepared for clinician-led review",
+    desc: "The MoleScan platform processes the case with AI-assisted analysis and prepares it for expert clinician review.",
+    image: "/images/clinic-pathway/step5.png",
   },
 ];
 
 const stepsRow2 = [
   {
     num: 6,
-    title: "MoleScan analyses the case",
-    desc: "The MoleScan platform uses AI-assisted analysis to evaluate the dermoscopic images and clinical data submitted.",
-    image: "/images/pathway/step6.png",
+    title: "Case reviewed by UK GPwSI Dermatologist or Consultant Dermatologist",
+    desc: "Every case is reviewed by a UK-registered GPwSI or Consultant Dermatologist. Expert judgement you can trust.",
+    image: "/images/clinic-pathway/step6.png",
   },
   {
     num: 7,
-    title: "Case reviewed by UK GPwSI Dermatologist or Consultant Dermatologist",
-    desc: "Every case is reviewed by a UK-registered GPwSI or Consultant Dermatologist.",
-    image: "/images/pathway/step7.png",
+    title: "Final report sent to clinic within 24 hrs",
+    desc: "A comprehensive clinical report with clear recommendations is delivered to your clinic within 24 hours of submission.",
+    image: "/images/clinic-pathway/step7.png",
   },
   {
     num: 8,
-    title: "Final report sent to GP surgery",
-    desc: "A comprehensive clinical report with clear recommendations is delivered to the referring GP surgery within 24 hours.",
-    image: "/images/pathway/step8.png",
-  },
-  {
-    num: 9,
-    title: "Outcome rag-rated for clear actions",
-    desc: "Each case is given a clear RAG-rated outcome so the GP can act with confidence.",
-    image: "/images/pathway/step9.png",
+    title: "Outcome guidance (RAG-rated)",
+    desc: "Each case is given a clear RAG-rated outcome so the clinic can act with confidence.",
+    image: "/images/clinic-pathway/step8.png",
     ragItems: [
-      { color: "bg-emerald-500", label: "GREEN", desc: "Low risk", action: "Routine care / Monitor" },
+      { color: "bg-emerald-500", label: "GREEN", desc: "Low risk", action: "Reassure / Monitor" },
       { color: "bg-amber-500", label: "AMBER", desc: "Intermediate risk", action: "Review / Monitor / Possible referral" },
       { color: "bg-red-500", label: "RED", desc: "High risk", action: "Urgent referral / Fast-track" },
     ],
   },
+  {
+    num: 9,
+    title: "Clinic decides the appropriate action",
+    desc: "Based on the report, the clinic takes the right next step for the client.",
+    image: "/images/clinic-pathway/step9-v2.png",
+    actionItems: ["Proceed with treatment", "Reassess / Monitor", "Refer to GP / Specialist"],
+  },
+  {
+    num: 10,
+    title: "Safe, confident care for your clients",
+    desc: "Better outcomes. Stronger trust. Your clients know you take their safety seriously.",
+    image: "/images/clinic-pathway/step10.png",
+  },
 ];
 
-export default function PathwayDiagram({
-  title = "How MoleScan Fits Into the NHS Skin Cancer Pathway",
-}: PathwayDiagramProps) {
+export default function ClinicPathwayDiagram({
+  title = "Pause. Assess. Then Treat.",
+}: ClinicPathwayDiagramProps) {
   const [ref, inView] = useInView<HTMLDivElement>({ threshold: 0.05 });
 
   return (
     <section
       ref={ref}
       className="py-16 md:py-24 bg-white relative overflow-hidden"
-      aria-label="NHS Skin Cancer Pathway Workflow"
+      aria-label="Clinic Mole Assessment Pathway Workflow"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -94,12 +101,12 @@ export default function PathwayDiagram({
         >
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-[44px] font-bold font-display text-brand-deep-navy leading-[1.12] tracking-tight mb-4">
-              Timely expert assessment.
+              Pause. Assess.
               <br />
-              <span className="text-brand-deep-blue">Better outcomes for every patient.</span>
+              <span className="text-brand-deep-blue italic">Then treat.</span>
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed">
-              Supporting GP surgeries with fast, specialist dermatology advice.
+              Not every lesion should be treated without assessment.
             </p>
           </div>
           <div
@@ -114,14 +121,14 @@ export default function PathwayDiagram({
                 </svg>
               </div>
               <h3 className="text-lg md:text-xl font-bold text-brand-deep-navy">
-                Right advice. Right time. Right outcome.
+                Raising the standard in aesthetic care.
               </h3>
             </div>
             <p className="text-gray-600 leading-relaxed text-[15px]">
-              MoleScan gives GP surgeries access to expert dermatology assessment{" "}
-              <strong className="text-brand-deep-navy">within 24 hours</strong>, so you can act with{" "}
-              <strong className="text-brand-deep-navy">confidence</strong> and provide the best possible
-              care for your patients.
+              MoleScan provides structured assessment and expert dermatology review, so you can make{" "}
+              <strong className="text-brand-deep-navy">informed decisions</strong> with{" "}
+              <strong className="text-brand-deep-navy">confidence</strong> and protect your clients
+              and your practice.
             </p>
           </div>
         </div>
@@ -159,9 +166,9 @@ export default function PathwayDiagram({
           </svg>
         </div>
 
-        {/* ── Row 2: Steps 6-9 ── */}
+        {/* ── Row 2: Steps 6-10 ── */}
         <div className="mb-14 md:mb-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
             {stepsRow2.map((step, index) => (
               <div
                 key={step.num}
@@ -181,6 +188,8 @@ export default function PathwayDiagram({
 
                 {"ragItems" in step && step.ragItems ? (
                   <RagStepCard step={step} />
+                ) : "actionItems" in step && step.actionItems ? (
+                  <ActionStepCard step={step} />
                 ) : (
                   <StepCard step={step} />
                 )}
@@ -196,14 +205,14 @@ export default function PathwayDiagram({
           }`}
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 px-6 md:px-10 py-5 md:py-6">
-            {/* Left: clock + turnaround */}
+            {/* Left: checkmark + tagline */}
             <div className="flex items-center gap-3">
               <div className="w-11 h-11 rounded-full bg-brand-teal/15 border border-brand-teal/25 flex items-center justify-center flex-shrink-0">
                 <svg className="w-5 h-5 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <span className="text-white font-bold text-lg font-display">24-hour turnaround.</span>
+              <span className="text-white font-bold text-lg font-display">Check first. Treat with confidence.</span>
             </div>
 
             {/* Divider */}
@@ -211,17 +220,20 @@ export default function PathwayDiagram({
 
             {/* Center: tagline */}
             <p className="text-gray-300 text-sm md:text-base text-center">
-              Expert assessment. &nbsp;Clear guidance. &nbsp;Confident decisions.
+              MoleScan supports clinical excellence and client safety.
             </p>
 
             {/* Divider */}
             <div className="hidden md:block w-px h-8 bg-white/10" />
 
-            {/* Right: NHS badge */}
+            {/* Right: 24h badge */}
             <div className="flex items-center gap-2">
               <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-lg px-4 py-2 flex items-center gap-2">
-                <span className="text-white font-bold text-lg tracking-wide">NHS</span>
-                <span className="text-gray-400 text-xs">Compatible</span>
+                <svg className="w-5 h-5 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-white font-bold text-lg tracking-wide">24h</span>
+                <span className="text-gray-400 text-xs">Turnaround</span>
               </div>
             </div>
           </div>
@@ -276,7 +288,7 @@ function StepCard({ step }: { step: StepData }) {
           </p>
         )}
 
-        {/* Sub-items (for step 5) */}
+        {/* Sub-items (for step 4) */}
         {step.subItems && (
           <ul className="mt-auto pt-3 space-y-1.5 border-t border-gray-100">
             {step.subItems.map((item, i) => (
@@ -293,7 +305,7 @@ function StepCard({ step }: { step: StepData }) {
 }
 
 
-/* ─── RAG Step Card (Step 9) ─── */
+/* ─── RAG Step Card (Step 8) ─── */
 
 interface RagStep {
   num: number;
@@ -318,7 +330,7 @@ function RagStepCard({ step }: { step: RagStep }) {
           alt={step.title}
           fill
           className="object-contain group-hover:scale-105 transition-transform duration-500"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
         />
       </div>
 
@@ -355,6 +367,79 @@ function RagStepCard({ step }: { step: RagStep }) {
             </div>
           ))}
         </div>
+      </div>
+    </div>
+  );
+}
+
+
+/* ─── Action Step Card (Step 9) ─── */
+
+interface ActionStep {
+  num: number;
+  title: string;
+  desc?: string;
+  image: string;
+  actionItems: string[];
+}
+
+function ActionStepCard({ step }: { step: ActionStep }) {
+  const actionIcons = [
+    // Checkmark - proceed
+    <svg key="proceed" className="w-3.5 h-3.5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>,
+    // Magnifying glass - monitor
+    <svg key="monitor" className="w-3.5 h-3.5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+    </svg>,
+    // Building - refer
+    <svg key="refer" className="w-3.5 h-3.5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v3.818" />
+    </svg>,
+  ];
+
+  return (
+    <div className="group bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+      {/* Image */}
+      <div className="relative w-full aspect-square bg-gradient-to-br from-[#f5f7fa] to-[#eef1f6] overflow-hidden">
+        <Image
+          src={step.image}
+          alt={step.title}
+          fill
+          className="object-contain group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="p-4 flex-1 flex flex-col">
+        {/* Step number badge */}
+        <div className="flex items-start gap-3 mb-2">
+          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-deep-navy text-white text-xs font-bold flex items-center justify-center">
+            {step.num}
+          </span>
+          <h3 className="text-sm font-semibold text-brand-deep-navy leading-snug flex-1">
+            {step.title}
+          </h3>
+        </div>
+
+        {/* Description */}
+        {step.desc && (
+          <p className="text-xs text-gray-500 leading-relaxed mb-2">
+            {step.desc}
+          </p>
+        )}
+
+        {/* Action items */}
+        <ul className="mt-auto pt-3 space-y-2 border-t border-gray-100">
+          {step.actionItems.map((item, i) => (
+            <li key={i} className="flex items-center gap-2 text-xs text-gray-600 font-medium">
+              {actionIcons[i]}
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

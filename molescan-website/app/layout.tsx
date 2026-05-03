@@ -22,11 +22,11 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "MoleScan™ — Clinician-Led Skin Lesion Assessment",
+    default: "MoleScan™ — Dermatologist-Led Skin Lesion Assessment",
     template: "%s | MoleScan™",
   },
   description:
-    "Clinician-led skin lesion assessment reviewed by UK GPs and dermatologists. Dermoscopic imaging with results within 24 hours. For private clinics and NHS. Request a demo.",
+    "Dermatologist-led skin lesion assessment reviewed by UK GPs with special interest and dermatologists. Dermoscopic imaging with results within 24 hours. For private clinics and NHS. Request a demo.",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://molescan.co.uk"
   ),
@@ -75,7 +75,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className="font-sans min-h-screen flex flex-col">
+      <body className="font-sans min-h-screen flex flex-col" suppressHydrationWarning>
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

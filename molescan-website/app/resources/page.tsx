@@ -21,9 +21,9 @@ const articles = [
     readTime: "5 min read",
   },
   {
-    title: "Dermoscopic Imaging: What Clinicians Need to Know",
+    title: "Dermoscopic Imaging: What Practitioners Need to Know",
     excerpt:
-      "A practical guide to understanding how dermoscopic imaging is used in skin lesion assessment, what it can and cannot show, and how clinician-led platforms like MoleScan leverage dermoscopy with human expertise.",
+      "A practical guide to understanding how dermoscopic imaging is used in skin lesion assessment, what it can and cannot show, and how dermatologist-led platforms like MoleScan leverage dermoscopy with human expertise.",
     category: "Dermoscopy",
     readTime: "7 min read",
   },
@@ -56,6 +56,7 @@ export default function ResourcesPage() {
         subtitle="Clinical guides, insights, and articles on dermoscopic imaging, skin cancer pathways, and skin lesion assessment best practices."
         ctas={[]}
         background="blue"
+        backgroundImage="/images/hero-bg-resources.png"
         badges={{
           text: "",
           items: ["NHS Pathways", "Dermoscopy", "Clinical Practice"],

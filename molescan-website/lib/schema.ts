@@ -8,7 +8,7 @@ export function generateOrganizationSchema() {
     url: SITE_URL,
     logo: `${SITE_URL}/images/logo.svg`,
     description:
-      "Clinician-led skin lesion assessment and triage platform for healthcare professionals.",
+      "Dermatologist-led skin lesion assessment and triage platform for healthcare professionals.",
     parentOrganization: {
       "@type": "Organization",
       name: "Dermme Health Ltd",
@@ -18,10 +18,13 @@ export function generateOrganizationSchema() {
       name: "United Kingdom",
     },
     knowsAbout: [
+      "mole assessment",
+      "mole check",
       "skin lesion assessment",
       "AI dermatology",
       "dermoscopy",
       "skin cancer triage",
+      "aesthetic clinic mole check",
     ],
   };
 }
@@ -30,23 +33,23 @@ export function generateServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "MoleScan Clinician-Led Skin Lesion Assessment",
+    name: "MoleScan Dermatologist-Led Skin Lesion Assessment",
     provider: {
       "@type": "Organization",
       name: "MoleScan",
       url: SITE_URL,
     },
-    serviceType: "Clinician-led clinical triage",
+    serviceType: "Dermatologist-led clinical triage",
     areaServed: {
       "@type": "Country",
       name: "United Kingdom",
     },
     audience: {
       "@type": "MedicalAudience",
-      audienceType: "Clinician",
+      audienceType: "MedicalProfessional",
     },
     description:
-      "Clinician-led skin lesion assessment with UK GP and dermatologist review. Dermoscopic imaging with results within 24 hours.",
+      "Dermatologist-led skin lesion assessment with UK GPwSI and dermatologist review. Dermoscopic imaging with results within 24 hours.",
   };
 }
 

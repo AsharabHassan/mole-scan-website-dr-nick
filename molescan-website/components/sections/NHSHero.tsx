@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+import HeroFeatureBar from "@/components/sections/HeroFeatureBar";
 import { useInView } from "@/components/hooks/useInView";
 
 export default function NHSHero() {
@@ -11,12 +12,23 @@ export default function NHSHero() {
     <section
       ref={ref}
       id="nhs-hero"
-      aria-label="MoleScan for NHS and Integrated Care Boards — clinician-led dermatology triage solution"
+      aria-label="MoleScan for NHS and Integrated Care Boards — dermatologist-led dermatology triage solution"
       className="relative overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0" aria-hidden="true">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-deep-navy via-[#152057] to-brand-deep-blue animate-gradient" />
+
+        {/* Background image */}
+        <div
+          className="absolute inset-0 opacity-[0.15]"
+          style={{
+            backgroundImage: `url('/images/hero-bg-nhs.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
         <div
           className="absolute inset-0 opacity-[0.02]"
           style={{
@@ -75,7 +87,7 @@ export default function NHSHero() {
               }`}
             >
               MoleScan helps NHS primary care triage skin lesions effectively
-              with expert clinical assessment and UK GP and dermatologist
+              with expert clinical assessment and UK GPwSI and dermatologist
               review — reducing 2-week-wait pressure while maintaining
               patient safety.
             </p>
@@ -125,7 +137,7 @@ export default function NHSHero() {
               <div className="relative w-full aspect-square rounded-3xl overflow-hidden bg-white/[0.03] border border-white/[0.06] p-4 lg:p-6">
                 <Image
                   src="/images/hero-nhs-integrated-care.png"
-                  alt="Illustrated infographic showing MoleScan integrated into the NHS dermatology referral pathway — clinician-led skin lesion triage reducing unnecessary 2-week-wait referrals while ensuring urgent melanoma cases are fast-tracked to secondary care"
+                  alt="Illustrated infographic showing MoleScan integrated into the NHS dermatology referral pathway — dermatologist-led skin lesion triage reducing unnecessary 2-week-wait referrals while ensuring urgent melanoma cases are fast-tracked to secondary care"
                   fill
                   priority
                   className="object-contain p-2 lg:p-4"
@@ -205,59 +217,15 @@ export default function NHSHero() {
         </div>
       </div>
 
-      {/* Bottom stats ribbon — SEO-rich structured content */}
-      <div className="relative z-10 mt-8">
-        <div className="border-t border-white/[0.06]">
-          <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-            <div
-              className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-0 transition-all duration-700 delay-500 ${
-                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-              }`}
-            >
-              {[
-                { icon: "shield", label: "Clinician-Led Assessment", desc: "Every case reviewed by UK GPs and dermatologists" },
-                { icon: "clock", label: "24-Hour Reports", desc: "Structured results delivered within one working day" },
-                { icon: "chart", label: "Reduce 2WW Pressure", desc: "Filter benign referrals at the primary care level" },
-                { icon: "lock", label: "NHS Compliant", desc: "DCB0129, GDPR, DTAC aligned platform" },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className={`flex items-start gap-3 py-5 px-3 md:py-6 md:px-4 ${
-                    i < 3 ? "md:border-r md:border-white/[0.06]" : ""
-                  } border-b border-white/[0.06] md:border-b-0`}
-                >
-                  <div className="w-9 h-9 rounded-xl bg-brand-teal/10 border border-brand-teal/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    {item.icon === "shield" && (
-                      <svg className="w-4 h-4 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                      </svg>
-                    )}
-                    {item.icon === "clock" && (
-                      <svg className="w-4 h-4 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    )}
-                    {item.icon === "chart" && (
-                      <svg className="w-4 h-4 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6L9 12.75l4.286-4.286a11.948 11.948 0 014.306 6.43l.776 2.898m0 0l3.182-5.511m-3.182 5.51l-5.511-3.181" />
-                      </svg>
-                    )}
-                    {item.icon === "lock" && (
-                      <svg className="w-4 h-4 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                      </svg>
-                    )}
-                  </div>
-                  <div>
-                    <h3 className="text-white text-sm font-semibold mb-0.5">{item.label}</h3>
-                    <p className="text-gray-400 text-xs leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+      <HeroFeatureBar
+        inView={inView}
+        items={[
+          { icon: "shield", label: "Dermatologist-Led Assessment", desc: "Every case reviewed by UK GPwSI dermatologists and consultant dermatologists" },
+          { icon: "clock", label: "24-Hour Reports", desc: "Structured results delivered within one working day" },
+          { icon: "chart", label: "Reduce 2WW Pressure", desc: "Filter benign referrals at the primary care level" },
+          { icon: "lock", label: "NHS Compliant", desc: "DCB0129, GDPR, DTAC aligned platform" },
+        ]}
+      />
 
     </section>
   );

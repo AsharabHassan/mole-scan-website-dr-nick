@@ -29,7 +29,7 @@ const commissionerBenefits = [
     ),
     title: "Reduce 2WW Referral Pressure",
     description:
-      "MoleScan enables primary care clinicians to triage skin lesions before referral, reducing the volume of unnecessary 2-week-wait submissions reaching secondary care.",
+      "MoleScan enables primary care practitioners to triage skin lesions before referral, reducing the volume of unnecessary 2-week-wait submissions reaching secondary care.",
   },
   {
     icon: (
@@ -49,7 +49,7 @@ const commissionerBenefits = [
     ),
     title: "Patient Safety First",
     description:
-      "Every assessment is reviewed by a UK GP or dermatologist. Urgent cases are flagged for fast-track referral, ensuring no melanoma is missed.",
+      "Every assessment is reviewed by a UK GPwSI or dermatologist. Urgent cases are flagged for fast-track referral, ensuring no melanoma is missed.",
   },
   {
     icon: (
@@ -60,6 +60,16 @@ const commissionerBenefits = [
     title: "Scalable Across Sites",
     description:
       "Deploy MoleScan across multiple GP practices and primary care sites within your ICB. Centralised reporting and governance across all locations.",
+  },
+  {
+    icon: (
+      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    title: "Reduce Routine Dermatology Waiting Times",
+    description:
+      "By triaging skin lesions effectively at primary care level, MoleScan helps free up routine dermatology appointment slots for patients who genuinely need specialist face-to-face assessment.",
   },
 ];
 
@@ -115,12 +125,12 @@ const faqs = [
   {
     question: "How does MoleScan fit into existing NHS referral pathways?",
     answer:
-      "MoleScan sits between primary care and secondary care in the skin cancer referral pathway. GPs and primary care clinicians use MoleScan to triage lesions before making a 2-week-wait referral. Cases assessed as benign can be safely managed in primary care, while suspicious cases are flagged for urgent referral with supporting clinical evidence.",
+      "MoleScan sits between primary care and secondary care in the skin cancer referral pathway. GPs and primary care practitioners use MoleScan to triage lesions before making a 2-week-wait referral. Cases assessed as benign can be safely managed in primary care, while suspicious cases are flagged for urgent referral with supporting clinical evidence.",
   },
   {
     question: "Is MoleScan a medical device?",
     answer:
-      "MoleScan is a clinical workflow and triage platform, not a standalone diagnostic medical device. It supports clinician decision-making by providing structured clinical triage with UK GP and dermatologist review. The final clinical decision always rests with the treating clinician.",
+      "MoleScan is a clinical workflow and triage platform, not a standalone diagnostic medical device. It supports practitioner decision-making by providing structured clinical triage with UK GPwSI and dermatologist review. The final clinical decision always rests with the treating practitioner.",
   },
   {
     question: "What data governance standards does MoleScan meet?",
@@ -176,7 +186,7 @@ export default function ForNHSPage() {
           </Card>
           <Card className="p-10 text-center">
             <AnimatedStat
-              value={6}
+              value={9}
               suffix="+ weeks"
               label="average wait for non-urgent dermatology appointments"
             />
@@ -192,9 +202,9 @@ export default function ForNHSPage() {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper background="soft-blue" id="pathway">
+      <div id="pathway">
         <PathwayDiagram />
-      </SectionWrapper>
+      </div>
 
       <SectionWrapper background="white" id="commissioner-benefits">
         <FeatureGrid

@@ -1,6 +1,7 @@
 "use client";
 
 import Button from "@/components/ui/Button";
+import HeroFeatureBar from "@/components/sections/HeroFeatureBar";
 import { useInView } from "@/components/hooks/useInView";
 
 export default function ClinicsHero() {
@@ -13,17 +14,8 @@ export default function ClinicsHero() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      title: "24-Hour Reports",
-      desc: "Consultant-reviewed results",
-    },
-    {
-      icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-        </svg>
-      ),
-      title: "Dermoscopic Imaging",
-      desc: "High-quality clinical capture",
+      title: "Answers in 24 Hours",
+      desc: "Know if it\u2019s safe to proceed with treatment",
     },
     {
       icon: (
@@ -31,28 +23,50 @@ export default function ClinicsHero() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
         </svg>
       ),
-      title: "Full Audit Trail",
-      desc: "Complete clinical governance",
+      title: "Expert Dermatologist Review",
+      desc: "You don\u2019t need to diagnose \u2014 we handle that",
+    },
+    {
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      title: "Keep Treatments on Track",
+      desc: "Don\u2019t lose clients to GP waiting times",
     },
   ];
 
   const clinicTypes = [
-    "Private GPs",
     "Aesthetic Clinics",
-    "Pharmacies",
-    "Podiatrists",
-    "Walk-in Centres",
+    "Beauty Therapists",
+    "Laser & IPL Clinics",
+    "Podiatry Clinics",
+    "Physiotherapy",
+    "Private GPs",
+    "Chiropractors",
   ];
 
   return (
     <section
       ref={ref}
       id="hero"
-      className="relative overflow-hidden min-h-[80vh] flex items-center"
+      className="relative overflow-hidden min-h-[80vh] flex flex-col"
     >
       {/* Background */}
       <div className="absolute inset-0" aria-hidden="true">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-deep-navy via-[#152057] to-brand-deep-blue animate-gradient" />
+
+        {/* Background image */}
+        <div
+          className="absolute inset-0 opacity-[0.15]"
+          style={{
+            backgroundImage: `url('/images/hero-bg-clinics.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
         <div className="absolute top-0 right-0 w-[50%] h-full bg-gradient-to-l from-brand-teal/6 to-transparent" />
         <div className="absolute bottom-0 left-0 w-[40%] h-[50%] bg-gradient-to-tr from-brand-teal/4 to-transparent" />
         <div
@@ -68,7 +82,7 @@ export default function ClinicsHero() {
         <div className="absolute bottom-24 left-[8%] w-16 h-16 border border-brand-teal/[0.05] rounded-xl -rotate-6" />
       </div>
 
-      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-28">
+      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-28 flex-1 flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left: Content — 7 cols */}
           <div className="lg:col-span-7">
@@ -83,7 +97,7 @@ export default function ClinicsHero() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-teal" />
               </span>
               <span className="text-sm text-gray-300 font-medium">
-                For Private Clinics &amp; Healthcare Providers
+                For Private Clinics &amp; Allied Health Practitioners
               </span>
             </div>
 
@@ -92,9 +106,9 @@ export default function ClinicsHero() {
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Skin Lesion Assessment{" "}
+              A Mole in the{" "}
               <span className="relative inline-block">
-                <span className="relative z-10">for Your Clinic</span>
+                <span className="relative z-10">Treatment Zone?</span>
                 <span
                   className="absolute bottom-1 left-0 right-0 h-3 bg-brand-teal/25 rounded-sm -z-0"
                   aria-hidden="true"
@@ -102,7 +116,7 @@ export default function ClinicsHero() {
               </span>
               <br />
               <span className="text-gray-300/90 text-[0.72em] font-semibold">
-                Backed by Expert Dermatologist Review
+                Check It. Clear It. Treat With Confidence.
               </span>
             </h1>
 
@@ -111,9 +125,10 @@ export default function ClinicsHero() {
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              You see patients with suspicious moles. You&apos;re not a
-              dermatologist. MoleScan gives you a safe, structured pathway to
-              assess and triage skin lesions with confidence.
+              You&apos;ve spotted a mole or skin lesion on a client. You&apos;re
+              not a dermatologist — and you don&apos;t need to be. MoleScan gives
+              your clinic a fast, expert-backed answer so you can treat safely,
+              advise confidently, or refer appropriately.
             </p>
 
             {/* CTAs */}
@@ -208,10 +223,14 @@ export default function ClinicsHero() {
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"
-        aria-hidden="true"
+      <HeroFeatureBar
+        inView={inView}
+        items={[
+          { icon: "clock", label: "Answers in 24 Hours", desc: "Know if it's safe to proceed with treatment" },
+          { icon: "shield", label: "Expert Dermatologist Review", desc: "You don't diagnose — the expert handles it" },
+          { icon: "check", label: "Keep Treatments on Track", desc: "Don't lose clients to GP waiting times" },
+          { icon: "lock", label: "Full Audit Trail", desc: "Complete documentation for every assessment" },
+        ]}
       />
     </section>
   );

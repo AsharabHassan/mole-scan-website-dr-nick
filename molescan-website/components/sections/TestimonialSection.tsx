@@ -17,7 +17,7 @@ interface TestimonialSectionProps {
 }
 
 export default function TestimonialSection({
-  title = "What Clinicians Say",
+  title = "What Practitioners Say",
   testimonials,
 }: TestimonialSectionProps) {
   const [ref, inView] = useInView<HTMLDivElement>({ threshold: 0.15 });

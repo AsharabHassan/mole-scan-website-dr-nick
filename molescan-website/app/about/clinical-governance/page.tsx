@@ -34,7 +34,7 @@ const governanceSections = [
       {
         heading: "Dermatologist Review",
         description:
-          "Every assessment is reviewed by a UK GP or dermatologist before a report is issued. No clinical output is delivered without clinician review. This human oversight is the cornerstone of MoleScan's safety model.",
+          "Every assessment is reviewed by a UK GPwSI or dermatologist before a report is issued. No clinical output is delivered without dermatologist review. This human oversight is the cornerstone of MoleScan's safety model.",
       },
     ],
   },
@@ -104,7 +104,7 @@ const faqs = [
   {
     question: "Is MoleScan a registered medical device?",
     answer:
-      "MoleScan is a clinical workflow and triage platform that supports clinician decision-making. It is not currently classified or registered as a standalone medical device. The platform provides structured clinical triage with UK GP and dermatologist review, with the final clinical decision always resting with the treating clinician.",
+      "MoleScan is a clinical workflow and triage platform that supports practitioner decision-making. It is not currently classified or registered as a standalone medical device. The platform provides structured clinical triage with UK GPwSI and dermatologist review, with the final clinical decision always resting with the treating practitioner.",
   },
   {
     question: "How does MoleScan handle clinical incidents?",
@@ -119,7 +119,7 @@ const faqs = [
   {
     question: "How are the dermatologists vetted?",
     answer:
-      "All MoleScan GPs and dermatologists are registered with the General Medical Council (GMC), and dermatologists hold current specialist registration in dermatology. All clinicians undergo credential verification before joining the platform.",
+      "All MoleScan GPs and dermatologists are registered with the General Medical Council (GMC), and dermatologists hold current specialist registration in dermatology. All doctors undergo credential verification before joining the platform.",
   },
 ];
 
@@ -141,14 +141,21 @@ export default function ClinicalGovernancePage() {
         eyebrow="Safety & Compliance"
         title="Clinical Governance"
         titleHighlight="Governance"
-        subtitle="MoleScan is built on a foundation of clinical safety, data protection, and quality assurance. Every assessment is clinician-led, consultant-reviewed, and fully governed."
+        subtitle="MoleScan is built on a foundation of clinical safety, data protection, and quality assurance. Every assessment is dermatologist-led, dermatologist-reviewed, and fully governed."
         ctas={[
           { label: "Request Demo", href: "/request-demo", variant: "primary" },
         ]}
         background="blue"
+        backgroundImage="/images/hero-bg-governance.png"
+        featureBar={[
+          { icon: "shield", label: "DCB0129 Aligned", desc: "Clinical safety framework for health IT systems" },
+          { icon: "lock", label: "GDPR Compliant", desc: "ICO registered with UK data residency" },
+          { icon: "check", label: "CQC Registered", desc: "Care Quality Commission regulated service" },
+          { icon: "users", label: "GMC-Registered Doctors", desc: "All reviewers hold current GMC registration" },
+        ]}
         badges={{
           text: "",
-          items: ["DCB0129 Aligned", "GDPR Compliant", "GMC-Registered Clinicians"],
+          items: ["DCB0129 Aligned", "GDPR Compliant", "CQC Registered", "GMC-Registered Doctors"],
         }}
       />
 

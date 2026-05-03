@@ -1,25 +1,29 @@
 # MoleScan
 
-> Clinician-led, AI-assisted skin lesion assessment and triage platform for healthcare professionals.
+> Dermatologist-led mole and skin lesion assessment platform for aesthetic clinics, beauty therapists, podiatrists, and healthcare professionals across the UK. CQC registered.
 
-MoleScan combines AI-powered image analysis with UK consultant dermatologist review to deliver structured skin lesion assessment reports within 24 hours.
+MoleScan combines AI-powered image analysis with UK consultant dermatologist review to deliver structured mole assessment reports within 24 hours. It is designed for practitioners who are not dermatologists but encounter moles and skin lesions during treatments.
 
 ## Key Facts
 
-- Every assessment is reviewed by a UK consultant dermatologist
-- Results delivered within 24 hours
-- Accepts smartphone and dermoscopic images
-- Designed for private clinics and NHS primary care
-- Not a medical device — a clinical workflow and triage platform
+- Every mole assessment is reviewed by a UK GP with special interest or dermatologist
+- Results delivered within 24 hours via RAG-rated report (GREEN/AMBER/RED)
+- Built for aesthetic clinics, beauty therapists, podiatrists, laser clinics, and NHS primary care
+- Practitioners capture a dermoscopic image — the dermatologist provides the clinical opinion
+- No medical training required to use the platform
+- Not a medical device — a dermatologist-led triage and assessment platform
+- CQC registered
+- GMC registered doctors review every case
 - Operated by Dermme Health Ltd, registered in England & Wales
+- GDPR compliant with UK-based data storage
 
 ## Pages
 
-- [Home](https://molescan.co.uk/)
-- [For Clinics](https://molescan.co.uk/for-clinics)
-- [For NHS & ICBs](https://molescan.co.uk/for-nhs)
-- [How MoleScan Works](https://molescan.co.uk/about/how-molescan-works)
-- [Clinical Governance](https://molescan.co.uk/about/clinical-governance)
-- [Resources](https://molescan.co.uk/resources)
-- [Contact](https://molescan.co.uk/contact)
-- [Request Demo](https://molescan.co.uk/request-demo)
+- [Home](https://molescan.co.uk/): Overview of MoleScan's mole and skin lesion assessment platform
+- [For Clinics](https://molescan.co.uk/for-clinics): Mole check service for aesthetic clinics, beauticians, podiatrists, and non-dermatology practitioners
+- [For NHS & ICBs](https://molescan.co.uk/for-nhs): NHS-integrated skin lesion triage for primary care and ICBs
+- [How MoleScan Works](https://molescan.co.uk/about/how-molescan-works): Step-by-step mole assessment process from image capture to dermatologist report
+- [Clinical Governance](https://molescan.co.uk/about/clinical-governance): Clinical safety, data governance, and regulatory information
+- [Resources](https://molescan.co.uk/resources): Guides and educational content on mole assessment
+- [Contact](https://molescan.co.uk/contact): Get in touch with the MoleScan team
+- [Request Demo](https://molescan.co.uk/request-demo): Request a free demo of MoleScan for your clinic

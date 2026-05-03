@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+import HeroFeatureBar from "@/components/sections/HeroFeatureBar";
 import { useInView } from "@/components/hooks/useInView";
 
 export default function HomepageHero() {
@@ -14,7 +15,7 @@ export default function HomepageHero() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
         </svg>
       ),
-      text: "UK GPs & Dermatologists",
+      text: "UK GPwSI & Consultant Dermatologists",
     },
     {
       icon: (
@@ -38,12 +39,23 @@ export default function HomepageHero() {
     <section
       ref={ref}
       id="hero"
-      className="relative overflow-hidden min-h-[85vh] flex items-center"
+      className="relative overflow-hidden min-h-[85vh] flex flex-col"
     >
       {/* Background layers */}
       <div className="absolute inset-0" aria-hidden="true">
         {/* Primary gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-brand-deep-navy via-[#152057] to-brand-deep-blue animate-gradient" />
+
+        {/* Background image */}
+        <div
+          className="absolute inset-0 opacity-[0.15]"
+          style={{
+            backgroundImage: `url('/images/hero-bg-homepage.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
 
         {/* Mesh gradient overlays */}
         <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-to-l from-brand-teal/8 to-transparent" />
@@ -68,7 +80,7 @@ export default function HomepageHero() {
         <div className="absolute bottom-32 left-[10%] w-20 h-20 border border-brand-teal/[0.06] rounded-2xl -rotate-6" />
       </div>
 
-      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-28">
+      <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-28 flex-1 flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Content */}
           <div>
@@ -83,7 +95,7 @@ export default function HomepageHero() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-teal" />
               </span>
               <span className="text-sm text-gray-300 font-medium">
-                Clinician-Led Clinical Triage Platform
+                Dermatologist-Led Clinical Triage Platform
               </span>
             </div>
 
@@ -92,7 +104,7 @@ export default function HomepageHero() {
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Clinician-Led,{" "}
+              Dermatologist-Led,{" "}
               <span className="relative">
                 <span className="relative z-10">Expert-Reviewed</span>
                 <span
@@ -109,7 +121,7 @@ export default function HomepageHero() {
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              MoleScan provides expert dermoscopic image analysis with UK GP and
+              MoleScan provides expert dermoscopic image analysis with UK GPwSI and
               dermatologist review to deliver structured skin lesion assessment
               reports within 24 hours. A safe, governed triage pathway for
               healthcare professionals.
@@ -163,7 +175,7 @@ export default function HomepageHero() {
                 ))}
               </div>
               <p className="text-gray-400 text-sm">
-                Trusted by <span className="text-white font-medium">clinicians across the UK</span>
+                Trusted by <span className="text-white font-medium">practitioners across the UK</span>
               </p>
             </div>
           </div>
@@ -185,7 +197,7 @@ export default function HomepageHero() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/30 ring-1 ring-white/10">
                 <Image
                   src="/images/homepage-hero-v2.jpg"
-                  alt="Illustrated infographic showing MoleScan clinician-led skin lesion assessment workflow — a clinician captures a mole image with a dermoscope, expert clinicians assess the lesion for risk stratification, and a UK GP or dermatologist reviews and delivers a structured report within 24 hours"
+                  alt="Illustrated infographic showing MoleScan dermatologist-led skin lesion assessment workflow — a practitioner captures a mole image with a dermoscope, expert dermatologists assess the lesion for risk stratification, and a UK GP or dermatologist reviews and delivers a structured report within 24 hours"
                   width={680}
                   height={510}
                   priority
@@ -221,7 +233,7 @@ export default function HomepageHero() {
                 </div>
                 <div>
                   <p className="font-bold text-brand-deep-blue text-sm">Expert Review</p>
-                  <p className="text-brand-text/60 text-xs">Clinician-led triage</p>
+                  <p className="text-brand-text/60 text-xs">Dermatologist-led triage</p>
                 </div>
               </div>
             </div>
@@ -229,10 +241,14 @@ export default function HomepageHero() {
         </div>
       </div>
 
-      {/* Bottom gradient fade */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"
-        aria-hidden="true"
+      <HeroFeatureBar
+        inView={inView}
+        items={[
+          { icon: "shield", label: "Dermatologist-Led", desc: "Every case reviewed by UK GPwSI dermatologists and consultant dermatologists" },
+          { icon: "clock", label: "24-Hour Reports", desc: "Structured results delivered within one working day" },
+          { icon: "lock", label: "GDPR Compliant", desc: "UK data residency with full encryption" },
+          { icon: "check", label: "100% Expert Reviewed", desc: "No assessment without dermatologist oversight" },
+        ]}
       />
     </section>
   );
