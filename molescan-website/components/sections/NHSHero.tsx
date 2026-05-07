@@ -77,7 +77,7 @@ export default function NHSHero() {
               </span>
               <br />
               <span className="text-gray-300/90 text-[0.65em] font-semibold">
-                Ensure No Urgent Case Is Missed.
+                Free Up Specialist Capacity for Patients Who Need It Most.
               </span>
             </h1>
 
@@ -86,10 +86,10 @@ export default function NHSHero() {
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              MoleScan helps NHS primary care triage skin lesions effectively
-              with expert clinical assessment and UK GPwSI and dermatologist
-              review — reducing 2-week-wait pressure while maintaining
-              patient safety.
+              MoleScan supports NHS primary care in triaging skin lesions
+              through structured, clinician-led assessment with UK GPwSI
+              dermatology doctor review — helping reduce avoidable
+              2-week-wait referrals while maintaining patient safety.
             </p>
 
             {/* CTAs */}
@@ -112,7 +112,7 @@ export default function NHSHero() {
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
             >
-              {["DCB0129 Aligned", "GDPR Compliant", "DTAC Ready", "UK Data Residency"].map((badge, i) => (
+              {["DCB0129 compliant", "GDPR compliant", "DTAC-ready", "UK data residency"].map((badge, i) => (
                 <span
                   key={i}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/[0.07] text-gray-300 text-xs font-medium"
@@ -220,10 +220,10 @@ export default function NHSHero() {
       <HeroFeatureBar
         inView={inView}
         items={[
-          { icon: "shield", label: "Dermatologist-Led Assessment", desc: "Every case reviewed by UK GPwSI dermatologists and consultant dermatologists" },
-          { icon: "clock", label: "24-Hour Reports", desc: "Structured results delivered within one working day" },
-          { icon: "chart", label: "Reduce 2WW Pressure", desc: "Filter benign referrals at the primary care level" },
-          { icon: "lock", label: "NHS Compliant", desc: "DCB0129, GDPR, DTAC aligned platform" },
+          { icon: "shield", label: "Clinician-Led Assessment", desc: "Every case reviewed by a UK GPwSI (General Practitioner with a specialist interest in dermatology)" },
+          { icon: "clock", label: "24-Hour Reports", desc: "Clear, structured reports delivered within one working day to support safe triage decisions" },
+          { icon: "chart", label: "Supports Reduction in 2WW Pressure", desc: "Helps reduce avoidable 2-week-wait referrals and optimise specialist dermatology capacity" },
+          { icon: "lock", label: "NHS-Aligned Platform", desc: "Aligned with DCB0129 clinical safety standards, GDPR, and DTAC requirements for safe NHS integration" },
         ]}
       />
 

@@ -11,64 +11,64 @@ const stepsRow1 = [
   {
     num: 1,
     title: "Patient concerned about a mole",
-    desc: "A patient notices a new or changing mole and decides to seek medical advice from their GP surgery.",
-    image: "/images/pathway/step1.png",
+    desc: "A patient notices a new or changing mole and wants to get it assessed by their GP.",
+    image: "/images/pathway/step1.jpg",
   },
   {
     num: 2,
-    title: "Patient calls GP surgery",
-    desc: "The patient contacts their local GP surgery to request an appointment for a skin concern assessment.",
-    image: "/images/pathway/step2.png",
+    title: "Patient contacts GP surgery",
+    desc: "The patient contacts their GP surgery to request an appointment for assessment of a skin lesion.",
+    image: "/images/pathway/step2.jpg",
   },
   {
     num: 3,
-    title: "Appointment booked with Nurse / HCA",
-    desc: "A dedicated MoleScan appointment is scheduled with a trained Nurse or Healthcare Assistant.",
-    image: "/images/pathway/step3.png",
+    title: "Appointment scheduled for MoleScan capture",
+    desc: "A dedicated appointment is arranged with a trained Nurse or Healthcare Assistant for MoleScan image capture.",
+    image: "/images/pathway/step3.jpg",
   },
   {
     num: 4,
-    title: "Nurse / HCA appointment",
-    desc: "The patient attends a brief, focused consultation with their Nurse or HCA at the GP surgery.",
-    image: "/images/pathway/step4.png",
+    title: "Nurse / HCA assessment",
+    desc: "The patient attends a brief, focused appointment for clinical history and lesion assessment.",
+    image: "/images/pathway/step4.jpg",
   },
   {
     num: 5,
-    title: "Nurse / HCA captures information & dermoscopic images",
-    desc: "Clinical details are recorded and high-quality dermoscopic images are captured using a smartphone attachment.",
-    image: "/images/pathway/step5.png",
-    subItems: ["Pre-determined questions", "Dermoscopic images", "Upload to MoleScan"],
+    title: "Clinical data and dermoscopic images captured",
+    desc: "Structured clinical information is recorded and high-quality dermoscopic images are captured using a dermatoscope.",
+    image: "/images/pathway/step5.jpg",
+    subItems: ["Structured clinical questionnaire", "Dermoscopic image capture", "Secure upload to MoleScan"],
   },
 ];
 
 const stepsRow2 = [
   {
     num: 6,
-    title: "MoleScan analyses the case",
-    desc: "The MoleScan platform uses AI-assisted analysis to evaluate the dermoscopic images and clinical data submitted.",
-    image: "/images/pathway/step6.png",
+    title: "Case prepared for clinical review",
+    desc: "Dermoscopic images and clinical data are processed and prepared for specialist assessment.",
+    image: "/images/pathway/step6.jpg",
   },
   {
     num: 7,
-    title: "Case reviewed by UK GPwSI Dermatologist or Consultant Dermatologist",
-    desc: "Every case is reviewed by a UK-registered GPwSI or Consultant Dermatologist.",
-    image: "/images/pathway/step7.png",
+    title: "Case reviewed by UK GPwSI or Consultant Dermatologist",
+    desc: "Every case is reviewed by a GMC-registered GPwSI in Dermatology or Consultant Dermatologist.",
+    image: "/images/pathway/step7.jpg",
   },
   {
     num: 8,
-    title: "Final report sent to GP surgery",
-    desc: "A comprehensive clinical report with clear recommendations is delivered to the referring GP surgery within 24 hours.",
-    image: "/images/pathway/step8.png",
+    title: "Clinical report returned to GP surgery",
+    desc: "A structured clinical report with clear recommendations is returned to the referring GP surgery within 24 hours.",
+    image: "/images/pathway/step8.jpg",
   },
   {
     num: 9,
-    title: "Outcome rag-rated for clear actions",
-    desc: "Each case is given a clear RAG-rated outcome so the GP can act with confidence.",
-    image: "/images/pathway/step9.png",
+    title: "Clear RAG-rated outcome for clinical decision-making",
+    desc: "Each case is assigned a clear RAG-rated outcome to support appropriate next steps.",
+    image: "/images/pathway/step9.jpg",
     ragItems: [
-      { color: "bg-emerald-500", label: "GREEN", desc: "Low risk", action: "Routine care / Monitor" },
-      { color: "bg-amber-500", label: "AMBER", desc: "Intermediate risk", action: "Review / Monitor / Possible referral" },
-      { color: "bg-red-500", label: "RED", desc: "High risk", action: "Urgent referral / Fast-track" },
+      { color: "bg-emerald-500", label: "GREEN", desc: "Low risk", action: "Reassure / Monitor" },
+      { color: "bg-amber-500", label: "AMBER", desc: "Moderate risk", action: "Review in primary care / Routine referral" },
+      { color: "bg-red-500", label: "RED", desc: "High risk", action: "Urgent referral (2WW pathway)" },
     ],
   },
 ];
@@ -94,12 +94,12 @@ export default function PathwayDiagram({
         >
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-[44px] font-bold font-display text-brand-deep-navy leading-[1.12] tracking-tight mb-4">
-              Timely expert assessment.
+              Timely specialist assessment.
               <br />
-              <span className="text-brand-deep-blue">Better outcomes for every patient.</span>
+              <span className="text-brand-deep-blue">Better outcomes for patients.</span>
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed">
-              Supporting GP surgeries with fast, specialist dermatology advice.
+              Supporting primary care with fast, specialist dermatology assessment.
             </p>
           </div>
           <div
@@ -118,10 +118,10 @@ export default function PathwayDiagram({
               </h3>
             </div>
             <p className="text-gray-600 leading-relaxed text-[15px]">
-              MoleScan gives GP surgeries access to expert dermatology assessment{" "}
-              <strong className="text-brand-deep-navy">within 24 hours</strong>, so you can act with{" "}
-              <strong className="text-brand-deep-navy">confidence</strong> and provide the best possible
-              care for your patients.
+              MoleScan gives GP surgeries access to specialist dermatology skin lesion assessment{" "}
+              <strong className="text-brand-deep-navy">within 24 hours</strong> — helping you reduce unnecessary referrals,
+              prioritise the right patients, and act with{" "}
+              <strong className="text-brand-deep-navy">confidence</strong>.
             </p>
           </div>
         </div>

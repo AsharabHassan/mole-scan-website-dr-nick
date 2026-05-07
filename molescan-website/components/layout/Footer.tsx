@@ -7,29 +7,29 @@ import { useInView } from "@/components/hooks/useInView";
 const productLinks = [
   { label: "For Clinics", href: "/for-clinics" },
   { label: "For NHS & ICBs", href: "/for-nhs" },
-  { label: "How It Works", href: "/about/how-molescan-works" },
-  { label: "Request Demo", href: "/request-demo" },
+  { label: "How MoleScan Works", href: "/about/how-molescan-works" },
+  { label: "Request a Demo", href: "/request-demo" },
 ];
 
 const companyLinks = [
   { label: "Clinical Governance", href: "/about/clinical-governance" },
-  { label: "Resources", href: "/resources" },
+  { label: "Resources & Guidance", href: "/resources" },
   { label: "Contact", href: "/contact" },
 ];
 
 const legalLinks = [
-  { label: "Website privacy notice", href: "/privacy-policy" },
-  { label: "GDPR compliant cookie policy", href: "/cookie-policy" },
-  { label: "TERMS OF WEBSITE USE", href: "/terms-of-use" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Cookie Policy (GDPR compliant)", href: "/cookie-policy" },
   { label: "GDPR & Data Protection", href: "/gdpr-data-protection" },
   { label: "Clinical Safety Statement", href: "/clinical-safety-statement" },
+  { label: "Terms of Website Use", href: "/terms-of-use" },
 ];
 
 const trustBadges = [
-  "DCB0129 Aligned",
-  "GDPR Compliant",
-  "UK Data Residency",
-  "DTAC Ready",
+  "DCB0129 compliant",
+  "GDPR compliant",
+  "UK data residency",
+  "DTAC-ready architecture",
 ];
 
 export default function Footer() {
@@ -87,11 +87,17 @@ export default function Footer() {
                 <span className="text-gray-400 text-xs font-medium leading-tight">NHS<br />Compatible</span>
               </div>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
-              Dermatologist-led skin lesion assessment and triage
-              platform. Supporting structured, safe, and responsible pathways
-              for healthcare professionals across the UK.
-            </p>
+            <div className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm space-y-3">
+              <p>
+                MoleScan is a dermatologist-led skin lesion assessment and triage
+                platform, designed to support structured clinical decision-making
+                in private practice.
+              </p>
+              <p>
+                Every case follows a governed assessment pathway — helping you
+                treat safely, avoid unnecessary delays, and act with confidence.
+              </p>
+            </div>
 
             {/* Trust badges */}
             <div className="flex flex-wrap gap-2">
@@ -195,6 +201,9 @@ export default function Footer() {
               <p className="text-xs text-gray-500 uppercase tracking-widest mb-3 font-semibold">
                 Get in Touch
               </p>
+              <p className="text-gray-400 text-sm mb-2">
+                For clinic enquiries and partnerships:
+              </p>
               <a
                 href="mailto:hello@molescan.co.uk"
                 className="inline-flex items-center gap-2 text-gray-300 hover:text-brand-soft-teal transition-colors duration-200 text-sm group"
@@ -206,6 +215,10 @@ export default function Footer() {
                 </span>
                 hello@molescan.co.uk
               </a>
+              <p className="text-gray-500 text-xs leading-relaxed mt-5">
+                Supporting safe, structured, and accountable skin lesion
+                assessment in private clinical practice.
+              </p>
             </div>
           </div>
         </div>

@@ -8,14 +8,26 @@ interface CTABandProps {
   subtitle?: string;
   buttonLabel: string;
   buttonHref: string;
+  secondaryButtonLabel?: string;
+  secondaryButtonHref?: string;
+  trustItems?: string[];
   background?: "teal" | "navy";
 }
+
+const DEFAULT_TRUST_ITEMS = [
+  "24h report turnaround",
+  "GMC registered doctors",
+  "CQC registered",
+];
 
 export default function CTABand({
   title,
   subtitle,
   buttonLabel,
   buttonHref,
+  secondaryButtonLabel = "Talk to our team",
+  secondaryButtonHref = "/contact",
+  trustItems = DEFAULT_TRUST_ITEMS,
   background = "teal",
 }: CTABandProps) {
   const [ref, inView] = useInView<HTMLElement>({ threshold: 0.15 });
@@ -121,39 +133,30 @@ export default function CTABand({
               </svg>
             </Link>
             <Link
-              href="/contact"
+              href={secondaryButtonHref}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl border border-white/[0.12] text-gray-300 font-semibold text-base transition-all duration-300 hover:bg-white/[0.06] hover:border-white/20 hover:text-white"
             >
-              Talk to our team
+              {secondaryButtonLabel}
             </Link>
           </div>
 
           {/* Mini social proof */}
           <div
-            className={`mt-10 flex items-center justify-center gap-6 transition-all duration-700 delay-500 ${
+            className={`mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 transition-all duration-700 delay-500 ${
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="flex items-center gap-2 text-gray-500 text-xs">
-              <svg className="w-4 h-4 text-brand-teal/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              24h report turnaround
-            </div>
-            <div className="w-px h-3 bg-white/10" />
-            <div className="flex items-center gap-2 text-gray-500 text-xs">
-              <svg className="w-4 h-4 text-brand-teal/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-              </svg>
-              GMC registered doctors
-            </div>
-            <div className="w-px h-3 bg-white/10" />
-            <div className="flex items-center gap-2 text-gray-500 text-xs">
-              <svg className="w-4 h-4 text-brand-teal/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-              </svg>
-              CQC registered
-            </div>
+            {trustItems.map((item, i) => (
+              <div key={i} className="flex items-center gap-x-6 gap-y-2">
+                {i > 0 && <div className="w-px h-3 bg-white/10" />}
+                <div className="flex items-center gap-2 text-gray-500 text-xs">
+                  <svg className="w-4 h-4 text-brand-teal/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                  {item}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

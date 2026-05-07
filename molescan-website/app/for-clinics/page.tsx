@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import ClinicsHero from "@/components/sections/ClinicsHero";
-import ClinicIntroSection from "@/components/sections/ClinicIntroSection";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepProcess from "@/components/sections/StepProcess";
@@ -28,9 +27,9 @@ const painPoints = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
       </svg>
     ),
-    title: "Treatment Blocked or Appointment Delayed",
+    title: "Treatment Delayed \u2014 Or Put On Hold",
     description:
-      "Your client is booked for treatment \u2014 but there\u2019s a mole or skin lesion that needs checking first. You can\u2019t safely proceed without knowing what it is. The appointment stalls, and your client is told to see their GP \u2014 a process that can take weeks.",
+      "During your consultation, you identify a mole or skin lesion in the treatment area. You can\u2019t proceed without knowing what it is. The appointment is delayed \u2014 and your client is advised to see their GP, often leading to weeks of waiting.",
   },
   {
     icon: (
@@ -38,9 +37,9 @@ const painPoints = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: "Not Your Speciality \u2014 And It Shouldn\u2019t Be",
+    title: "Not Your Area of Expertise \u2014 And That\u2019s OK",
     description:
-      "You\u2019re trained in your field \u2014 not dermatology. Whether you\u2019re a beautician, physiotherapist, podiatrist, or private GP without dermatology expertise, you need a professional way to get a mole assessed without sending every client to the NHS queue.",
+      "You\u2019re trained in your field \u2014 not dermatology. Whether you\u2019re an aesthetic practitioner, podiatrist, physiotherapist, or GP without specialist dermatology training, you need a reliable way to assess lesions without referring every case externally.",
   },
   {
     icon: (
@@ -48,9 +47,9 @@ const painPoints = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
       </svg>
     ),
-    title: "Liability If You Ignore It",
+    title: "Clinical & Medico-Legal Risk If Unassessed",
     description:
-      "Treating over or around an unassessed mole \u2014 or failing to flag it \u2014 puts you and your client at risk. Without documentation, you have no safety net if something is later found to be serious.",
+      "Treating over or around an unassessed lesion \u2014 or failing to document it appropriately \u2014 may carry clinical risk for the patient and potential medico-legal risk for your practice. Without clear documentation, decisions can be difficult to justify if concerns arise later.",
   },
 ];
 
@@ -63,7 +62,7 @@ const benefits = [
     ),
     title: "Keep Treatments on Track",
     description:
-      "Get a clear answer within 24 hours \u2014 safe to treat, monitor, or refer. No more cancelled appointments or lost revenue because of an unknown mole.",
+      "Get a clear answer within 24 hours \u2014 so you can safely treat, monitor, or refer. No unnecessary delays. No cancelled appointments.",
   },
   {
     icon: (
@@ -71,9 +70,9 @@ const benefits = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    title: "Your Professional Safety Net",
+    title: "Your Clinical Safety Net",
     description:
-      "Every mole is reviewed by a UK dermatologist. You don\u2019t diagnose \u2014 you simply capture and upload. The expert opinion protects you and your client.",
+      "Every case is reviewed by a UK dermatologist. You don\u2019t need to diagnose \u2014 you capture and submit. The expert assessment supports your decision-making and protects both you and your client.",
   },
   {
     icon: (
@@ -83,7 +82,7 @@ const benefits = [
     ),
     title: "Full Documentation & Audit Trail",
     description:
-      "Every assessment is logged with images and dermatologist review. If a question ever arises, you have a complete record showing you acted responsibly.",
+      "Every assessment is recorded with images, clinical input, and a documented outcome. A clear record of your decision-making — supporting safe practice and clinical governance.",
   },
   {
     icon: (
@@ -91,9 +90,9 @@ const benefits = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
       </svg>
     ),
-    title: "Clients Trust You More",
+    title: "Build Trust With Your Clients",
     description:
-      "Offering a professional mole check shows clients you take their safety seriously. It builds loyalty and sets your practice apart from competitors.",
+      "Offering a structured mole assessment shows you prioritise safety and clinical responsibility. Clients feel reassured knowing their treatment decisions are based on expert input.",
   },
 ];
 
@@ -116,32 +115,37 @@ const faqs = [
   {
     question: "I\u2019m not a doctor \u2014 can I still use MoleScan?",
     answer:
-      "Absolutely. MoleScan is specifically designed for non-dermatology practitioners like aesthetic therapists, beauticians, podiatrists, and laser technicians. You capture the image \u2014 a UK dermatologist does the clinical assessment. No medical training required on your end.",
+      "Yes. MoleScan is designed for non-dermatology practitioners, including aesthetic clinicians, therapists, and other healthcare professionals. You capture the images and clinical details \u2014 a UK GPwSI Dermatologist or Consultant Dermatologist provides the assessment and report. You\u2019re not expected to diagnose \u2014 you\u2019re supported to make safe, informed decisions.",
   },
   {
-    question: "Do I need a dermoscope?",
+    question: "Do I need a dermatoscope?",
     answer:
-      "Yes. MoleScan works with dermoscopic images to ensure the highest quality assessment. A dermoscope attachment for your smartphone is all you need \u2014 we can advise on compatible devices.",
+      "Yes. MoleScan uses dermoscopic images to ensure a high-quality clinical assessment. A smartphone-compatible dermatoscope attachment is essential. We can advise on suitable devices and setup.",
   },
   {
     question: "How quickly will I get an answer?",
     answer:
-      "Within 24 hours. You\u2019ll receive a clear RAG-rated report: GREEN (safe to proceed with treatment), AMBER (monitor or review needed), or RED (urgent referral recommended).",
+      "Within 24 hours. You\u2019ll receive a clear RAG-rated clinical report: GREEN \u2014 safe to proceed; AMBER \u2014 Routine referral advised; RED \u2014 Urgent referral recommended. This allows you to act quickly and appropriately without unnecessary delays.",
   },
   {
     question: "What happens if the mole is flagged as concerning?",
     answer:
-      "You\u2019ll receive guidance in the report. For AMBER or RED results, the report recommends next steps \u2014 typically advising the client to see their GP or a specialist. You\u2019re not expected to manage the clinical pathway, just to act on the guidance.",
+      "You\u2019ll receive clear guidance within the report. For AMBER or RED outcomes, recommended next steps are provided \u2014 typically advising referral to a GP or specialist. You\u2019re not expected to manage the condition \u2014 only to act appropriately based on the clinical guidance.",
   },
   {
-    question: "Can I charge clients for the mole check?",
+    question: "Can I charge patients for the mole check?",
     answer:
-      "Yes. Many clinics offer MoleScan as an add-on service or include it as part of their duty of care. It can become a revenue stream while demonstrating professionalism and client safety.",
+      "Yes. Many clinics offer MoleScan as a standalone service or as part of their consultation process. It can generate additional revenue while reinforcing your commitment to patient safety and professional standards.",
   },
   {
-    question: "Is my client\u2019s data secure?",
+    question: "Is my patient\u2019s data secure?",
     answer:
-      "Yes. MoleScan is fully GDPR compliant with all data encrypted and stored securely within the UK. See our Clinical Governance page for full details.",
+      "Yes. MoleScan is fully GDPR compliant. All data is encrypted, securely stored within the UK, and managed in line with clinical governance standards.",
+  },
+  {
+    question: "Does this protect me medico-legally?",
+    answer:
+      "MoleScan provides a documented, clinician-reviewed assessment for every case. Each submission includes images, clinical information, and an expert report \u2014 creating a clear audit trail to support your decision-making. This demonstrates that you acted responsibly and followed a structured clinical process.",
   },
 ];
 
@@ -166,15 +170,41 @@ export default function ForClinicsPage() {
 
       <ClinicsHero />
 
-      <ClinicIntroSection />
+      {/* Operator / regulatory disclaimer */}
+      <section className="bg-white border-b border-gray-100" aria-label="MoleScan operator and regulatory information">
+        <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+          <div className="flex items-start gap-3 max-w-3xl mx-auto">
+            <svg
+              className="w-5 h-5 text-brand-teal flex-shrink-0 mt-0.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+            </svg>
+            <p className="text-sm md:text-[15px] text-gray-600 leading-relaxed">
+              MoleScan is operated by{" "}
+              <strong className="text-brand-deep-navy">Dermme Health Ltd</strong>{" "}
+              — a CQC-registered provider. It is a clinician-led skin lesion
+              assessment and triage service, not a standalone diagnostic device.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <SectionWrapper background="soft-blue" id="challenges">
         <FeatureGrid
-          title="What Happens When You Encounter a Suspicious Mole?"
-          subtitle="You're running a private clinic. You spot a mole or lesion on a client. You're not a dermatologist — so what do you do?"
+          title="You've found a mole in the treatment area. What's your next step?"
+          subtitle="You are running a private clinic. As part of a structured consultation, you assess the treatment area and identify a mole or skin lesion. You don't know exactly what it is — and proceeding without assessment isn't appropriate. So what do you do?"
           features={painPoints}
           columns={3}
         />
+        <p className="text-center text-brand-text/80 text-lg max-w-3xl mx-auto mt-12 leading-relaxed">
+          MoleScan fits into your consultation process — allowing you to assess first,
+          then proceed with confidence — without unnecessary delays or GP referrals.
+        </p>
       </SectionWrapper>
 
       <SectionWrapper background="white" id="benefits">
@@ -190,9 +220,15 @@ export default function ForClinicsPage() {
 
       <SectionWrapper background="white" id="who-uses">
         <div className="text-center mb-12">
-          <h2 className="mb-4">Who Uses MoleScan?</h2>
+          <p className="text-brand-teal text-sm font-semibold uppercase tracking-wider mb-3">
+            Pause. Assess. Then treat.
+          </p>
+          <h2 className="mb-4">Who Is MoleScan For?</h2>
+          <p className="text-brand-text/70 text-lg max-w-2xl mx-auto mb-3">
+            Don&apos;t guess. Don&apos;t delay. Get a clear, clinician-led answer within 24 hours so you can act safely and confidently.
+          </p>
           <p className="text-brand-text/70 text-lg max-w-2xl mx-auto">
-            If you run a private clinic and encounter moles or skin lesions that need expert assessment before you can treat or advise, MoleScan is built for you.
+            If you assess patients for aesthetic or skin treatments and encounter a mole or skin lesion in the treatment area, MoleScan gives you a clear, clinician-led answer before you proceed.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -205,8 +241,8 @@ export default function ForClinicsPage() {
                 </svg>
               ),
               scenario: "Botox, fillers, or chemical peels",
-              problem: "A mole sits right where you need to inject or apply treatment. You can\u2019t treat over it without knowing it\u2019s safe.",
-              outcome: "Get a dermatologist\u2019s assessment within 24 hours and proceed with confidence \u2014 or advise your client appropriately.",
+              problem: "A mole sits exactly where you plan to inject or treat. You can\u2019t proceed safely without knowing what it is \u2014 and referring to a GP delays your patient\u2019s treatment.",
+              outcome: "Get a clinician-led assessment within 24 hours \u2014 so you can treat safely, advise confidently, or refer appropriately.",
             },
             {
               name: "Beauty Therapists",
@@ -216,8 +252,8 @@ export default function ForClinicsPage() {
                 </svg>
               ),
               scenario: "Facials, waxing, microdermabrasion, or threading",
-              problem: "During a facial or waxing appointment, you spot a mole you haven\u2019t seen before \u2014 or one that looks different. You can\u2019t just ignore it.",
-              outcome: "MoleScan lets you flag it professionally without needing any clinical training. Your client sees you care about their safety.",
+              problem: "During a treatment, you notice a mole you haven\u2019t seen before \u2014 or one that looks different. You can\u2019t ignore it.",
+              outcome: "MoleScan allows you to escalate concerns professionally without needing dermatology expertise. Your patient sees that you take their safety seriously.",
             },
             {
               name: "Laser & IPL Clinics",
@@ -226,9 +262,9 @@ export default function ForClinicsPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                 </svg>
               ),
-              scenario: "Laser hair removal, skin rejuvenation, or IPL treatments",
-              problem: "Lasering over an unassessed mole is a serious risk. You must avoid moles during treatment \u2014 but you need to know why it\u2019s there and whether it\u2019s safe.",
-              outcome: "A MoleScan report clears the mole or flags it for referral \u2014 so you can map your treatment area safely.",
+              scenario: "Laser or IPL hair removal, skin rejuvenation treatments",
+              problem: "Treating over an unassessed mole is a serious risk. You must avoid it \u2014 but you also need to understand what it is and whether it\u2019s safe.",
+              outcome: "MoleScan provides a clear outcome \u2014 so you can treat, monitor, or refer safely.",
             },
             {
               name: "Podiatry Clinics",
@@ -238,19 +274,19 @@ export default function ForClinicsPage() {
                 </svg>
               ),
               scenario: "Foot and nail treatments, verruca removal, or biomechanical assessments",
-              problem: "A dark lesion on the foot or under a toenail can look like a bruise, verruca, or subungual melanoma. You need to rule out the worst before treating.",
-              outcome: "MoleScan gives you a fast expert opinion on foot and nail lesions \u2014 particularly important as acral melanoma is often missed.",
+              problem: "A dark lesion on the foot or under a toenail can resemble a bruise or verruca \u2014 but could represent something more serious.",
+              outcome: "You need to rule out serious pathology before proceeding. MoleScan gives you fast expert input on foot and nail lesions \u2014 particularly important as acral melanoma is frequently missed.",
             },
             {
-              name: "Tattoo Removal Studios",
+              name: "Tattoo Studios",
               icon: (
                 <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.905 1.905 0 00-3.208-2.068l-5.19 2.837a15.996 15.996 0 00-5.212 4.408m4.97 5.285a15.993 15.993 0 01-3.42-3.42" />
                 </svg>
               ),
-              scenario: "Laser tattoo removal across large skin areas",
-              problem: "Tattoo ink can obscure moles or hide changes in pigmentation. Before lasering a tattooed area, any moles within or near the tattoo must be assessed.",
-              outcome: "MoleScan helps you identify and assess moles in tattooed skin \u2014 so you can proceed with removal safely.",
+              scenario: "New tattoos, cosmetic tattooing, or body art",
+              problem: "Before placing ink, you may identify a mole or skin lesion within the planned tattoo area. Tattooing over an unassessed lesion can make future monitoring more difficult and may carry avoidable risk.",
+              outcome: "MoleScan gives you a structured, clinician-led assessment \u2014 helping you protect your patient and make a safer decision before proceeding.",
             },
             {
               name: "Chiropractors & Massage Therapists",
@@ -260,8 +296,8 @@ export default function ForClinicsPage() {
                 </svg>
               ),
               scenario: "Spinal manipulation, deep tissue massage, or physical therapy",
-              problem: "You work on exposed skin daily. You may notice a mole on a client\u2019s back that they\u2019ve never seen themselves \u2014 raised, irregular, or changing.",
-              outcome: "Flagging it through MoleScan turns a casual observation into a professional duty of care \u2014 and could make a life-changing difference for your client.",
+              problem: "You work on exposed skin daily. You may notice a mole on a patient\u2019s back that they\u2019ve never seen \u2014 raised, irregular, or changing.",
+              outcome: "MoleScan allows you to escalate concerns appropriately, turning a casual observation into a professional duty of care \u2014 and enabling earlier detection of something serious.",
             },
           ].map((clinic) => (
             <div
@@ -288,9 +324,11 @@ export default function ForClinicsPage() {
 
       <CTABand
         title="Stop Referring Every Mole to the GP"
-        subtitle="See how MoleScan fits into your clinic's workflow. Get expert dermatologist assessments in 24 hours — so you can treat, advise, or refer with confidence."
+        subtitle="See how MoleScan fits into your consultation process. Get a clear answer within 24 hours — so you can move forward safely, without delays, cancellations, or guesswork. No more cancelled appointments. No more unnecessary delays."
         buttonLabel="Request a Demo"
         buttonHref="/request-demo"
+        secondaryButtonLabel="Book a call"
+        secondaryButtonHref="/contact"
       />
     </>
   );

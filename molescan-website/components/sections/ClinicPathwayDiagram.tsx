@@ -10,73 +10,72 @@ interface ClinicPathwayDiagramProps {
 const stepsRow1 = [
   {
     num: 1,
-    title: "Client attends aesthetic clinic",
-    desc: "A client arrives at your clinic for a scheduled aesthetic, beauty, or skin treatment appointment.",
-    image: "/images/clinic-pathway/step1.png",
+    title: "Patient attends for consultation",
+    desc: "A patient attends your clinic to discuss treatment for an aesthetic or skin concern. The process begins with a structured consultation to determine whether treatment is appropriate and safe.",
+    image: "/images/clinic-pathway/step1.jpg",
   },
   {
     num: 2,
-    title: "Practitioner notices a mole in the treatment area",
-    desc: "During the appointment, the practitioner spots a mole or skin lesion in or near the treatment zone that needs checking.",
-    image: "/images/clinic-pathway/step2.png",
+    title: "Practitioner identifies a lesion in the treatment area",
+    desc: "During the consultation, you identify a mole or skin lesion within the treatment area. Without knowing what it is, proceeding with treatment may not be safe.",
+    image: "/images/clinic-pathway/step2.jpg",
   },
   {
     num: 3,
-    title: "Practitioner recommends MoleScan analysis before any treatment",
-    desc: "Instead of cancelling or guessing, the practitioner pauses and recommends a MoleScan assessment. Safety first — get it checked.",
-    image: "/images/clinic-pathway/step3.png",
+    title: "Practitioner recommends MoleScan assessment before proceeding",
+    desc: "As part of a structured consultation, the practitioner recommends a MoleScan assessment to determine whether it is safe to proceed. This avoids unnecessary delays while maintaining clinical safety.",
+    image: "/images/clinic-pathway/step3.jpg",
   },
   {
     num: 4,
-    title: "Questions answered & dermoscopic images captured",
-    desc: "The practitioner answers a few pre-determined clinical questions, captures dermoscopic images, and uploads everything to MoleScan.",
-    image: "/images/clinic-pathway/step4-v2.png",
-    subItems: ["Pre-determined questions", "Dermoscopic images", "Upload to MoleScan"],
+    title: "Clinical details recorded and dermoscopic images captured",
+    desc: "The practitioner records key clinical details and captures dermoscopic images of the lesion. Everything is securely uploaded to MoleScan for expert dermatology review.",
+    image: "/images/clinic-pathway/step4.jpg",
   },
   {
     num: 5,
     title: "Case prepared for clinician-led review",
-    desc: "The MoleScan platform processes the case with AI-assisted analysis and prepares it for expert clinician review.",
-    image: "/images/clinic-pathway/step5.png",
+    desc: "The case is securely prepared for review by a UK dermatologist within a structured and clinically governed assessment pathway, with all clinical details and images clearly organised.",
+    image: "/images/clinic-pathway/step5.jpg",
   },
 ];
 
 const stepsRow2 = [
   {
     num: 6,
-    title: "Case reviewed by UK GPwSI Dermatologist or Consultant Dermatologist",
-    desc: "Every case is reviewed by a UK-registered GPwSI or Consultant Dermatologist. Expert judgement you can trust.",
-    image: "/images/clinic-pathway/step6.png",
+    title: "Case reviewed by a UK dermatologist",
+    desc: "Every case is reviewed by a UK GPwSI or Consultant Dermatologist, ensuring expert clinical judgement and clear next-step guidance.",
+    image: "/images/clinic-pathway/step6.jpg",
   },
   {
     num: 7,
-    title: "Final report sent to clinic within 24 hrs",
-    desc: "A comprehensive clinical report with clear recommendations is delivered to your clinic within 24 hours of submission.",
-    image: "/images/clinic-pathway/step7.png",
+    title: "Clinical report delivered within 24 hours",
+    desc: "A clear, structured clinical report is delivered within 24 hours, outlining whether it is safe to treat, monitor, or refer.",
+    image: "/images/clinic-pathway/step7.jpg",
   },
   {
     num: 8,
-    title: "Outcome guidance (RAG-rated)",
-    desc: "Each case is given a clear RAG-rated outcome so the clinic can act with confidence.",
-    image: "/images/clinic-pathway/step8.png",
+    title: "Clear outcome guidance (RAG-rated)",
+    desc: "Each case is assigned a clear RAG-rated outcome, guiding whether it is safe to treat, monitor, or refer.",
+    image: "/images/clinic-pathway/step8.jpg",
     ragItems: [
-      { color: "bg-emerald-500", label: "GREEN", desc: "Low risk", action: "Reassure / Monitor" },
-      { color: "bg-amber-500", label: "AMBER", desc: "Intermediate risk", action: "Review / Monitor / Possible referral" },
-      { color: "bg-red-500", label: "RED", desc: "High risk", action: "Urgent referral / Fast-track" },
+      { color: "bg-emerald-500", label: "GREEN", desc: "Low risk", action: "Safe to proceed / Routine monitoring" },
+      { color: "bg-amber-500", label: "AMBER", desc: "Intermediate risk", action: "Consider non-urgent specialist referral" },
+      { color: "bg-red-500", label: "RED", desc: "High risk", action: "Urgent referral recommended" },
     ],
   },
   {
     num: 9,
-    title: "Clinic decides the appropriate action",
-    desc: "Based on the report, the clinic takes the right next step for the client.",
-    image: "/images/clinic-pathway/step9-v2.png",
-    actionItems: ["Proceed with treatment", "Reassess / Monitor", "Refer to GP / Specialist"],
+    title: "Clinic proceeds with the appropriate next step",
+    desc: "Based on the report, the clinic makes a clear, clinically informed decision on how to proceed.",
+    image: "/images/clinic-pathway/step9.jpg",
+    actionItems: ["Proceed with treatment", "Routine referral", "Urgent referral to GP or specialist"],
   },
   {
     num: 10,
-    title: "Safe, confident care for your clients",
-    desc: "Better outcomes. Stronger trust. Your clients know you take their safety seriously.",
-    image: "/images/clinic-pathway/step10.png",
+    title: "Safe, confident clinical decisions for your patients",
+    desc: "With structured assessment and expert dermatology review, you can treat safely, minimise risk, and build lasting patient trust.",
+    image: "/images/clinic-pathway/step10.jpg",
   },
 ];
 
@@ -106,7 +105,7 @@ export default function ClinicPathwayDiagram({
               <span className="text-brand-deep-blue italic">Then treat.</span>
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed">
-              Not every lesion should be treated without assessment.
+              Every lesion deserves assessment before treatment.
             </p>
           </div>
           <div
@@ -121,14 +120,13 @@ export default function ClinicPathwayDiagram({
                 </svg>
               </div>
               <h3 className="text-lg md:text-xl font-bold text-brand-deep-navy">
-                Raising the standard in aesthetic care.
+                Raising the standard in clinical care
               </h3>
             </div>
             <p className="text-gray-600 leading-relaxed text-[15px]">
-              MoleScan provides structured assessment and expert dermatology review, so you can make{" "}
+              MoleScan brings structured assessment and expert dermatology input into your consultation process — so you can make{" "}
               <strong className="text-brand-deep-navy">informed decisions</strong> with{" "}
-              <strong className="text-brand-deep-navy">confidence</strong> and protect your clients
-              and your practice.
+              <strong className="text-brand-deep-navy">confidence</strong> and protect both your clients and your practice.
             </p>
           </div>
         </div>

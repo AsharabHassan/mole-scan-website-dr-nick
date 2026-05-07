@@ -22,19 +22,19 @@ const governanceSections = [
     title: "Clinical Safety",
     items: [
       {
-        heading: "DCB0129 & DCB0160 Alignment",
+        heading: "DCB0129 & DCB0160",
         description:
-          "MoleScan's clinical safety framework is aligned with DCB0129 (manufacturer clinical safety) and DCB0160 (deploying organisation clinical safety) standards. A formal Clinical Safety Case is maintained and reviewed regularly.",
+          "MoleScan's clinical safety framework is aligned with DCB0129 (manufacturer responsibility) and DCB0160 (deploying organisation responsibility). A formal Clinical Safety Case is maintained and regularly reviewed.",
       },
       {
         heading: "Clinical Safety Officer",
         description:
-          "MoleScan maintains a designated Clinical Safety Officer (CSO) responsible for overseeing the clinical safety case, hazard management, and incident reporting processes.",
+          "MoleScan maintains a designated Clinical Safety Officer (CSO) responsible for the Clinical Safety Case, hazard management, and incident reporting in line with NHS digital safety standards.",
       },
       {
-        heading: "Dermatologist Review",
+        heading: "GPwSI Dermatology Doctor Review",
         description:
-          "Every assessment is reviewed by a UK GPwSI or dermatologist before a report is issued. No clinical output is delivered without dermatologist review. This human oversight is the cornerstone of MoleScan's safety model.",
+          "Every assessment is reviewed by a UK GP with specialist expertise in dermatology (GPwSI). No clinical output is delivered without qualified clinician oversight. This human review is central to MoleScan's safety model.",
       },
     ],
   },
@@ -44,22 +44,22 @@ const governanceSections = [
       {
         heading: "GDPR Compliance",
         description:
-          "MoleScan is fully compliant with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. Dermme Health Ltd is registered with the Information Commissioner's Office (ICO).",
+          "MoleScan complies with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. Dermme Health Ltd is registered with the Information Commissioner's Office (ICO).",
       },
       {
         heading: "UK Data Residency",
         description:
-          "All patient data is stored within the United Kingdom. No patient data is transferred outside the UK.",
+          "All patient data is stored within the United Kingdom, with no routine transfer outside the UK.",
       },
       {
         heading: "Encryption",
         description:
-          "All data is encrypted in transit (TLS 1.2+) and at rest (AES-256). Access to patient data is strictly controlled through role-based access controls.",
+          "All data is encrypted in transit (TLS 1.2+) and at rest (AES-256). Access to patient data is strictly controlled through role-based access controls, ensuring only authorised users can access sensitive information.",
       },
       {
         heading: "Data Minimisation",
         description:
-          "MoleScan collects only the minimum data necessary for clinical assessment. Data retention policies are transparent and documented.",
+          "MoleScan collects only the minimum data required for clinical assessment. Data retention policies are clearly defined, documented, and auditable.",
       },
     ],
   },
@@ -69,7 +69,7 @@ const governanceSections = [
       {
         heading: "Structured Reporting",
         description:
-          "Every MoleScan report follows a standardised format ensuring consistency and completeness across all assessments.",
+          "Every MoleScan report follows a standardised clinical format, ensuring consistency, clarity, and completeness across all assessments.",
       },
       {
         heading: "Audit Trail",
@@ -79,7 +79,7 @@ const governanceSections = [
       {
         heading: "Continuous Improvement",
         description:
-          "MoleScan monitors clinical outcomes and assessment quality through regular clinical audit cycles, feeding findings back into platform improvements.",
+          "MoleScan monitors clinical outcomes and assessment quality through regular audit cycles, with findings feeding directly into ongoing platform and process improvements.",
       },
     ],
   },
@@ -89,7 +89,7 @@ const governanceSections = [
       {
         heading: "WCAG 2.2 AA Compliance",
         description:
-          "The MoleScan platform and website are built to Web Content Accessibility Guidelines (WCAG) 2.2 Level AA standards.",
+          "The MoleScan platform and website are built in line with WCAG 2.2 Level AA accessibility standards.",
       },
       {
         heading: "NHS Service Standard Alignment",
@@ -104,12 +104,12 @@ const faqs = [
   {
     question: "Is MoleScan a registered medical device?",
     answer:
-      "MoleScan is a clinical workflow and triage platform that supports practitioner decision-making. It is not currently classified or registered as a standalone medical device. The platform provides structured clinical triage with UK GPwSI and dermatologist review, with the final clinical decision always resting with the treating practitioner.",
+      "MoleScan is a clinical workflow and triage platform that supports practitioner decision-making. It is not currently classified or registered as a standalone medical device. The platform provides structured clinical triage with review by UK GPs with specialist expertise in dermatology (GPwSI). The final clinical decision always rests with the treating practitioner.",
   },
   {
     question: "How does MoleScan handle clinical incidents?",
     answer:
-      "MoleScan maintains a clinical incident reporting and management process aligned with DCB0129. All incidents are reviewed by the Clinical Safety Officer, and findings are fed into the clinical safety case and hazard log. Serious incidents are escalated in accordance with regulatory requirements.",
+      "MoleScan maintains a clinical incident reporting and management process aligned with DCB0129. All incidents are reviewed by the Clinical Safety Officer, with findings incorporated into the Clinical Safety Case and hazard log. Serious incidents are managed and escalated in line with regulatory requirements.",
   },
   {
     question: "Can I see MoleScan's Clinical Safety Case?",
@@ -117,9 +117,9 @@ const faqs = [
       "A summary of MoleScan's Clinical Safety Case is available on request. Please contact us or request a demo to discuss clinical governance documentation.",
   },
   {
-    question: "How are the dermatologists vetted?",
+    question: "How are doctors vetted?",
     answer:
-      "All MoleScan GPs and dermatologists are registered with the General Medical Council (GMC), and dermatologists hold current specialist registration in dermatology. All doctors undergo credential verification before joining the platform.",
+      "All MoleScan doctors are registered with the General Medical Council (GMC). All doctors hold appropriate training and experience in dermatology and skin lesion assessments (GPwSI or equivalent), and all clinicians undergo credential verification before joining the platform. Ongoing professional registration and compliance are regularly reviewed.",
   },
 ];
 
@@ -141,17 +141,17 @@ export default function ClinicalGovernancePage() {
         eyebrow="Safety & Compliance"
         title="Clinical Governance"
         titleHighlight="Governance"
-        subtitle="MoleScan is built on a foundation of clinical safety, data protection, and quality assurance. Every assessment is dermatologist-led, dermatologist-reviewed, and fully governed."
+        subtitle="MoleScan is built on a foundation of clinical safety, data protection, and quality assurance. Every assessment is reviewed by UK GMC-registered clinicians with specialist expertise in dermatology (GPwSI), supported by structured processes and robust clinical governance."
         ctas={[
           { label: "Request Demo", href: "/request-demo", variant: "primary" },
         ]}
         background="blue"
         backgroundImage="/images/hero-bg-governance.png"
         featureBar={[
-          { icon: "shield", label: "DCB0129 Aligned", desc: "Clinical safety framework for health IT systems" },
-          { icon: "lock", label: "GDPR Compliant", desc: "ICO registered with UK data residency" },
+          { icon: "shield", label: "DCB0129 Aligned", desc: "Clinical safety framework for digital health systems" },
+          { icon: "lock", label: "GDPR Compliant", desc: "ICO registered with UK data residency and encryption at rest and in transit" },
           { icon: "check", label: "CQC Registered", desc: "Care Quality Commission regulated service" },
-          { icon: "users", label: "GMC-Registered Doctors", desc: "All reviewers hold current GMC registration" },
+          { icon: "users", label: "GMC-Registered Doctors", desc: "All doctors hold current GMC registration and relevant clinical experience" },
         ]}
         badges={{
           text: "",
@@ -184,9 +184,11 @@ export default function ClinicalGovernancePage() {
 
       <CTABand
         title="Want to Know More About Our Governance?"
-        subtitle="Request a demo to discuss MoleScan's clinical safety case, data governance, and compliance documentation."
+        subtitle="Request a demo to explore MoleScan's clinical safety framework, data governance model, and compliance standards — including our Clinical Safety Case and structured assessment pathway."
         buttonLabel="Request Demo"
         buttonHref="/request-demo"
+        secondaryButtonLabel="Speak to our team"
+        secondaryButtonHref="/contact"
         background="navy"
       />
     </>

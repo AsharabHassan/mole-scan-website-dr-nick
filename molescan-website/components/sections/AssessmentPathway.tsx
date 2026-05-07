@@ -57,7 +57,7 @@ export default function AssessmentPathway({ steps }: AssessmentPathwayProps) {
   // Group steps by phase for the summary
   const phases = [
     { key: "capture" as const, steps: "1–2", label: "Data Capture", desc: "Image capture and secure upload" },
-    { key: "analysis" as const, steps: "3–4", label: "Clinical Analysis", desc: "AI screening and consultant review" },
+    { key: "analysis" as const, steps: "3–4", label: "Clinical Analysis", desc: "Structured analysis and GPwSI clinician review" },
     { key: "delivery" as const, steps: "5–6", label: "Report & Action", desc: "Structured report and clinical decision" },
   ];
 

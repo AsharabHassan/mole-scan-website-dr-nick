@@ -6,6 +6,9 @@ import { useInView } from "@/components/hooks/useInView";
 interface FAQ {
   question: string;
   answer: string;
+  intro?: string;
+  bullets?: string[];
+  outro?: string;
 }
 
 interface FAQSectionProps {

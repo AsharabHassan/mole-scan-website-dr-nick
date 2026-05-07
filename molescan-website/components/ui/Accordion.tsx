@@ -2,14 +2,20 @@
 
 import { useState } from "react";
 
-interface AccordionItemProps {
+export interface AccordionItemData {
   question: string;
   answer: string;
+  intro?: string;
+  bullets?: string[];
+  outro?: string;
+}
+
+interface AccordionItemProps extends AccordionItemData {
   isOpen: boolean;
   onToggle: () => void;
 }
 
-function AccordionItem({ question, answer, isOpen, onToggle }: AccordionItemProps) {
+function AccordionItem({ question, answer, intro, bullets, outro, isOpen, onToggle }: AccordionItemProps) {
   return (
     <div
       className={`border-b border-gray-200 transition-colors duration-300 ${
@@ -56,9 +62,21 @@ function AccordionItem({ question, answer, isOpen, onToggle }: AccordionItemProp
         }`}
       >
         <div className="overflow-hidden">
-          <p className="text-brand-text/80 leading-relaxed pb-5">
-            {answer}
-          </p>
+          <div className="text-brand-text/80 leading-relaxed pb-5 space-y-3">
+            {bullets && bullets.length > 0 ? (
+              <>
+                {intro && <p>{intro}</p>}
+                <ul className="list-disc pl-5 space-y-1.5 marker:text-brand-teal">
+                  {bullets.map((b, i) => (
+                    <li key={i}>{b}</li>
+                  ))}
+                </ul>
+                {outro && <p>{outro}</p>}
+              </>
+            ) : (
+              <p>{answer}</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -66,7 +84,7 @@ function AccordionItem({ question, answer, isOpen, onToggle }: AccordionItemProp
 }
 
 interface AccordionProps {
-  items: { question: string; answer: string }[];
+  items: AccordionItemData[];
 }
 
 export default function Accordion({ items }: AccordionProps) {
@@ -79,6 +97,9 @@ export default function Accordion({ items }: AccordionProps) {
           key={index}
           question={item.question}
           answer={item.answer}
+          intro={item.intro}
+          bullets={item.bullets}
+          outro={item.outro}
           isOpen={openIndex === index}
           onToggle={() => setOpenIndex(openIndex === index ? null : index)}
         />
