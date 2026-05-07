@@ -10,7 +10,7 @@ interface PathwayDiagramProps {
 const stepsRow1 = [
   {
     num: 1,
-    title: "Patient concerned about a mole",
+    title: "Patient concern about a mole or a skin lesion",
     desc: "A patient notices a new or changing mole and wants to get it assessed by their GP.",
     image: "/images/pathway/step1.jpg",
   },
