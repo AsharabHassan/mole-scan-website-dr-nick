@@ -15,7 +15,7 @@ export default function HomepageHero() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
         </svg>
       ),
-      text: "UK GPwSI & Consultant Dermatologists",
+      text: "UK GPwSI Dermatology Review",
     },
     {
       icon: (
@@ -116,16 +116,20 @@ export default function HomepageHero() {
               Skin Lesion Assessment
             </h1>
 
-            <p
-              className={`text-gray-300/90 text-lg md:text-xl leading-relaxed mb-8 max-w-xl transition-all duration-700 delay-200 ${
+            <div
+              className={`text-gray-300/90 text-lg md:text-xl leading-relaxed mb-8 max-w-xl transition-all duration-700 delay-200 space-y-4 ${
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              MoleScan provides expert dermoscopic image analysis with UK GPwSI and
-              dermatologist review to deliver structured skin lesion assessment
-              reports within 24 hours. A safe, governed triage pathway for
-              healthcare professionals.
-            </p>
+              <p>
+                MoleScan provides structured dermoscopic image assessment with
+                review by UK GPwSI dermatology doctors delivering clear,
+                clinically governed skin lesion reports within 24 hours.
+              </p>
+              <p>
+                A safe, standardised triage pathway for healthcare professionals.
+              </p>
+            </div>
 
             {/* Highlight pills */}
             <div
@@ -218,7 +222,7 @@ export default function HomepageHero() {
                 </div>
                 <div>
                   <p className="font-bold text-brand-deep-blue text-sm">24h Reports</p>
-                  <p className="text-brand-text/60 text-xs">Expert-reviewed</p>
+                  <p className="text-brand-text/60 text-xs">GPwSI-reviewed</p>
                 </div>
               </div>
 
@@ -232,8 +236,8 @@ export default function HomepageHero() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-bold text-brand-deep-blue text-sm">Expert Review</p>
-                  <p className="text-brand-text/60 text-xs">Dermatologist-led triage</p>
+                  <p className="font-bold text-brand-deep-blue text-sm">Specialist Review</p>
+                  <p className="text-brand-text/60 text-xs">Doctor-led clinical triage</p>
                 </div>
               </div>
             </div>
@@ -244,10 +248,10 @@ export default function HomepageHero() {
       <HeroFeatureBar
         inView={inView}
         items={[
-          { icon: "shield", label: "Dermatologist-Led", desc: "Every case reviewed by UK GPwSI dermatologists and consultant dermatologists" },
-          { icon: "clock", label: "24-Hour Reports", desc: "Structured results delivered within one working day" },
-          { icon: "lock", label: "GDPR Compliant", desc: "UK data residency with full encryption" },
-          { icon: "check", label: "100% Expert Reviewed", desc: "No assessment without dermatologist oversight" },
+          { icon: "shield", label: "Doctor-Led Specialist Review", desc: "Every case is reviewed by UK GPwSI clinicians with specialist expertise in dermatology." },
+          { icon: "clock", label: "24-Hour Reports", desc: "Structured clinical reports delivered within one working day." },
+          { icon: "lock", label: "GDPR Compliant", desc: "UK data residency with full encryption at rest and in transit." },
+          { icon: "check", label: "100% Clinician Reviewed", desc: "No assessment is completed without qualified GPwSI clinical oversight." },
         ]}
       />
     </section>

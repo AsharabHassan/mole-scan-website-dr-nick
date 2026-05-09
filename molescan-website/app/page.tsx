@@ -25,7 +25,7 @@ const howItWorksSteps = [
     number: 1,
     title: "Capture",
     description:
-      "The practitioner photographs the skin lesion using a smartphone dermoscope — capturing the high-quality dermoscopic images needed for expert assessment.",
+      "The practitioner photographs the skin lesion using a smartphone dermoscope — capturing high-quality dermoscopic images required for clinical assessment.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
@@ -35,9 +35,9 @@ const howItWorksSteps = [
   },
   {
     number: 2,
-    title: "Expert Review",
+    title: "Clinical Review",
     description:
-      "Every case is reviewed by a UK GPwSI or Consultant Dermatologist. No AI-only assessments — expert human judgement on every case.",
+      "Every case is reviewed by a UK GPwSI clinician with specialist dermatology expertise.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -48,7 +48,7 @@ const howItWorksSteps = [
     number: 3,
     title: "Report in 24 Hours",
     description:
-      "A structured, RAG-rated report is delivered within 24 hours. Clear outcomes — reassure, monitor, or refer urgently — so practitioners can act with confidence.",
+      "A structured, RAG-rated clinical report is delivered within 24 hours. Clear outcomes — reassure, monitor, or refer — so practitioners can act with confidence.",
     icon: (
       <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -64,9 +64,9 @@ const differentiators = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
       </svg>
     ),
-    title: "Expert Dermatologist Review — Every Case",
+    title: "Doctor-Led Clinical Review — Every Case",
     description:
-      "No assessment leaves MoleScan without being reviewed by a UK GPwSI or Consultant Dermatologist. This is what makes MoleScan dermatologist-led — human expertise validates every case.",
+      "No assessment leaves MoleScan without review by a UK GPwSI clinician with specialist expertise in dermatology. Every case includes qualified clinical judgement.",
   },
   {
     icon: (
@@ -76,7 +76,7 @@ const differentiators = [
     ),
     title: "Answers in 24 Hours — Not Weeks",
     description:
-      "Don't lose clients to GP waiting times or leave patients waiting for a dermatology slot. MoleScan delivers structured, actionable reports within one working day.",
+      "Avoid delays in care and unnecessary referrals. MoleScan delivers structured, actionable reports within one working day.",
   },
   {
     icon: (
@@ -86,7 +86,7 @@ const differentiators = [
     ),
     title: "RAG-Rated Outcomes You Can Act On",
     description:
-      "Every report delivers a clear outcome — GREEN (reassure/treat), AMBER (monitor/review), or RED (urgent referral). No ambiguity. Clear next steps for the practitioner.",
+      "Every report delivers a clear outcome: GREEN (reassure / monitor), AMBER (review / consider referral), RED (urgent referral). No ambiguity — clear next steps for the practitioner.",
   },
   {
     icon: (
@@ -94,16 +94,16 @@ const differentiators = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
       </svg>
     ),
-    title: "Fully Governed & Compliant",
+    title: "Clinically Governed & Compliant",
     description:
-      "DCB0129 aligned. GDPR compliant. UK data residency. CQC registered. Complete audit trail for every assessment. Built for clinical governance from day one.",
+      "Aligned with DCB0129 clinical safety standards. Fully GDPR compliant with UK data residency. Comprehensive audit trail for every assessment. Designed for safe integration into clinical workflows.",
   },
 ];
 
 const complianceBadges = [
   {
     label: "DCB0129 Aligned",
-    desc: "Clinical safety framework",
+    desc: "Clinical safety framework for digital health systems.",
     icon: (
       <svg className="w-5 h-5 text-brand-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
@@ -112,7 +112,7 @@ const complianceBadges = [
   },
   {
     label: "GDPR Compliant",
-    desc: "UK data residency, encrypted at rest and in transit",
+    desc: "UK data residency with encryption in transit and at rest.",
     icon: (
       <svg className="w-5 h-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
@@ -121,7 +121,7 @@ const complianceBadges = [
   },
   {
     label: "CQC Registered",
-    desc: "Care Quality Commission regulated service",
+    desc: "Regulated healthcare service under the Care Quality Commission.",
     icon: (
       <svg className="w-5 h-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -130,7 +130,7 @@ const complianceBadges = [
   },
   {
     label: "GMC-Registered Doctors",
-    desc: "All reviewers hold current GMC registration",
+    desc: "All our doctors hold current UK GMC registration.",
     icon: (
       <svg className="w-5 h-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
@@ -163,11 +163,11 @@ export default function HomePage() {
       <SectionWrapper background="white" id="the-challenge">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="mb-4">Moles and Skin Lesions Need Expert Eyes</h2>
+            <h2 className="mb-4">Moles and Skin Lesions Need Clinical Expertise</h2>
             <p className="text-brand-text/70 text-lg max-w-3xl mx-auto leading-relaxed">
               Whether you&rsquo;re a GP deciding if a lesion warrants a 2-week-wait referral, or a
-              beautician who&rsquo;s spotted a mole in the treatment zone — the question is the
-              same: <strong className="text-brand-deep-navy">is it safe?</strong>
+              clinic identifying a lesion in a treatment area — the question is the
+              same: <strong className="text-brand-deep-navy">is it safe to proceed?</strong>
             </p>
           </div>
 
@@ -182,9 +182,10 @@ export default function HomePage() {
                 <div>
                   <h3 className="text-lg font-bold text-brand-deep-navy mb-2">For NHS Primary Care</h3>
                   <p className="text-brand-text/70 leading-relaxed">
-                    95% of urgent skin cancer referrals are for benign lesions. Rising 2WW volumes
-                    overwhelm secondary care. GPs need a structured triage pathway with expert
-                    dermatologist support before referring.
+                    A significant proportion of urgent skin cancer referrals are for benign lesions,
+                    placing pressure on secondary care dermatology services. Primary care needs a
+                    structured, clinically governed triage pathway — with timely review by GPwSI
+                    clinicians experienced in dermatology — before referral.
                   </p>
                 </div>
               </div>
@@ -200,10 +201,11 @@ export default function HomePage() {
                 <div>
                   <h3 className="text-lg font-bold text-brand-deep-navy mb-2">For Private Clinics</h3>
                   <p className="text-brand-text/70 leading-relaxed">
-                    You run a private clinic — aesthetic, beauty, podiatry, physiotherapy, or general
-                    practice. You encounter moles and skin lesions regularly, but dermatology isn&rsquo;t
-                    your speciality. Referring every case to a GP or dermatologist means delays,
-                    lost appointments, and frustrated clients. You need a faster, professional answer.
+                    You run a clinic — aesthetic, beauty, podiatry, physiotherapy, or general
+                    practice. You encounter skin lesions regularly, but dermatology is not your
+                    core specialty. Referring every case externally leads to delays, disrupted
+                    workflows, and frustrated patients. You need a fast, clinically reliable answer
+                    to guide safe decision-making.
                   </p>
                 </div>
               </div>
@@ -212,8 +214,8 @@ export default function HomePage() {
 
           <div className="text-center mt-10">
             <p className="text-brand-deep-blue text-lg font-semibold">
-              MoleScan gives both audiences the same thing:{" "}
-              <span className="text-brand-teal">an expert dermatologist opinion within 24 hours.</span>
+              MoleScan gives both audiences the same outcome:{" "}
+              <span className="text-brand-teal">a structured, GPwSI dermatology doctor-led clinical assessment within 24 hours.</span>
             </p>
           </div>
         </div>
@@ -223,7 +225,7 @@ export default function HomePage() {
       <SectionWrapper background="soft-blue">
         <StepProcess
           title="How MoleScan Works"
-          subtitle="A simple, structured process — from image capture to expert-reviewed report. No clinical training required from the practitioner."
+          subtitle="A simple, structured process — from image capture to clinician-reviewed report. No specialist dermatology training required from the practitioner."
           steps={howItWorksSteps}
         />
       </SectionWrapper>
@@ -231,34 +233,34 @@ export default function HomePage() {
       {/* ── Two Audiences ── */}
       <SectionWrapper background="white" id="who-is-molescan-for">
         <div className="text-center mb-12">
-          <h2 className="mb-4">Built for Two Audiences. One Standard of Care.</h2>
+          <h2 className="mb-4">Built for Two Settings. One Clinical Standard.</h2>
           <p className="text-brand-text/70 text-lg max-w-2xl mx-auto">
-            MoleScan serves both private clinics and NHS organisations with the same
-            dermatologist-led assessment platform — tailored to each workflow.
+            MoleScan supports both private clinics and NHS organisations with the same
+            doctor-led, clinically governed triage platform — adapted to each workflow.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <AudienceCard
             title="For Private Clinics"
-            description="Whether you run an aesthetic clinic, beauty practice, podiatry clinic, or any private practice — when you encounter a mole or skin lesion, MoleScan gives you a professional dermatologist opinion in 24 hours. No need to refer every case to the GP."
+            description="Whether you run an aesthetic, beauty, podiatry, physiotherapy, or general practice — you will encounter skin lesions, but dermatology is not your core specialty. MoleScan provides a rapid, GPwSI dermatology doctor-led clinical assessment within 24 hours, so you can make safe, informed decisions without disrupting your workflow."
             bulletPoints={[
               "Keep treatments and appointments on track",
-              "You don't diagnose — the dermatologist does",
+              "You don't diagnose — clinical decisions are supported by GPwSI review",
               "Full audit trail protects you and your client",
-              "RAG-rated outcomes: safe to treat, monitor, or refer",
-              "Works for aesthetic, beauty, podiatry, and all private clinics",
+              "RAG-rated outcomes: reassure, monitor, or refer",
+              "Designed for all non-dermatology clinical settings",
             ]}
             ctaLabel="Learn More"
             ctaHref="/for-clinics"
           />
           <AudienceCard
             title="For NHS & ICBs"
-            description="Reduce pressure on 2-week-wait dermatology pathways. MoleScan enables structured triage at primary care level with expert dermatologist review — so only the cases that need secondary care reach it."
+            description="Reduce pressure on 2-week-wait dermatology pathways. MoleScan enables structured triage at primary care level, with timely review by GPwSI clinicians experienced in dermatology — ensuring only appropriate cases are escalated to secondary care."
             bulletPoints={[
               "Reduce unnecessary 2WW referrals at source",
-              "Every case reviewed by a UK dermatologist",
+              "Every case reviewed by a UK GPwSI clinician",
               "Structured RAG-rated reports within 24 hours",
-              "DCB0129, GDPR, DTAC aligned platform",
+              "Aligned with DCB0129, GDPR, and DTAC requirements",
               "Scalable across multiple GP practices and ICBs",
             ]}
             ctaLabel="Learn More"
@@ -271,7 +273,7 @@ export default function HomePage() {
       <SectionWrapper background="soft-blue" id="why-molescan">
         <FeatureGrid
           title="Why MoleScan?"
-          subtitle="A dermatologist-led platform built for clinical rigour, speed, and trust."
+          subtitle="A doctor-led clinical triage platform built for safety, consistency, and speed."
           features={differentiators}
           columns={2}
         />
@@ -282,8 +284,8 @@ export default function HomePage() {
         <div className="text-center mb-12">
           <h2 className="mb-4">Trusted. Governed. Compliant.</h2>
           <p className="text-brand-text/70 text-lg max-w-2xl mx-auto">
-            MoleScan is built to meet the safety, governance, and data protection standards
-            expected by both private clinics and NHS organisations.
+            MoleScan is designed to meet the clinical safety, governance, and data protection
+            standards expected by both private clinics and NHS organisations.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -301,9 +303,12 @@ export default function HomePage() {
 
       <CTABand
         title="See MoleScan in Action"
-        subtitle="Request a no-obligation demo and discover how MoleScan can support your skin lesion assessment pathway — whether you're a clinic or an NHS organisation."
+        subtitle="Request a no-obligation demo and see how MoleScan supports safe, structured skin lesion triage — whether you're a clinic or an NHS organisation."
         buttonLabel="Request Demo"
         buttonHref="/request-demo"
+        secondaryButtonLabel="Speak to our team"
+        secondaryButtonHref="/contact"
+        trustItems={["Reports within 24 hours", "GMC-registered clinicians", "CQC-registered service"]}
       />
     </>
   );

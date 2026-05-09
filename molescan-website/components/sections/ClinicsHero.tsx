@@ -1,7 +1,6 @@
 "use client";
 
 import Button from "@/components/ui/Button";
-import HeroFeatureBar from "@/components/sections/HeroFeatureBar";
 import { useInView } from "@/components/hooks/useInView";
 
 export default function ClinicsHero() {
@@ -233,15 +232,6 @@ export default function ClinicsHero() {
         </div>
       </div>
 
-      <HeroFeatureBar
-        inView={inView}
-        items={[
-          { icon: "clock", label: "Doctor-led assessment within 24 hours", desc: "Know if it's safe to proceed" },
-          { icon: "shield", label: "Reviewed by UK Dermatologists", desc: "You're not expected to diagnose — we handle the assessment" },
-          { icon: "check", label: "Clear clinical guidance", desc: "Support safe, appropriate treatment decisions" },
-          { icon: "lock", label: "Full clinical audit trail", desc: "Documented and traceable for governance and medico-legal protection" },
-        ]}
-      />
     </section>
   );
 }
