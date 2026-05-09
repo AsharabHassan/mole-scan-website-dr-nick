@@ -6,7 +6,7 @@ import { useInView } from "@/components/hooks/useInView";
 interface Feature {
   icon: React.ReactNode;
   title: string;
-  description: string;
+  description: React.ReactNode;
 }
 
 interface FeatureGridProps {
@@ -64,9 +64,13 @@ export default function FeatureGrid({
               <h3 className="text-xl font-semibold mb-2 transition-colors duration-300 group-hover:text-brand-teal">
                 {feature.title}
               </h3>
-              <p className="text-brand-text/70 leading-relaxed">
-                {feature.description}
-              </p>
+              <div className="text-brand-text/70 leading-relaxed space-y-3">
+                {typeof feature.description === "string" ? (
+                  <p>{feature.description}</p>
+                ) : (
+                  feature.description
+                )}
+              </div>
             </Card>
           </div>
         ))}

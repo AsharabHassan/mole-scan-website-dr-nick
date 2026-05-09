@@ -9,6 +9,7 @@ interface ProcessStep {
   detail: string;
   icon: React.ReactNode;
   phase: "capture" | "analysis" | "delivery";
+  phaseLabel?: string;
 }
 
 interface AssessmentPathwayProps {
@@ -225,7 +226,7 @@ function StepCard({ step, config, align }: StepCardProps) {
         className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest ${config.textColor} ${config.bgLight} border ${config.borderLight} mb-3`}
       >
         <div className={`w-1.5 h-1.5 rounded-full ${config.dotColor}`} />
-        {phaseConfig[step.phase].label}
+        {step.phaseLabel ?? phaseConfig[step.phase].label}
       </div>
 
       <h3 className="text-lg font-bold text-brand-deep-blue mb-2.5 leading-snug">

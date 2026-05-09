@@ -196,7 +196,7 @@ export default function HomepageHero() {
 
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/30 ring-1 ring-white/10">
                 <Image
-                  src="/images/homepage-hero-v2.jpg"
+                  src="/images/homepage-hero-v4.png"
                   alt="Illustrated infographic showing MoleScan dermatologist-led skin lesion assessment workflow — a practitioner captures a mole image with a dermoscope, expert dermatologists assess the lesion for risk stratification, and a UK GP or dermatologist reviews and delivers a structured report within 24 hours"
                   width={680}
                   height={510}
