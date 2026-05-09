@@ -210,7 +210,7 @@ export default function ClinicPathwayDiagram({
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <span className="text-white font-bold text-lg font-display">Check first. Treat with confidence.</span>
+              <span className="text-white font-bold text-lg font-display">Pause. Assess. Then treat.</span>
             </div>
 
             {/* Divider */}
@@ -218,7 +218,7 @@ export default function ClinicPathwayDiagram({
 
             {/* Center: tagline */}
             <p className="text-gray-300 text-sm md:text-base text-center">
-              MoleScan supports clinical excellence and client safety.
+              Don&rsquo;t guess. Don&rsquo;t delay. Get a clear, clinician-led answer within 24 hours so you can act safely and confidently.
             </p>
 
             {/* Divider */}

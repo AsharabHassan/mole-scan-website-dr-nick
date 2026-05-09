@@ -220,13 +220,7 @@ export default function ForClinicsPage() {
 
       <SectionWrapper background="white" id="who-uses">
         <div className="text-center mb-12">
-          <p className="text-brand-teal text-sm font-semibold uppercase tracking-wider mb-3">
-            Pause. Assess. Then treat.
-          </p>
           <h2 className="mb-4">Who Is MoleScan For?</h2>
-          <p className="text-brand-text/70 text-lg max-w-2xl mx-auto mb-3">
-            Don&apos;t guess. Don&apos;t delay. Get a clear, clinician-led answer within 24 hours so you can act safely and confidently.
-          </p>
           <p className="text-brand-text/70 text-lg max-w-2xl mx-auto">
             If you assess patients for aesthetic or skin treatments and encounter a mole or skin lesion in the treatment area, MoleScan gives you a clear, clinician-led answer before you proceed.
           </p>
