@@ -14,6 +14,7 @@ interface Article {
   readTime: string;
   featured?: boolean;
   icon?: "hospital" | "shield" | "scope";
+  comingSoon?: boolean;
 }
 
 const ARTICLES: Article[] = [
@@ -27,6 +28,7 @@ const ARTICLES: Article[] = [
     readTime: "5 min read",
     featured: true,
     icon: "hospital",
+    comingSoon: true,
   },
   {
     slug: "before-you-treat-skin-lesion-assessment",
@@ -47,6 +49,7 @@ const ARTICLES: Article[] = [
     readTime: "7 min read",
     featured: true,
     icon: "scope",
+    comingSoon: true,
   },
   // ── All Resources (8) ──
   {
@@ -56,6 +59,7 @@ const ARTICLES: Article[] = [
       "Exploring the key drivers behind rising demand and what it means for primary care and patients.",
     category: "NHS & Pathways",
     readTime: "4 min read",
+    comingSoon: true,
   },
   {
     slug: "what-happens-after-2ww-referral",
@@ -64,6 +68,7 @@ const ARTICLES: Article[] = [
       "A step-by-step look at the patient journey and where delays can occur.",
     category: "NHS & Pathways",
     readTime: "5 min read",
+    comingSoon: true,
   },
   {
     slug: "common-mistakes-skin-lesion-assessment",
@@ -72,6 +77,7 @@ const ARTICLES: Article[] = [
       "Practical tips to avoid pitfalls and improve diagnostic confidence.",
     category: "Clinical Practice",
     readTime: "6 min read",
+    comingSoon: true,
   },
   {
     slug: "what-clinically-governed-actually-means",
@@ -80,6 +86,7 @@ const ARTICLES: Article[] = [
       "Understanding clinical governance in digital health platforms.",
     category: "Governance",
     readTime: "6 min read",
+    comingSoon: true,
   },
   {
     slug: "dcb0129-explained-for-clinics",
@@ -87,6 +94,7 @@ const ARTICLES: Article[] = [
     description: "A simple guide to the NHS standard for digital clinical safety.",
     category: "Governance",
     readTime: "5 min read",
+    comingSoon: true,
   },
   {
     slug: "reduce-risk-before-laser-ipl",
@@ -95,6 +103,7 @@ const ARTICLES: Article[] = [
       "A structured approach to lesion assessment before energy-based procedures.",
     category: "Clinics",
     readTime: "6 min read",
+    comingSoon: true,
   },
   {
     slug: "choosing-safe-skin-lesion-triage-platform",
@@ -103,6 +112,7 @@ const ARTICLES: Article[] = [
       "Key considerations for clinics evaluating triage solutions.",
     category: "Clinics",
     readTime: "5 min read",
+    comingSoon: true,
   },
   {
     slug: "benign-vs-suspicious-lesions",
@@ -111,6 +121,7 @@ const ARTICLES: Article[] = [
       "A quick reference guide with images and clinical examples.",
     category: "Clinical Practice",
     readTime: "4 min read",
+    comingSoon: true,
   },
 ];
 
@@ -155,7 +166,25 @@ function CategoryPill({ category }: { category: Category }) {
   );
 }
 
-function ReadArticleLink({ href }: { href: string }) {
+function ComingSoonPill() {
+  return (
+    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-amber-50 text-amber-700 text-xs font-semibold border border-amber-200">
+      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      Coming Soon
+    </span>
+  );
+}
+
+function ReadArticleLink({ href, comingSoon }: { href: string; comingSoon?: boolean }) {
+  if (comingSoon) {
+    return (
+      <span className="inline-flex items-center gap-1.5 text-brand-text/40 text-sm font-semibold cursor-not-allowed">
+        Coming soon
+      </span>
+    );
+  }
   return (
     <Link
       href={href}
@@ -303,8 +332,9 @@ export default function ResourcesContent() {
                   <div className="w-14 h-14 rounded-2xl bg-brand-teal/10 flex items-center justify-center text-brand-teal mb-5">
                     <FeaturedIcon name={article.icon} />
                   </div>
-                  <div className="flex items-center gap-2 mb-3">
+                  <div className="flex items-center gap-2 mb-3 flex-wrap">
                     <CategoryPill category={article.category} />
+                    {article.comingSoon && <ComingSoonPill />}
                     <span className="text-xs text-brand-text/50">{article.readTime}</span>
                   </div>
                   <h3 className="text-lg md:text-xl font-bold text-brand-deep-navy leading-snug mb-3">
@@ -313,7 +343,7 @@ export default function ResourcesContent() {
                   <p className="text-brand-text/70 text-sm leading-relaxed mb-5 flex-grow">
                     {article.description}
                   </p>
-                  <ReadArticleLink href={`/resources/${article.slug}`} />
+                  <ReadArticleLink href={`/resources/${article.slug}`} comingSoon={article.comingSoon} />
                 </article>
               ))}
             </div>
@@ -339,6 +369,7 @@ export default function ResourcesContent() {
                 >
                   <div className="flex items-center gap-2 mb-3 flex-wrap">
                     <CategoryPill category={article.category} />
+                    {article.comingSoon && <ComingSoonPill />}
                     <span className="text-xs text-brand-text/50">{article.readTime}</span>
                   </div>
                   <h3 className="text-base font-bold text-brand-deep-navy leading-snug mb-2.5">
@@ -347,7 +378,7 @@ export default function ResourcesContent() {
                   <p className="text-brand-text/70 text-sm leading-relaxed mb-4 flex-grow">
                     {article.description}
                   </p>
-                  <ReadArticleLink href={`/resources/${article.slug}`} />
+                  <ReadArticleLink href={`/resources/${article.slug}`} comingSoon={article.comingSoon} />
                 </article>
               ))}
             </div>
