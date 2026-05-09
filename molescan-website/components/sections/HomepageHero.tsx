@@ -95,7 +95,7 @@ export default function HomepageHero() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-teal" />
               </span>
               <span className="text-sm text-gray-300 font-medium">
-                Dermatologist-Led Clinical Triage Platform
+                Doctor-Led Clinical Triage Platform
               </span>
             </div>
 
@@ -104,9 +104,9 @@ export default function HomepageHero() {
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Dermatologist-Led,{" "}
+              Doctor-Led,{" "}
               <span className="relative">
-                <span className="relative z-10">Expert-Reviewed</span>
+                <span className="relative z-10">GPwSI-Reviewed</span>
                 <span
                   className="absolute bottom-1 left-0 right-0 h-3 bg-brand-teal/25 rounded-sm -z-0"
                   aria-hidden="true"
