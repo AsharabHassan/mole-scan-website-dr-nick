@@ -147,67 +147,61 @@ export default function NHSHero() {
 
               {/* Desktop only: floating metric cards */}
               <div
-                className={`hidden lg:block absolute -top-4 -left-4 bg-white/[0.1] backdrop-blur-xl border border-white/[0.12] rounded-2xl px-5 py-4 shadow-2xl transition-all duration-500 hover:-translate-y-1 ${
+                className={`hidden lg:flex items-start gap-3 absolute -top-6 -left-6 bg-white/[0.1] backdrop-blur-xl border border-white/[0.12] rounded-2xl px-5 py-4 shadow-2xl transition-all duration-500 hover:-translate-y-1 max-w-[280px] ${
                   inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
                 }`}
                 style={{ transitionDelay: inView ? "600ms" : "0ms" }}
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-3xl font-bold font-display text-brand-teal">95%</span>
-                  <p className="text-gray-300 text-xs leading-tight max-w-[140px]">
-                    of suspected skin cancer<br />referrals are benign
-                  </p>
-                </div>
+                <span className="text-3xl font-bold font-display text-brand-teal flex-shrink-0">90–95%</span>
+                <p className="text-gray-300 text-xs leading-snug">
+                  of suspected skin cancer referrals are ultimately benign — placing significant pressure on dermatology services.
+                </p>
               </div>
 
               <div
-                className={`hidden lg:block absolute -bottom-4 -right-4 bg-white/[0.1] backdrop-blur-xl border border-white/[0.12] rounded-2xl px-5 py-4 shadow-2xl transition-all duration-500 hover:-translate-y-1 ${
+                className={`hidden lg:flex items-start gap-3 absolute -bottom-6 -right-6 bg-white/[0.1] backdrop-blur-xl border border-white/[0.12] rounded-2xl px-5 py-4 shadow-2xl transition-all duration-500 hover:-translate-y-1 max-w-[280px] ${
                   inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
                 }`}
                 style={{ transitionDelay: inView ? "750ms" : "0ms" }}
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-3xl font-bold font-display text-brand-teal">24h</span>
-                  <p className="text-gray-300 text-xs leading-tight max-w-[120px]">
-                    rapid clinical<br />reports
-                  </p>
-                </div>
+                <span className="text-3xl font-bold font-display text-brand-teal flex-shrink-0">24h</span>
+                <p className="text-gray-300 text-xs leading-snug">
+                  Rapid clinical reports within 24 hours to support timely, confident decision-making in primary care.
+                </p>
               </div>
 
               <div
-                className={`hidden lg:block absolute -bottom-4 left-8 bg-white/[0.1] backdrop-blur-xl border border-white/[0.12] rounded-2xl px-5 py-4 shadow-2xl transition-all duration-500 hover:-translate-y-1 ${
+                className={`hidden lg:flex items-start gap-3 absolute -bottom-6 left-2 bg-white/[0.1] backdrop-blur-xl border border-white/[0.12] rounded-2xl px-5 py-4 shadow-2xl transition-all duration-500 hover:-translate-y-1 max-w-[280px] ${
                   inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: inView ? "900ms" : "0ms" }}
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-3xl font-bold font-display text-brand-teal">100%</span>
-                  <p className="text-gray-300 text-xs leading-tight max-w-[120px]">
-                    GPwSI doctor<br />reviewed
-                  </p>
-                </div>
+                <span className="text-3xl font-bold font-display text-brand-teal flex-shrink-0">100%</span>
+                <p className="text-gray-300 text-xs leading-snug">
+                  of cases reviewed by UK GPwSI doctors with specialist expertise in dermatology.
+                </p>
               </div>
             </div>
 
-            {/* Mobile only: metrics as a clean row below the image */}
+            {/* Mobile only: metrics stacked below the image */}
             <div
-              className={`lg:hidden grid grid-cols-3 gap-3 mt-6 transition-all duration-700 delay-500 ${
+              className={`lg:hidden flex flex-col gap-3 mt-6 transition-all duration-700 delay-500 ${
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
             >
               {[
-                { value: "95%", label: "suspected referrals are benign" },
-                { value: "24h", label: "rapid clinical reports" },
-                { value: "100%", label: "GPwSI doctor reviewed" },
+                { value: "90–95%", label: "of suspected skin cancer referrals are ultimately benign — placing significant pressure on dermatology services." },
+                { value: "24h", label: "Rapid clinical reports within 24 hours to support timely, confident decision-making in primary care." },
+                { value: "100%", label: "of cases reviewed by UK GPwSI doctors with specialist expertise in dermatology." },
               ].map((metric, i) => (
                 <div
                   key={i}
-                  className="bg-white/[0.07] backdrop-blur-md border border-white/[0.09] rounded-xl p-3 text-center"
+                  className="bg-white/[0.07] backdrop-blur-md border border-white/[0.09] rounded-xl p-4 flex items-start gap-3"
                 >
-                  <span className="block text-2xl font-bold font-display text-brand-teal mb-1">
+                  <span className="text-2xl font-bold font-display text-brand-teal flex-shrink-0">
                     {metric.value}
                   </span>
-                  <p className="text-gray-400 text-[10px] leading-tight">
+                  <p className="text-gray-300 text-xs leading-snug">
                     {metric.label}
                   </p>
                 </div>

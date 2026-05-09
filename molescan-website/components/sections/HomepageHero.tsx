@@ -179,7 +179,7 @@ export default function HomepageHero() {
                 ))}
               </div>
               <p className="text-gray-400 text-sm">
-                Trusted by <span className="text-white font-medium">practitioners across the UK</span>
+                Trusted by <span className="text-white font-medium">healthcare professionals across the UK</span>
               </p>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ClinicsHero from "@/components/sections/ClinicsHero";
+import ClinicsExpertAssessment from "@/components/sections/ClinicsExpertAssessment";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import FeatureGrid from "@/components/sections/FeatureGrid";
 import StepProcess from "@/components/sections/StepProcess";
@@ -193,6 +194,8 @@ export default function ForClinicsPage() {
           </div>
         </div>
       </section>
+
+      <ClinicsExpertAssessment />
 
       <SectionWrapper background="soft-blue" id="challenges">
         <FeatureGrid
