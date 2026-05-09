@@ -77,10 +77,10 @@ export default function ClinicsExpertAssessment() {
               {/* Illustration */}
               <div className="relative aspect-[5/4] bg-white">
                 <Image
-                  src="/images/clinic-pathway/step3-v2.png"
-                  alt="Clinician using MoleScan to capture a dermoscopic image of a skin lesion"
+                  src="/images/clinics-expert-assessment.png"
+                  alt="Clinician using MoleScan to capture a dermoscopic image of a patient's skin lesion"
                   fill
-                  className="object-contain p-6"
+                  className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
