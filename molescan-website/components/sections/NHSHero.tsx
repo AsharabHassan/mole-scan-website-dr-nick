@@ -154,8 +154,8 @@ export default function NHSHero() {
               >
                 <div className="flex items-center gap-3">
                   <span className="text-3xl font-bold font-display text-brand-teal">95%</span>
-                  <p className="text-gray-300 text-xs leading-tight max-w-[120px]">
-                    of 2WW referrals<br />are benign
+                  <p className="text-gray-300 text-xs leading-tight max-w-[140px]">
+                    of suspected skin cancer<br />referrals are benign
                   </p>
                 </div>
               </div>
@@ -169,7 +169,7 @@ export default function NHSHero() {
                 <div className="flex items-center gap-3">
                   <span className="text-3xl font-bold font-display text-brand-teal">24h</span>
                   <p className="text-gray-300 text-xs leading-tight max-w-[120px]">
-                    structured report<br />turnaround
+                    rapid clinical<br />reports
                   </p>
                 </div>
               </div>
@@ -183,7 +183,7 @@ export default function NHSHero() {
                 <div className="flex items-center gap-3">
                   <span className="text-3xl font-bold font-display text-brand-teal">100%</span>
                   <p className="text-gray-300 text-xs leading-tight max-w-[120px]">
-                    expert<br />reviewed
+                    GPwSI doctor<br />reviewed
                   </p>
                 </div>
               </div>
@@ -196,9 +196,9 @@ export default function NHSHero() {
               }`}
             >
               {[
-                { value: "95%", label: "2WW referrals are benign" },
-                { value: "24h", label: "report turnaround" },
-                { value: "100%", label: "expert reviewed" },
+                { value: "95%", label: "suspected referrals are benign" },
+                { value: "24h", label: "rapid clinical reports" },
+                { value: "100%", label: "GPwSI doctor reviewed" },
               ].map((metric, i) => (
                 <div
                   key={i}
@@ -220,10 +220,10 @@ export default function NHSHero() {
       <HeroFeatureBar
         inView={inView}
         items={[
-          { icon: "shield", label: "Clinician-Led Assessment", desc: "Every case reviewed by a UK GPwSI (General Practitioner with a specialist interest in dermatology)" },
-          { icon: "clock", label: "24-Hour Reports", desc: "Clear, structured reports delivered within one working day to support safe triage decisions" },
-          { icon: "chart", label: "Supports Reduction in 2WW Pressure", desc: "Helps reduce avoidable 2-week-wait referrals and optimise specialist dermatology capacity" },
-          { icon: "lock", label: "NHS-Aligned Platform", desc: "Aligned with DCB0129 clinical safety standards, GDPR, and DTAC requirements for safe NHS integration" },
+          { icon: "shield", label: "Clinician-Led Assessment", desc: "Every case is reviewed by a UK GPwSI (General Practitioner with a specialist interest in dermatology)." },
+          { icon: "clock", label: "24-Hour Reports", desc: "Clear, structured reports delivered within one working day to support safe triage decisions." },
+          { icon: "chart", label: "Supports Reduction in 2WW Pressure", desc: "Helps reduce avoidable 2-week-wait referrals and optimise specialist dermatology capacity." },
+          { icon: "lock", label: "NHS-Aligned Platform", desc: "Aligned with DCB0129 clinical safety standards, GDPR, and DTAC requirements for safe NHS integration." },
         ]}
       />
 
