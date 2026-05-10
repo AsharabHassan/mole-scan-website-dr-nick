@@ -14,16 +14,7 @@ export default function ClinicsHero() {
         </svg>
       ),
       title: "Doctor-led assessment within 24 hours",
-      desc: "Know if it\u2019s safe to proceed with treatment",
-    },
-    {
-      icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-      title: "Clear guidance",
-      desc: "On whether it\u2019s safe to proceed",
+      desc: "Clear guidance on whether it\u2019s safe to proceed",
     },
     {
       icon: (
@@ -33,6 +24,15 @@ export default function ClinicsHero() {
       ),
       title: "Reviewed by UK Dermatologists",
       desc: "You\u2019re not expected to diagnose \u2014 we provide the clinical assessment",
+    },
+    {
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      title: "Support safe, appropriate treatment decisions",
+      desc: "Helping you avoid unnecessary referrals and delays \u2014 while maintaining safe clinical decision-making.",
     },
     {
       icon: (

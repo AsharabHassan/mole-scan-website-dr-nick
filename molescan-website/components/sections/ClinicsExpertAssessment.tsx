@@ -3,45 +3,6 @@
 import Image from "next/image";
 import { useInView } from "@/components/hooks/useInView";
 
-const FEATURES = [
-  {
-    title: "Doctor-led assessment within 24 hours",
-    desc: "Clear clinical guidance when you need it",
-    icon: (
-      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Doctor-led",
-    desc: "Every case reviewed by a UK GPwSI or Consultant Dermatologist",
-    icon: (
-      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-      </svg>
-    ),
-  },
-  {
-    title: "RAG-rated outcomes",
-    desc: "GREEN: safe to proceed • AMBER: review/monitor • RED: urgent referral",
-    icon: (
-      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Full clinical audit trail",
-    desc: "Every assessment is documented and traceable — supporting clinical governance and medico-legal protection",
-    icon: (
-      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9h6m-6 4h4" />
-      </svg>
-    ),
-  },
-];
-
 const BUILT_FOR = [
   "Aesthetic Clinics",
   "Beauty Therapists",
@@ -164,30 +125,6 @@ export default function ClinicsExpertAssessment() {
               or unnecessary delays. No guessing. Just a fast, expert answer so
               you can treat safely, advise confidently, or refer appropriately.
             </p>
-
-            {/* Feature grid (2x2) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-              {FEATURES.map((f) => (
-                <div
-                  key={f.title}
-                  className="bg-brand-soft-blue/30 rounded-xl p-4 border border-gray-100"
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-white border border-gray-100 flex items-center justify-center text-brand-teal flex-shrink-0 mt-0.5">
-                      {f.icon}
-                    </div>
-                    <div className="min-w-0">
-                      <h3 className="text-sm font-bold text-brand-deep-navy mb-1 leading-snug">
-                        {f.title}
-                      </h3>
-                      <p className="text-xs text-brand-text/60 leading-snug">
-                        {f.desc}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
 
             {/* Designed For */}
             <div className="mb-6">

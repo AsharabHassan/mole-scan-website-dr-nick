@@ -171,30 +171,6 @@ export default function ForClinicsPage() {
 
       <ClinicsHero />
 
-      {/* Operator / regulatory disclaimer */}
-      <section className="bg-white border-b border-gray-100" aria-label="MoleScan operator and regulatory information">
-        <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
-          <div className="flex items-start gap-3 max-w-3xl mx-auto">
-            <svg
-              className="w-5 h-5 text-brand-teal flex-shrink-0 mt-0.5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              aria-hidden="true"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-            </svg>
-            <p className="text-sm md:text-[15px] text-gray-600 leading-relaxed">
-              MoleScan is operated by{" "}
-              <strong className="text-brand-deep-navy">Dermme Health Ltd</strong>{" "}
-              — a CQC-registered provider. It is a clinician-led skin lesion
-              assessment and triage service, not a standalone diagnostic device.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <ClinicsExpertAssessment />
 
       <SectionWrapper background="soft-blue" id="challenges">
