@@ -73,7 +73,7 @@ const benefits = [
     ),
     title: "Your Clinical Safety Net",
     description:
-      "Every case is reviewed by a UK dermatologist. You don\u2019t need to diagnose \u2014 you capture and submit. The expert assessment supports your decision-making and protects both you and your client.",
+      "Every case is reviewed by a UK dermatologist. You don\u2019t need to diagnose \u2014 you capture and submit. The specialist assessment supports your decision-making and protects both you and your client.",
   },
   {
     icon: (
@@ -93,7 +93,7 @@ const benefits = [
     ),
     title: "Build Trust With Your Clients",
     description:
-      "Offering a structured mole assessment shows you prioritise safety and clinical responsibility. Clients feel reassured knowing their treatment decisions are based on expert input.",
+      "Offering a structured mole assessment shows you prioritise safety and clinical responsibility. Clients feel reassured knowing their treatment decisions are based on specialist input.",
   },
 ];
 
