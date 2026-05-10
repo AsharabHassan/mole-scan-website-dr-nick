@@ -173,8 +173,6 @@ export default function ClinicPathwayDiagram({
 
                 {"ragItems" in step && step.ragItems ? (
                   <RagStepCard step={step} />
-                ) : "actionItems" in step && step.actionItems ? (
-                  <ActionStepCard step={step} />
                 ) : (
                   <StepCard step={step} />
                 )}
@@ -358,74 +356,3 @@ function RagStepCard({ step }: { step: RagStep }) {
 }
 
 
-/* ─── Action Step Card (Step 9) ─── */
-
-interface ActionStep {
-  num: number;
-  title: string;
-  desc?: string;
-  image: string;
-  actionItems: string[];
-}
-
-function ActionStepCard({ step }: { step: ActionStep }) {
-  const actionIcons = [
-    // Checkmark - proceed
-    <svg key="proceed" className="w-3.5 h-3.5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>,
-    // Magnifying glass - monitor
-    <svg key="monitor" className="w-3.5 h-3.5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-    </svg>,
-    // Building - refer
-    <svg key="refer" className="w-3.5 h-3.5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v3.818" />
-    </svg>,
-  ];
-
-  return (
-    <div className="group bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
-      {/* Image */}
-      <div className="relative w-full aspect-square bg-gradient-to-br from-[#f5f7fa] to-[#eef1f6] overflow-hidden">
-        <Image
-          src={step.image}
-          alt={step.title}
-          fill
-          className="object-contain group-hover:scale-105 transition-transform duration-500"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-        />
-      </div>
-
-      {/* Content */}
-      <div className="p-4 flex-1 flex flex-col">
-        {/* Step number badge */}
-        <div className="flex items-start gap-3 mb-2">
-          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-deep-navy text-white text-xs font-bold flex items-center justify-center">
-            {step.num}
-          </span>
-          <h3 className="text-sm font-semibold text-brand-deep-navy leading-snug flex-1">
-            {step.title}
-          </h3>
-        </div>
-
-        {/* Description */}
-        {step.desc && (
-          <p className="text-xs text-gray-500 leading-relaxed mb-2">
-            {step.desc}
-          </p>
-        )}
-
-        {/* Action items */}
-        <ul className="mt-auto pt-3 space-y-2 border-t border-gray-100">
-          {step.actionItems.map((item, i) => (
-            <li key={i} className="flex items-center gap-2 text-xs text-gray-600 font-medium">
-              {actionIcons[i]}
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
