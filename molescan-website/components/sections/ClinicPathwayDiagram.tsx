@@ -12,52 +12,46 @@ const stepsRow1 = [
     num: 1,
     title: "Patient attends for consultation",
     desc: "A patient attends your clinic to discuss treatment for an aesthetic or skin concern. The process begins with a structured consultation to determine whether treatment is appropriate and safe.",
-    image: "/images/clinic-pathway/step1-v2.png",
+    image: "/images/clinic-pathway/step1-v4.png",
   },
   {
     num: 2,
     title: "Practitioner identifies a lesion in the treatment area",
     desc: "During the consultation, you identify a mole or skin lesion within the treatment area. Without knowing what it is, proceeding with treatment may not be safe.",
-    image: "/images/clinic-pathway/step2-v2.png",
+    image: "/images/clinic-pathway/step2-v4.png",
   },
   {
     num: 3,
     title: "Practitioner recommends MoleScan assessment before proceeding",
     desc: "As part of a structured consultation, the practitioner recommends a MoleScan assessment to determine whether it is safe to proceed. This avoids unnecessary delays while maintaining clinical safety.",
-    image: "/images/clinic-pathway/step3-v2.png",
+    image: "/images/clinic-pathway/step3-v4.png",
   },
   {
     num: 4,
     title: "Clinical details recorded and dermoscopic images captured",
     desc: "The practitioner records key clinical details and captures dermoscopic images of the lesion. Everything is securely uploaded to MoleScan for expert dermatology review.",
-    image: "/images/clinic-pathway/step4-v3.png",
-  },
-  {
-    num: 5,
-    title: "Case prepared for clinician-led review",
-    desc: "The case is securely prepared for review by a UK dermatologist within a structured and clinically governed assessment pathway, with all clinical details and images clearly organised.",
-    image: "/images/clinic-pathway/step5-v3.jpg",
+    image: "/images/clinic-pathway/step4-v4.png",
   },
 ];
 
 const stepsRow2 = [
   {
+    num: 5,
+    title: "Case submitted for MoleScan clinician review",
+    desc: "The case is securely submitted for review by a UK dermatologist within a structured and clinically governed assessment pathway, with all clinical details and images clearly organised.",
+    image: "/images/clinic-pathway/step5-v4.png",
+  },
+  {
     num: 6,
     title: "Case reviewed by a UK dermatologist",
-    desc: "Every case is reviewed by a UK GPwSI or Consultant Dermatologist, ensuring expert clinical judgement and clear next-step guidance.",
-    image: "/images/clinic-pathway/step6-v2.png",
+    desc: "Every case is reviewed and reported within 24 hours of receipt, by a UK GPwSI or Consultant Dermatologist, ensuring expert clinical judgement and clear next-step guidance.",
+    image: "/images/clinic-pathway/step6-v4.png",
   },
   {
     num: 7,
-    title: "Clinical report delivered within 24 hours",
-    desc: "A clear, structured clinical report is delivered within 24 hours, outlining whether it is safe to treat, monitor, or refer.",
-    image: "/images/clinic-pathway/step7-v3.jpg",
-  },
-  {
-    num: 8,
     title: "Clear outcome guidance (RAG-rated)",
-    desc: "Each case is assigned a clear RAG-rated outcome, guiding whether it is safe to treat, monitor, or refer.",
-    image: "/images/clinic-pathway/step8-v3.jpg",
+    desc: "Each report is assigned a clear RAG-rated outcome, guiding whether it is safe to treat, monitor, or refer.",
+    image: "/images/clinic-pathway/step7-v4.png",
     ragItems: [
       { color: "bg-emerald-500", label: "GREEN", desc: "Low risk", action: "Safe to proceed / Routine monitoring" },
       { color: "bg-amber-500", label: "AMBER", desc: "Intermediate risk", action: "Consider non-urgent specialist referral" },
@@ -65,17 +59,10 @@ const stepsRow2 = [
     ],
   },
   {
-    num: 9,
-    title: "Clinic proceeds with the appropriate next step",
-    desc: "Based on the report, the clinic makes a clear, clinically informed decision on how to proceed.",
-    image: "/images/clinic-pathway/step9-v3.jpg",
-    actionItems: ["Proceed with treatment", "Routine referral", "Urgent referral to GP or specialist"],
-  },
-  {
-    num: 10,
+    num: 8,
     title: "Safe, confident clinical decisions for your patients",
-    desc: "With structured assessment and expert dermatology review, you can treat safely, minimise risk, and build lasting patient trust.",
-    image: "/images/clinic-pathway/step10-v2.jpg",
+    desc: "With structured lesion assessment and expert dermatology review, you can treat safely, minimise risk, and build lasting patient trust.",
+    image: "/images/clinic-pathway/step8-v4.png",
   },
 ];
 
@@ -133,7 +120,7 @@ export default function ClinicPathwayDiagram({
 
         {/* ── Row 1: Steps 1-5 ── */}
         <div className="mb-6 md:mb-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {stepsRow1.map((step, index) => (
               <div
                 key={step.num}
@@ -166,7 +153,7 @@ export default function ClinicPathwayDiagram({
 
         {/* ── Row 2: Steps 6-10 ── */}
         <div className="mb-14 md:mb-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {stepsRow2.map((step, index) => (
               <div
                 key={step.num}

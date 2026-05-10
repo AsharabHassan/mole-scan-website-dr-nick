@@ -12,64 +12,60 @@ const stepsRow1 = [
     num: 1,
     title: "Patient concern about a mole or a skin lesion",
     desc: "A patient notices a new or changing mole and wants to get it assessed by their GP.",
-    image: "/images/pathway/step1-v2.png",
+    image: "/images/pathway/step1-v4.png",
   },
   {
     num: 2,
     title: "Patient contacts GP surgery",
     desc: "The patient contacts their GP surgery to request an appointment for assessment of a skin lesion.",
-    image: "/images/pathway/step2-v2.png",
+    image: "/images/pathway/step2-v4.png",
   },
   {
     num: 3,
-    title: "Appointment scheduled for MoleScan capture",
-    desc: "A dedicated appointment is arranged with a trained Nurse or Healthcare Assistant for MoleScan image capture.",
-    image: "/images/pathway/step3-v2.png",
+    title: "Nurse / HCA assessment",
+    desc: "The patient attends a brief, focused appointment for clinical history and lesion assessment.",
+    image: "/images/pathway/step3-v4.png",
   },
   {
     num: 4,
-    title: "Nurse / HCA assessment",
-    desc: "The patient attends a brief, focused appointment for clinical history and lesion assessment.",
-    image: "/images/pathway/step4-v2.png",
-  },
-  {
-    num: 5,
     title: "Clinical data and dermoscopic images captured",
-    desc: "Structured clinical information is recorded and high-quality dermoscopic images are captured using a dermatoscope.",
-    image: "/images/pathway/step5-v2.png",
-    subItems: ["Structured clinical questionnaire", "Dermoscopic image capture", "Secure upload to MoleScan"],
+    image: "/images/pathway/step4-v4.png",
+    subItems: [
+      "Structured clinical questionnaire completed",
+      "Dermoscopic images captured",
+    ],
   },
 ];
 
 const stepsRow2 = [
   {
+    num: 5,
+    title: "Case submitted for MoleScan clinician review",
+    desc: "The case is securely submitted for review by a UK dermatologist within a structured and clinically governed assessment pathway, with all clinical details and images clearly organised.",
+    image: "/images/pathway/step5-v4.png",
+  },
+  {
     num: 6,
-    title: "Case prepared for clinical review",
-    desc: "Dermoscopic images and clinical data are processed and prepared for specialist assessment.",
-    image: "/images/pathway/step6-v2.png",
+    title: "Case reviewed by a UK dermatologist",
+    desc: "Every case is reviewed and reported within 24 hours of receipt, by a GMC registered GPwSI or Consultant Dermatologist, ensuring expert clinical judgement and clear next-step guidance.",
+    image: "/images/pathway/step6-v4.png",
   },
   {
     num: 7,
-    title: "Case reviewed by UK GPwSI or Consultant Dermatologist",
-    desc: "Every case is reviewed by a GMC-registered GPwSI in Dermatology or Consultant Dermatologist.",
-    image: "/images/pathway/step7-v3.jpg",
+    title: "Clear outcome guidance (RAG-rated)",
+    desc: "Each report is assigned a clear RAG-rated outcome, guiding whether it is safe to monitor, or refer.",
+    image: "/images/pathway/step7-v4.png",
+    ragItems: [
+      { color: "bg-emerald-500", label: "GREEN", desc: "Low risk", action: "Reassure / Monitor" },
+      { color: "bg-amber-500", label: "AMBER", desc: "Moderate risk", action: "Review in primary care / Routine Dermatology referral" },
+      { color: "bg-red-500", label: "RED", desc: "High risk", action: "Urgent 2WW dermatology referral recommended" },
+    ],
   },
   {
     num: 8,
-    title: "Clinical report returned to GP surgery",
-    desc: "A structured clinical report with clear recommendations is returned to the referring GP surgery within 24 hours.",
-    image: "/images/pathway/step8-v3.jpg",
-  },
-  {
-    num: 9,
-    title: "Clear RAG-rated outcome for clinical decision-making",
-    desc: "Each case is assigned a clear RAG-rated outcome to support appropriate next steps.",
-    image: "/images/pathway/step9-v2.jpg",
-    ragItems: [
-      { color: "bg-emerald-500", label: "GREEN", desc: "Low risk", action: "Reassure / Monitor" },
-      { color: "bg-amber-500", label: "AMBER", desc: "Moderate risk", action: "Review in primary care / Routine referral" },
-      { color: "bg-red-500", label: "RED", desc: "High risk", action: "Urgent referral (2WW pathway)" },
-    ],
+    title: "Making Dermatology Referral Pathways More Efficient and Timely to the Patients Who Need Them Most.",
+    desc: "Reducing unnecessary 2 week wait referrals can help free NHS dermatology capacity for patients who truly need timely care — MoleScan helps support that process.",
+    image: "/images/pathway/step8-v4.png",
   },
 ];
 
@@ -128,7 +124,7 @@ export default function PathwayDiagram({
 
         {/* ── Row 1: Steps 1-5 ── */}
         <div className="mb-6 md:mb-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {stepsRow1.map((step, index) => (
               <div
                 key={step.num}
@@ -281,7 +277,9 @@ function StepCard({ step }: { step: StepData }) {
           <ul className="mt-auto pt-3 space-y-1.5 border-t border-gray-100">
             {step.subItems.map((item, i) => (
               <li key={i} className="flex items-center gap-2 text-xs text-gray-500">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-teal flex-shrink-0" />
+                <svg className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75" />
+                </svg>
                 {item}
               </li>
             ))}
