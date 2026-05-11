@@ -32,7 +32,13 @@ export default function Page() {
     headline: TITLE,
     description: DESCRIPTION,
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}${ARTICLE_PATH}` },
-    author: { "@type": "Organization", name: "MoleScan" },
+    author: {
+      "@type": "Person",
+      name: "Dr Nick Nosina",
+      jobTitle:
+        "NHS GP | GP with Specialist Interest in Dermatology (GPwSI) | Aesthetic Doctor",
+      affiliation: { "@type": "Organization", name: "MoleScan" },
+    },
     publisher: {
       "@type": "Organization",
       name: "MoleScan",
@@ -81,9 +87,11 @@ export default function Page() {
           </h1>
 
           <p className="text-brand-text/70 text-lg md:text-xl leading-relaxed">
-            More patients than ever are seeking aesthetic treatments. As advanced
-            technologies become widely available, lesion assessment has become a
-            quiet but critical safety question that every clinic must answer.
+            As cosmetic medicine and aesthetic technology continue to evolve,
+            more patients than ever are seeking treatments to refine,
+            rejuvenate, and restore their skin. With that growth comes a quiet
+            but critical safety question every clinic must answer — what
+            happens before treatment begins.
           </p>
         </div>
       </section>
@@ -91,240 +99,281 @@ export default function Page() {
       {/* ── Article Body ── */}
       <article className="bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14 text-brand-text/85 text-[17px] leading-[1.75]">
-          <p className="mb-5">More patients than ever are seeking aesthetic treatments.</p>
-
           <p className="mb-5">
-            Clearer skin.
-            <br />
-            Even tone.
-            <br />
-            Younger-looking results.
+            As cosmetic medicine and aesthetic technology continue to evolve,
+            more patients than ever are seeking treatments designed to improve
+            skin quality, reduce pigmentation, tighten skin, remove vascular
+            lesions, or reverse visible signs of ageing.
           </p>
-
-          <p className="mb-5">
-            At the same time, advanced technologies — laser, IPL, radio-frequency —
-            are now widely available across clinics.
-          </p>
-
-          <p className="mb-5">
-            That combination has changed the landscape of aesthetic practice.
-          </p>
-
-          <Divider />
-
-          <p className="mb-5">But there is a gap that often gets overlooked.</p>
-
-          <p className="mb-5">
-            Many clinics offering these treatments are not dermatology-led.
-          </p>
-
-          <p className="mb-5">And that&rsquo;s where risk begins to emerge.</p>
-
-          <Divider />
-
-          <p className="mb-5">Skin lesions are common.</p>
-
-          <p className="mb-5">Most are benign.</p>
-
-          <p className="mb-5">But not all.</p>
-
-          <p className="mb-5">
-            And early malignant lesions — particularly melanoma — can look
-            deceptively harmless to the naked eye.
-          </p>
-
-          <p className="mb-5 font-semibold text-brand-deep-navy">
-            Flat. Symmetrical. Even in colour.
-          </p>
-
-          <p className="mb-5">
-            Easy to overlook, unless you are specifically trained to recognise
-            subtle warning signs.
-          </p>
-
-          <Divider />
-
-          <p className="mb-5">That is the challenge.</p>
-
-          <p className="mb-5">
-            Because in a busy clinic setting, lesion assessment is not always the
-            primary focus.
-          </p>
-
-          <p className="mb-5">
-            The patient is there for treatment.
-            <br />
-            The lesion is incidental.
-            <br />
-            And unless the clinician is actively looking for it — it may not even
-            be recognised.
-          </p>
-
-          <Divider />
-
-          <p className="mb-5">
-            Even when it is recognised, the assessment is often informal.
-          </p>
-
-          <p className="mb-5">
-            A quick glance.
-            <br />
-            A gut feeling that it&rsquo;s probably fine.
-            <br />
-            A judgement call.
-          </p>
-
-          <p className="mb-5">
-            And in some cases, the decision to proceed is made without any
-            structured assessment at all.
-          </p>
-
-          <Divider />
-
-          <p className="mb-5">Most of the time, nothing happens.</p>
-
-          <p className="mb-5">But occasionally, that decision carries consequences.</p>
-
-          <Divider />
-
-          <p className="mb-5">
-            Because if a malignant lesion is present in the treatment area, and an
-            energy-based procedure is performed over it, the situation changes.
-          </p>
-
-          <p className="mb-5">
-            Laser or IPL can alter the visible characteristics of the lesion.
-          </p>
-
-          <p className="mb-5">
-            Pigment patterns may shift.
-            <br />
-            Borders may blur.
-            <br />
-            Surface features may change.
-          </p>
-
-          <p className="mb-5">What was once recognisable… becomes less so.</p>
-
-          <Divider />
-
-          <p className="mb-5">The result is not immediate harm.</p>
-
-          <p className="mb-5 font-semibold text-brand-deep-navy">
-            The real risk is delay.
-          </p>
-
-          <p className="mb-5">
-            Delay in recognising the lesion.
-            <br />
-            Delay in referral.
-            <br />
-            Delay in diagnosis.
-          </p>
-
-          <p className="mb-5">And when it comes to melanoma, delay matters.</p>
-
-          <Divider />
-
-          <p className="mb-5">
-            This is why lesion assessment should not be incidental.
-          </p>
-
-          <p className="mb-5 font-semibold text-brand-deep-navy">
-            It should be deliberate.
-          </p>
-
-          <Divider />
-
-          <p className="mb-5">Not every lesion needs to be referred.</p>
-
-          <p className="mb-5">
-            But every lesion in a treatment area should be assessed properly
-            before proceeding.
-          </p>
-
-          <p className="mb-5">That does not mean over-referring.</p>
-
-          <p className="mb-5">
-            It means making a decision based on something more than instinct.
-          </p>
-
-          <Divider />
-
-          <p className="mb-5">In many clinics, that structure does not exist.</p>
-
-          <p className="mb-5">
-            Assessment varies from one practitioner to another.
-            <br />
-            Documentation is inconsistent.
-            <br />
-            And decision-making depends heavily on individual experience.
-          </p>
-
-          <Divider />
-
-          <p className="mb-5">A structured approach changes that.</p>
-
-          <p className="mb-5">
-            It introduces consistency into something that is otherwise subjective.
-          </p>
-
-          <p className="mb-5">
-            It ensures that lesions are not just noticed — but evaluated.
-          </p>
-
-          <p className="mb-5">And it creates a clear outcome:</p>
 
           <ul className="mb-5 pl-5 list-disc marker:text-brand-teal space-y-1.5">
-            <li>
-              <span className="font-semibold text-brand-deep-navy">Reassure.</span>
-            </li>
-            <li>
-              <span className="font-semibold text-brand-deep-navy">Monitor.</span>
-            </li>
-            <li>
-              <span className="font-semibold text-brand-deep-navy">Or refer.</span>
-            </li>
+            <li>Laser treatments</li>
+            <li>IPL</li>
+            <li>RF microneedling</li>
+            <li>Chemical resurfacing</li>
+            <li>Pigment correction</li>
+            <li>Tattoo removal</li>
           </ul>
 
-          <Divider />
-
           <p className="mb-5">
-            That&rsquo;s where systems like MoleScan fit into clinical practice.
+            Energy-based treatments are now widely available across private
+            clinics throughout the UK. For many patients, these treatments are
+            safe, effective, and transformative. However, there is an important
+            clinical reality that is often overlooked:{" "}
+            <span className="font-semibold text-brand-deep-navy">
+              not every lesion in a treatment area is benign, and not every
+              suspicious lesion is recognised before treatment begins.
+            </span>
           </p>
 
-          <p className="mb-5">Not to replace judgement — but to support it.</p>
-
-          <p className="mb-5">To bring structure into the consultation.</p>
+          <SectionHeading>The challenge with skin lesions in aesthetic practice</SectionHeading>
 
           <p className="mb-5">
-            And to ensure that safety is built into the workflow, not added as an
-            afterthought.
-          </p>
-
-          <Divider />
-
-          <p className="mb-5">
-            Because in aesthetic medicine, the focus is often on results.
+            Many skin cancers — particularly early melanoma — can appear
+            deceptively subtle. Some may resemble freckles, sun spots,
+            seborrhoeic keratoses, post-inflammatory pigmentation, vascular
+            lesions, or otherwise &ldquo;normal&rdquo; moles. In early stages,
+            malignant lesions may not immediately appear alarming to the naked
+            eye. This is one reason why dermoscopy has become such an
+            important part of modern skin lesion assessment.
           </p>
 
           <p className="mb-5">
-            But safe results start with the right decision at the very beginning.
+            Cancer Research UK notes that dermoscopy allows clinicians to
+            examine skin lesions in far greater detail than visual inspection
+            alone. NICE guidance similarly recommends urgent suspected cancer
+            referral when dermoscopy findings raise suspicion for melanoma.
           </p>
 
-          <Divider />
+          <SectionHeading>Why this matters before cosmetic treatment</SectionHeading>
 
-          <p className="mb-5">You do not need to refer every mole.</p>
+          <p className="mb-5">
+            The concern is not simply whether a lesion is eventually diagnosed.{" "}
+            <span className="font-semibold text-brand-deep-navy">
+              Timing matters.
+            </span>{" "}
+            If a suspicious lesion is overlooked and cosmetic treatment
+            proceeds first, the clinical picture can become significantly more
+            complicated.
+          </p>
 
-          <p className="mb-5">But you do need to know why you didn&rsquo;t.</p>
+          <p className="mb-5">
+            Energy-based treatments may alter pigmentation, vascularity,
+            surface architecture, inflammation, or visible border definition.
+            This can make future assessment more difficult, and in some cases
+            visible warning signs may become partially obscured following
+            treatment. Delayed recognition of melanoma can have serious
+            consequences. The NHS highlights that melanoma is a skin cancer
+            capable of spreading to other parts of the body, and that early
+            diagnosis remains critically important.
+          </p>
+
+          <SectionHeading>The issue is rarely negligence</SectionHeading>
+
+          <p className="mb-5">
+            In many clinics, lesion assessment happens informally — often
+            through a quick visual check, a brief conversation, or a judgement
+            call. Sometimes the lesion is recognised, sometimes it is assumed
+            to be benign, and sometimes it is not noticed at all.
+          </p>
+
+          <p className="mb-5">
+            This is not necessarily because practitioners are careless. It is
+            because aesthetic medicine increasingly intersects with dermatology
+            while the volume of patients with complex skin presentations
+            continues to rise. Many aesthetic practitioners are highly
+            experienced in cosmetic treatments, but identifying early melanoma
+            requires a very different clinical skillset. Even within
+            healthcare, melanoma diagnosis can be challenging.
+          </p>
+
+          <SectionHeading>The growing role of dermoscopy</SectionHeading>
+
+          <p className="mb-5">
+            Dermoscopy has become one of the most important tools in skin
+            lesion assessment. It allows clinicians to visualise structures
+            beneath the skin surface that cannot usually be seen with the naked
+            eye. This improves assessment of pigment networks, asymmetry,
+            vascular patterns, regression structures, and other morphological
+            features associated with malignancy.
+          </p>
+
+          <p className="mb-5">
+            Scottish melanoma guidance recommends dermoscopic assessment of
+            suspicious pigmented lesions as part of specialist evaluation
+            pathways. Increasingly, dermoscopy is also being integrated into
+            teledermatology and digital triage pathways throughout the NHS.
+          </p>
+
+          <SectionHeading>Why structured assessment matters</SectionHeading>
+
+          <p className="mb-5">
+            The key issue is not whether every lesion should be referred
+            urgently, as that would overwhelm specialist services. The issue
+            is ensuring lesions are{" "}
+            <span className="font-semibold text-brand-deep-navy">
+              assessed in a structured and clinically defensible way
+            </span>{" "}
+            before treatment decisions are made.
+          </p>
+
+          <p className="mb-5">
+            Structured lesion assessment introduces consistency into clinical
+            workflows. This may include standardised image capture,
+            dermoscopic imaging, documented lesion history, risk-factor
+            screening, structured triage, and appropriate escalation where
+            necessary. Importantly, structured assessment does not replace
+            clinician judgement — it supports it.
+          </p>
+
+          <SectionHeading>The medico-legal reality</SectionHeading>
+
+          <p className="mb-5">
+            As advanced treatments become more accessible, expectations around
+            clinical governance are also changing. If a suspicious lesion is
+            treated cosmetically before appropriate assessment, questions may
+            later arise regarding recognition, documentation, consent, referral
+            decisions, and overall clinical process.
+          </p>
+
+          <p className="mb-5">
+            This is particularly relevant in settings where multiple
+            practitioners may be involved in patient care. Aesthetic clinics
+            are no longer simply treatment environments. Increasingly, they
+            are becoming frontline skin-contact services, and with that comes
+            additional clinical responsibility.
+          </p>
+
+          <SectionHeading>The future of aesthetic practice</SectionHeading>
+
+          <p className="mb-5">
+            Modern aesthetic practice is moving towards greater integration of
+            governance, documentation, dermoscopy, and structured triage. Not
+            because every lesion is dangerous, but because{" "}
+            <span className="font-semibold text-brand-deep-navy">
+              variation in lesion assessment creates risk.
+            </span>
+          </p>
+
+          <p className="mb-5">
+            The goal is not to turn aesthetic clinics into dermatology
+            departments. The goal is to ensure that lesions are assessed
+            appropriately before cosmetic intervention takes place. That
+            protects patients, practitioners, clinics, and referral pathways
+            alike.
+          </p>
+
+          <SectionHeading>Final thoughts</SectionHeading>
+
+          <p className="mb-5">
+            Most lesions encountered in aesthetic practice will ultimately
+            prove benign. However, melanoma does not always announce itself
+            clearly. When uncertainty exists, structure matters, because
+            patient safety should begin before treatment starts — not after
+            concerns are identified later.
+          </p>
 
           <blockquote className="mt-8 mb-2 border-l-4 border-brand-teal bg-brand-soft-blue/40 rounded-r-xl px-6 py-5">
             <p className="text-lg md:text-xl font-semibold text-brand-deep-navy leading-snug">
-              And that is what separates informal judgement…
+              Patient safety should begin before treatment starts —
               <br />
-              from a clinically governed decision.
+              not after concerns are identified later.
             </p>
           </blockquote>
+
+          <Divider />
+
+          {/* ── Author ── */}
+          <div className="mt-2 mb-2 rounded-2xl border border-gray-100 bg-brand-soft-blue/30 px-6 py-6">
+            <p className="text-xs uppercase tracking-wider font-semibold text-brand-text/50 mb-2">
+              Author
+            </p>
+            <p className="text-lg font-bold font-display text-brand-deep-navy mb-1">
+              Dr Nick Nosina
+            </p>
+            <p className="text-sm text-brand-text/70 leading-relaxed">
+              NHS GP | GP with Specialist Interest in Dermatology (GPwSI) |
+              Aesthetic Doctor
+              <br />
+              Founder, MoleScan®
+            </p>
+          </div>
+
+          <Divider />
+
+          {/* ── References ── */}
+          <h2 className="text-xl md:text-2xl font-bold font-display text-brand-deep-navy mt-2 mb-4">
+            References
+          </h2>
+          <ol className="pl-5 list-decimal marker:text-brand-teal space-y-3 text-[15px] text-brand-text/75 leading-[1.7]">
+            <li>
+              Cancer Research UK. (2024). <em>Dermoscopy and skin cancer
+              assessment.</em> Cancer Research UK.
+            </li>
+            <li>
+              Cancer Research UK. (2024). <em>Referral to a specialist for
+              melanoma skin cancer.</em> Cancer Research UK.
+            </li>
+            <li>
+              Chuchu, N., Dinnes, J., Takwoingi, Y., Matin, R., Bayliss, S. E.,
+              Davenport, C., &amp; Deeks, J. J. (2018). Teledermatology for
+              diagnosing skin cancer in adults.{" "}
+              <em>Cochrane Database of Systematic Reviews,</em> 2018(12),
+              CD013193.
+            </li>
+            <li>
+              Dinnes, J., Deeks, J. J., Chuchu, N., Saleh, D., Bayliss, S. E.,
+              Patel, L., Davenport, C., &amp; Matin, R. (2018). Dermoscopy,
+              with and without visual inspection, for diagnosing melanoma in
+              adults. <em>Cochrane Database of Systematic Reviews,</em>{" "}
+              2018(12), CD011902.
+            </li>
+            <li>
+              National Institute for Health and Care Excellence. (2022).{" "}
+              <em>Suspected cancer: Recognition and referral (NG12).</em> NICE.
+            </li>
+            <li>
+              National Institute for Health and Care Excellence. (2022).{" "}
+              <em>Melanoma: Assessment and management (NG14).</em> NICE.
+            </li>
+            <li>
+              NHS England. (2022).{" "}
+              <em>
+                Suspected skin cancer two week wait pathway optimisation
+                guidance.
+              </em>{" "}
+              NHS England.
+            </li>
+            <li>
+              NHS England. (2023).{" "}
+              <em>Skin cancer timed diagnostic pathway.</em> NHS England.
+            </li>
+            <li>
+              NHS England. (2023). <em>Faster diagnosis standard.</em> NHS
+              England.
+            </li>
+            <li>
+              NHS UK. (2024). <em>Melanoma skin cancer.</em> NHS.
+            </li>
+            <li>
+              Scottish Intercollegiate Guidelines Network. (2023).{" "}
+              <em>
+                Cutaneous melanoma guideline and diagnostic indicators.
+              </em>{" "}
+              NHS Scotland.
+            </li>
+            <li>
+              The British Association of Dermatologists. (2021).{" "}
+              <em>
+                Quality standards for teledermatology and skin cancer pathways.
+              </em>{" "}
+              British Association of Dermatologists.
+            </li>
+            <li>
+              World Health Organization. (2023). <em>Skin cancers.</em> World
+              Health Organization.
+            </li>
+          </ol>
         </div>
       </article>
 
@@ -366,4 +415,12 @@ export default function Page() {
 
 function Divider() {
   return <hr className="my-8 border-0 h-px bg-gray-200" aria-hidden="true" />;
+}
+
+function SectionHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="text-2xl md:text-[28px] font-bold font-display text-brand-deep-navy leading-snug mt-10 mb-5">
+      {children}
+    </h2>
+  );
 }
