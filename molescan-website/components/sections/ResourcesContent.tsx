@@ -28,7 +28,6 @@ const ARTICLES: Article[] = [
     readTime: "5 min read",
     featured: true,
     icon: "hospital",
-    comingSoon: true,
   },
   {
     slug: "before-you-treat-skin-lesion-assessment",
