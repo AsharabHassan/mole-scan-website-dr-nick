@@ -1,7 +1,5 @@
 "use server";
 
-import { getSupabaseServer } from "./supabase-server";
-
 export type FormState = {
   success: boolean;
   message: string;
@@ -11,11 +9,11 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-async function sendToGHL(payload: Record<string, unknown>): Promise<void> {
+async function sendToGHL(payload: Record<string, unknown>): Promise<boolean> {
   const webhookUrl = process.env.GHL_WEBHOOK_URL;
   if (!webhookUrl) {
-    console.warn("GHL_WEBHOOK_URL not set; skipping webhook send.");
-    return;
+    console.error("GHL_WEBHOOK_URL is not set; cannot submit form.");
+    return false;
   }
   try {
     const response = await fetch(webhookUrl, {
@@ -27,9 +25,12 @@ async function sendToGHL(payload: Record<string, unknown>): Promise<void> {
     if (!response.ok) {
       const body = await response.text().catch(() => "");
       console.error(`GHL webhook returned ${response.status}: ${body}`);
+      return false;
     }
+    return true;
   } catch (err) {
     console.error("GHL webhook failed:", err);
+    return false;
   }
 }
 
@@ -62,27 +63,7 @@ export async function submitDemoRequest(
     return { success: false, message: "Please enter a valid email address." };
   }
 
-  const supabase = getSupabaseServer();
-
-  const { error } = await supabase.from("demo_requests").insert({
-    full_name: fullName,
-    email,
-    phone: phone || null,
-    organisation,
-    role,
-    message: message || null,
-    source_page: sourcePage || null,
-  });
-
-  if (error) {
-    console.error("Demo request submission error:", error);
-    return {
-      success: false,
-      message: "Something went wrong. Please try again or email us directly.",
-    };
-  }
-
-  await sendToGHL({
+  const sent = await sendToGHL({
     source_form: "demo_request",
     submitted_at: new Date().toISOString(),
     full_name: fullName,
@@ -93,6 +74,13 @@ export async function submitDemoRequest(
     message: message || null,
     source_page: sourcePage || null,
   });
+
+  if (!sent) {
+    return {
+      success: false,
+      message: "Something went wrong. Please try again or email us directly.",
+    };
+  }
 
   return {
     success: true,
@@ -126,24 +114,7 @@ export async function submitContactForm(
     return { success: false, message: "Please enter a valid email address." };
   }
 
-  const supabase = getSupabaseServer();
-
-  const { error } = await supabase.from("contact_submissions").insert({
-    full_name: fullName,
-    email,
-    subject,
-    message,
-  });
-
-  if (error) {
-    console.error("Contact form submission error:", error);
-    return {
-      success: false,
-      message: "Something went wrong. Please try again or email us directly.",
-    };
-  }
-
-  await sendToGHL({
+  const sent = await sendToGHL({
     source_form: "contact",
     submitted_at: new Date().toISOString(),
     full_name: fullName,
@@ -151,6 +122,13 @@ export async function submitContactForm(
     subject,
     message,
   });
+
+  if (!sent) {
+    return {
+      success: false,
+      message: "Something went wrong. Please try again or email us directly.",
+    };
+  }
 
   return {
     success: true,
