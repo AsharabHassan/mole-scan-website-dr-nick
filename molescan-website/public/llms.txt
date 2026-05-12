@@ -19,11 +19,16 @@ MoleScan combines AI-powered image analysis with UK consultant dermatologist rev
 
 ## Pages
 
-- [Home](https://molescan.co.uk/): Overview of MoleScan's mole and skin lesion assessment platform
-- [For Clinics](https://molescan.co.uk/for-clinics): Mole check service for aesthetic clinics, beauticians, podiatrists, and non-dermatology practitioners
-- [For NHS & ICBs](https://molescan.co.uk/for-nhs): NHS-integrated skin lesion triage for primary care and ICBs
-- [How MoleScan Works](https://molescan.co.uk/about/how-molescan-works): Step-by-step mole assessment process from image capture to dermatologist report
-- [Clinical Governance](https://molescan.co.uk/about/clinical-governance): Clinical safety, data governance, and regulatory information
-- [Resources](https://molescan.co.uk/resources): Guides and educational content on mole assessment
-- [Contact](https://molescan.co.uk/contact): Get in touch with the MoleScan team
-- [Request Demo](https://molescan.co.uk/request-demo): Request a free demo of MoleScan for your clinic
+- [Home](https://molescan.uk/): Overview of MoleScan's mole and skin lesion assessment platform
+- [For Clinics](https://molescan.uk/for-clinics): Mole check service for aesthetic clinics, beauticians, podiatrists, and non-dermatology practitioners
+- [For NHS & ICBs](https://molescan.uk/for-nhs): NHS-integrated skin lesion triage for primary care and ICBs
+- [How MoleScan Works](https://molescan.uk/about/how-molescan-works): Step-by-step mole assessment process from image capture to dermatologist report
+- [Clinical Governance](https://molescan.uk/about/clinical-governance): Clinical safety, data governance, and regulatory information
+- [Resources](https://molescan.uk/resources): Guides and educational content on mole assessment
+- [Contact](https://molescan.uk/contact): Get in touch with the MoleScan team
+- [Request Demo](https://molescan.uk/request-demo): Request a free demo of MoleScan for your clinic
+
+## Articles
+
+- [Understanding the 2-Week-Wait Dermatology Pathway](https://molescan.uk/resources/understanding-2ww-dermatology-pathway): NHS England data on rising urgent suspected skin cancer referrals, falling 2WW skin cancer conversion rates in the UK, regional variation, and the role of structured triage before referral.
+- [Before You Treat: Why Skin Lesion Assessment Matters](https://molescan.uk/resources/before-you-treat-skin-lesion-assessment): Why a structured mole check before laser, IPL, or other energy-based treatments matters in aesthetic clinics — patient safety, dermoscopy, and the medico-legal case for pre-treatment skin lesion assessment.

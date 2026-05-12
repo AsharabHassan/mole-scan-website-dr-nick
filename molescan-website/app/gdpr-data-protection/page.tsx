@@ -53,7 +53,7 @@ export default function GDPRDataProtectionPage() {
             Individuals have the right to access, rectify, erase, restrict, and
             port their personal data, as well as the right to object to
             processing. Requests can be submitted to{" "}
-            <a href="mailto:hello@molescan.co.uk">hello@molescan.co.uk</a>.
+            <a href="mailto:hello@molescan.uk">hello@molescan.uk</a>.
           </p>
 
           <h2>Data Protection Impact Assessments</h2>

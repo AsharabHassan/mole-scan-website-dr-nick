@@ -205,7 +205,7 @@ export default function Footer() {
                 For clinic enquiries and partnerships:
               </p>
               <a
-                href="mailto:hello@molescan.co.uk"
+                href="mailto:hello@molescan.uk"
                 className="inline-flex items-center gap-2 text-gray-300 hover:text-brand-soft-teal transition-colors duration-200 text-sm group"
               >
                 <span className="w-8 h-8 rounded-lg bg-white/[0.05] border border-white/[0.08] flex items-center justify-center group-hover:bg-brand-teal/10 group-hover:border-brand-teal/20 transition-all duration-300">
@@ -213,7 +213,7 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                   </svg>
                 </span>
-                hello@molescan.co.uk
+                hello@molescan.uk
               </a>
               <p className="text-gray-500 text-xs leading-relaxed mt-5">
                 Supporting safe, structured, and accountable skin lesion

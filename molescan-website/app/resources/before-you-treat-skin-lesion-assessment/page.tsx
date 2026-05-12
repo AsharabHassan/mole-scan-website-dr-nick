@@ -1,16 +1,56 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { generateBreadcrumbSchema } from "@/lib/schema";
+import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/schema";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://molescan.co.uk";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://molescan.uk";
 const ARTICLE_PATH = "/resources/before-you-treat-skin-lesion-assessment";
 const TITLE = "Before You Treat: Why Skin Lesion Assessment Matters";
+const META_TITLE =
+  "Mole Check Before Laser & IPL: Why Skin Lesion Assessment Matters";
 const DESCRIPTION =
-  "Why every aesthetic treatment plan should begin with structured lesion assessment — reducing risk, avoiding diagnostic delay, and protecting both patients and practitioners.";
+  "Why a structured mole check before laser, IPL, or other energy-based treatments matters in aesthetic clinics. Patient safety, dermoscopy, and the medico-legal case for pre-treatment skin lesion assessment.";
+
+const KEY_TAKEAWAYS = [
+  "Not every lesion in a treatment area is benign — and not every suspicious lesion is recognised before treatment begins.",
+  "Energy-based treatments (laser, IPL, RF microneedling, chemical peels) can alter pigmentation, vascularity, and border definition — masking warning signs of melanoma.",
+  "A structured mole check before laser or IPL — supported by dermoscopy — is becoming standard practice in aesthetic clinics.",
+  "Pre-treatment skin lesion assessment protects patients, practitioners, and the wider referral pathway.",
+];
+
+const FAQS = [
+  {
+    question: "Can you laser over a mole?",
+    answer:
+      "Clinically, lasering over a mole is not advised unless the lesion has been properly assessed and documented first. Energy-based treatments can alter a mole's appearance — making future melanoma assessment more difficult. A structured mole check before laser or IPL is the safer practice.",
+  },
+  {
+    question: "Can you do IPL over a mole?",
+    answer:
+      "The same principle applies to IPL as to laser: treatment over an unassessed mole risks obscuring early warning signs of skin cancer. A dermoscopic mole check before IPL is the recommended approach in aesthetic clinics.",
+  },
+  {
+    question: "When should a mole be referred to a dermatologist?",
+    answer:
+      "A mole should be referred when there are concerning features — asymmetry, irregular borders, multiple colours, diameter over 6 mm, or evolving change (the ABCDE features). NICE NG12 sets out the criteria for urgent suspected skin cancer referral in the UK.",
+  },
+  {
+    question: "Why does dermoscopy matter for aesthetic clinics?",
+    answer:
+      "Dermoscopy lets clinicians see structures beneath the skin surface that are invisible to the naked eye — pigment networks, vascular patterns, regression structures. For aesthetic clinics offering energy-based treatments, dermoscopy adds a vital layer of safety to pre-treatment skin lesion assessment.",
+  },
+  {
+    question: "Do aesthetic practitioners need to check moles before treatment?",
+    answer:
+      "Yes — although aesthetic practitioners are not expected to diagnose skin cancer, they are increasingly expected to identify suspicious lesions and escalate appropriately before cosmetic treatment proceeds. Structured triage protects both patient and practitioner.",
+  },
+];
 
 export const metadata: Metadata = {
-  title: `${TITLE} — MoleScan Resources`,
+  title: `${META_TITLE} | MoleScan`,
   description: DESCRIPTION,
+  alternates: {
+    canonical: ARTICLE_PATH,
+  },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
@@ -31,6 +71,8 @@ export default function Page() {
     "@type": "BlogPosting",
     headline: TITLE,
     description: DESCRIPTION,
+    datePublished: "2026-05-07",
+    dateModified: "2026-05-13",
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}${ARTICLE_PATH}` },
     author: {
       "@type": "Person",
@@ -47,6 +89,8 @@ export default function Page() {
     articleSection: "Clinical Practice",
   };
 
+  const faqSchema = generateFAQSchema(FAQS);
+
   return (
     <>
       <script
@@ -56,6 +100,10 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* ── Article Header ── */}
@@ -90,8 +138,8 @@ export default function Page() {
             As cosmetic medicine and aesthetic technology continue to evolve,
             more patients than ever are seeking treatments to refine,
             rejuvenate, and restore their skin. With that growth comes a quiet
-            but critical safety question every clinic must answer — what
-            happens before treatment begins.
+            but critical safety question every aesthetic clinic must answer —
+            what skin lesion assessment happens before treatment begins.
           </p>
         </div>
       </section>
@@ -99,11 +147,28 @@ export default function Page() {
       {/* ── Article Body ── */}
       <article className="bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14 text-brand-text/85 text-[17px] leading-[1.75]">
+          <aside
+            aria-label="Key takeaways"
+            className="not-prose mb-10 rounded-2xl border border-brand-teal/15 bg-brand-soft-blue/40 px-6 py-5"
+          >
+            <p className="text-xs uppercase tracking-wider font-semibold text-brand-teal mb-3">
+              Key takeaways
+            </p>
+            <ul className="space-y-2 list-disc pl-5 marker:text-brand-teal text-[15.5px] leading-[1.7] text-brand-text/85">
+              {KEY_TAKEAWAYS.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+          </aside>
+
           <p className="mb-5">
             As cosmetic medicine and aesthetic technology continue to evolve,
             more patients than ever are seeking treatments designed to improve
             skin quality, reduce pigmentation, tighten skin, remove vascular
-            lesions, or reverse visible signs of ageing.
+            lesions, or reverse visible signs of ageing. In every one of these
+            settings, a structured mole check before laser, IPL, or other
+            energy-based treatment is becoming a defining feature of safe
+            aesthetic practice.
           </p>
 
           <ul className="mb-5 pl-5 list-disc marker:text-brand-teal space-y-1.5">
@@ -119,7 +184,8 @@ export default function Page() {
             Energy-based treatments are now widely available across private
             clinics throughout the UK. For many patients, these treatments are
             safe, effective, and transformative. However, there is an important
-            clinical reality that is often overlooked:{" "}
+            clinical reality often overlooked when offering a mole check before
+            laser or IPL:{" "}
             <span className="font-semibold text-brand-deep-navy">
               not every lesion in a treatment area is benign, and not every
               suspicious lesion is recognised before treatment begins.
@@ -148,9 +214,11 @@ export default function Page() {
           <SectionHeading>Why this matters before cosmetic treatment</SectionHeading>
 
           <p className="mb-5">
-            The concern is not simply whether a lesion is eventually diagnosed.{" "}
+            Practitioners and patients often ask whether you can laser over a
+            mole. The honest clinical answer is that the concern is not simply
+            whether a lesion is eventually diagnosed —{" "}
             <span className="font-semibold text-brand-deep-navy">
-              Timing matters.
+              timing matters.
             </span>{" "}
             If a suspicious lesion is overlooked and cosmetic treatment
             proceeds first, the clinical picture can become significantly more
@@ -171,10 +239,11 @@ export default function Page() {
           <SectionHeading>The issue is rarely negligence</SectionHeading>
 
           <p className="mb-5">
-            In many clinics, lesion assessment happens informally — often
-            through a quick visual check, a brief conversation, or a judgement
-            call. Sometimes the lesion is recognised, sometimes it is assumed
-            to be benign, and sometimes it is not noticed at all.
+            In many aesthetic clinics, the mole check or lesion assessment
+            happens informally — often through a quick visual check, a brief
+            conversation, or a judgement call. Sometimes the lesion is
+            recognised, sometimes it is assumed to be benign, and sometimes it
+            is not noticed at all.
           </p>
 
           <p className="mb-5">
@@ -191,9 +260,9 @@ export default function Page() {
 
           <p className="mb-5">
             Dermoscopy has become one of the most important tools in skin
-            lesion assessment. It allows clinicians to visualise structures
-            beneath the skin surface that cannot usually be seen with the naked
-            eye. This improves assessment of pigment networks, asymmetry,
+            lesion assessment, including increasingly within aesthetic clinics.
+            It allows clinicians to visualise structures beneath the skin
+            surface that cannot usually be seen with the naked eye. This improves assessment of pigment networks, asymmetry,
             vascular patterns, regression structures, and other morphological
             features associated with malignancy.
           </p>
@@ -210,9 +279,9 @@ export default function Page() {
           <p className="mb-5">
             The key issue is not whether every lesion should be referred
             urgently, as that would overwhelm specialist services. The issue
-            is ensuring lesions are{" "}
+            is ensuring that pre-treatment skin lesion assessment is{" "}
             <span className="font-semibold text-brand-deep-navy">
-              assessed in a structured and clinically defensible way
+              structured and clinically defensible
             </span>{" "}
             before treatment decisions are made.
           </p>
@@ -330,11 +399,17 @@ export default function Page() {
             </li>
             <li>
               National Institute for Health and Care Excellence. (2022).{" "}
-              <em>Suspected cancer: Recognition and referral (NG12).</em> NICE.
+              <em>Suspected cancer: Recognition and referral (NG12).</em> NICE.{" "}
+              <ReferenceLink href="https://www.nice.org.uk/guidance/ng12">
+                nice.org.uk/guidance/ng12
+              </ReferenceLink>
             </li>
             <li>
               National Institute for Health and Care Excellence. (2022).{" "}
-              <em>Melanoma: Assessment and management (NG14).</em> NICE.
+              <em>Melanoma: Assessment and management (NG14).</em> NICE.{" "}
+              <ReferenceLink href="https://www.nice.org.uk/guidance/ng14">
+                nice.org.uk/guidance/ng14
+              </ReferenceLink>
             </li>
             <li>
               NHS England. (2022).{" "}
@@ -342,18 +417,30 @@ export default function Page() {
                 Suspected skin cancer two week wait pathway optimisation
                 guidance.
               </em>{" "}
-              NHS England.
+              NHS England.{" "}
+              <ReferenceLink href="https://www.england.nhs.uk/publication/suspected-skin-cancer-two-week-wait-pathway-optimisation-guidance/">
+                england.nhs.uk/publication/suspected-skin-cancer-two-week-wait-pathway-optimisation-guidance
+              </ReferenceLink>
             </li>
             <li>
               NHS England. (2023).{" "}
-              <em>Skin cancer timed diagnostic pathway.</em> NHS England.
+              <em>Skin cancer timed diagnostic pathway.</em> NHS England.{" "}
+              <ReferenceLink href="https://www.england.nhs.uk/publication/skin-cancer-timed-diagnostic-pathway/">
+                england.nhs.uk/publication/skin-cancer-timed-diagnostic-pathway
+              </ReferenceLink>
             </li>
             <li>
               NHS England. (2023). <em>Faster diagnosis standard.</em> NHS
-              England.
+              England.{" "}
+              <ReferenceLink href="https://www.england.nhs.uk/cancer/faster-diagnosis/">
+                england.nhs.uk/cancer/faster-diagnosis
+              </ReferenceLink>
             </li>
             <li>
-              NHS UK. (2024). <em>Melanoma skin cancer.</em> NHS.
+              NHS UK. (2024). <em>Melanoma skin cancer.</em> NHS.{" "}
+              <ReferenceLink href="https://www.nhs.uk/conditions/melanoma-skin-cancer/">
+                nhs.uk/conditions/melanoma-skin-cancer
+              </ReferenceLink>
             </li>
             <li>
               Scottish Intercollegiate Guidelines Network. (2023).{" "}
@@ -371,9 +458,43 @@ export default function Page() {
             </li>
             <li>
               World Health Organization. (2023). <em>Skin cancers.</em> World
-              Health Organization.
+              Health Organization.{" "}
+              <ReferenceLink href="https://www.who.int/news-room/fact-sheets/detail/skin-cancers">
+                who.int/news-room/fact-sheets/detail/skin-cancers
+              </ReferenceLink>
             </li>
           </ol>
+
+          <Divider />
+
+          {/* ── FAQ ── */}
+          <h2
+            id="faq"
+            className="text-xl md:text-2xl font-bold font-display text-brand-deep-navy mt-2 mb-5"
+          >
+            Frequently asked questions
+          </h2>
+          <div className="space-y-5">
+            {FAQS.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-2xl border border-gray-100 bg-white px-5 py-4 open:bg-brand-soft-blue/20"
+              >
+                <summary className="cursor-pointer list-none flex items-start justify-between gap-4 font-semibold text-brand-deep-navy">
+                  <span>{faq.question}</span>
+                  <span
+                    aria-hidden="true"
+                    className="text-brand-teal text-xl leading-none transition-transform group-open:rotate-45 select-none"
+                  >
+                    +
+                  </span>
+                </summary>
+                <p className="mt-3 text-[15.5px] leading-[1.7] text-brand-text/80">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
         </div>
       </article>
 
@@ -422,5 +543,24 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
     <h2 className="text-2xl md:text-[28px] font-bold font-display text-brand-deep-navy leading-snug mt-10 mb-5">
       {children}
     </h2>
+  );
+}
+
+function ReferenceLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-brand-teal hover:underline break-all"
+    >
+      {children}
+    </a>
   );
 }

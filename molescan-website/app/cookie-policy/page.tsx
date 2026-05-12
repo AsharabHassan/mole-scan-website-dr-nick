@@ -87,7 +87,7 @@ export default function CookiePolicyPage() {
           </p>
           <p>Except for essential cookies, all cookies will expire after 24 months.</p>
           <p>
-            If you have any questions about the cookies that we use, feel free to email us at <a href="mailto:dermmelondon@gmail.com">dermmelondon@gmail.com</a>
+            If you have any questions about the cookies that we use, feel free to email us at <a href="mailto:hello@molescan.uk">hello@molescan.uk</a>
           </p>
         </article>
       </SectionWrapper>

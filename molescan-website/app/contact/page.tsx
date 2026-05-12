@@ -46,10 +46,10 @@ export default function ContactPage() {
               <div>
                 <h4 className="font-semibold mb-1">Email</h4>
                 <a
-                  href="mailto:hello@molescan.co.uk"
+                  href="mailto:hello@molescan.uk"
                   className="text-brand-teal hover:text-brand-deep-teal transition-colors"
                 >
-                  hello@molescan.co.uk
+                  hello@molescan.uk
                 </a>
               </div>
 

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://molescan.co.uk";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://molescan.uk";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/about/how-molescan-works`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/about/clinical-governance`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/resources`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    { url: `${BASE_URL}/resources/understanding-2ww-dermatology-pathway`, lastModified: new Date("2026-05-13"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE_URL}/resources/before-you-treat-skin-lesion-assessment`, lastModified: new Date("2026-05-13"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/contact`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.5 },
     { url: `${BASE_URL}/request-demo`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.8 },
     { url: `${BASE_URL}/privacy-policy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.2 },

@@ -1,4 +1,4 @@
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://molescan.co.uk";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://molescan.uk";
 
 export function generateOrganizationSchema() {
   return {

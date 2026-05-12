@@ -36,11 +36,11 @@ export default function PrivacyPolicyPage() {
           <ul>
             <li>Full name of legal entity: Dermme Health Limited trading as MoleScan</li>
             <li>Name or title of Data Protection Officer: Dr P Nosina</li>
-            <li>Email address: <a href="mailto:dermmelondon@gmail.com">dermmelondon@gmail.com</a></li>
+            <li>Email address: <a href="mailto:hello@molescan.uk">hello@molescan.uk</a></li>
             <li>Postal address: 52 Thor drive, Bedford, MK41 0WP</li>
           </ul>
           <p>
-            It is very important that the information we hold about you is accurate and up to date. Please let us know if at any time your personal information changes by emailing us at dermmelondon@gmail.com
+            It is very important that the information we hold about you is accurate and up to date. Please let us know if at any time your personal information changes by emailing us at hello@molescan.uk
           </p>
 
           <h2>2. WHAT DATA DO WE COLLECT ABOUT YOU, FOR WHAT PURPOSE AND ON WHAT GROUND WE PROCESS IT</h2>
@@ -96,7 +96,7 @@ export default function PrivacyPolicyPage() {
             Before we share your personal data with any third party for their own marketing purposes we will get your express consent.
           </p>
           <p>
-            You can ask us or third parties to stop sending you marketing messages at any time by following the opt-out links on any marketing message sent to you or by emailing us at dermmelondon@gmail.com at any time.
+            You can ask us or third parties to stop sending you marketing messages at any time by following the opt-out links on any marketing message sent to you or by emailing us at hello@molescan.uk at any time.
           </p>
           <p>
             If you opt out of receiving marketing communications this opt-out does not apply to personal data provided as a result of other transactions, such as purchases, warranty registrations etc.
@@ -162,7 +162,7 @@ export default function PrivacyPolicyPage() {
             You can see more about these rights at: <a href="https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/" target="_blank" rel="noopener noreferrer">https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/</a>
           </p>
           <p>
-            If you wish to exercise any of the rights set out above, please email us at dermmelondon@gmail.com
+            If you wish to exercise any of the rights set out above, please email us at hello@molescan.uk
           </p>
           <p>
             You will not have to pay a fee to access your personal data (or to exercise any of the other rights). However, we may charge a reasonable fee if your request is clearly unfounded, repetitive or excessive or refuse to comply with your request in these circumstances.

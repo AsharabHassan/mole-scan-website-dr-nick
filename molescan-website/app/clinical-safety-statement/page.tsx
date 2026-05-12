@@ -72,7 +72,7 @@ export default function ClinicalSafetyStatementPage() {
           <h2>Contact</h2>
           <p>
             For clinical safety enquiries, contact us at{" "}
-            <a href="mailto:hello@molescan.co.uk">hello@molescan.co.uk</a>.
+            <a href="mailto:hello@molescan.uk">hello@molescan.uk</a>.
           </p>
         </article>
       </SectionWrapper>

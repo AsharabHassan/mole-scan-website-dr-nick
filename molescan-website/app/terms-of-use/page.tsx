@@ -23,7 +23,7 @@ export default function TermsOfUsePage() {
 
           <h2>ABOUT US</h2>
           <p>
-            www.molescan.uk is a site operated by Dermme Health Limited ("we" or “us”). We are registered in England and Wales under company number 16906493. Our registered office address is 52 Thor Drive, Bedford, MK41 0WP and our email address is dermmelondon@gmail.com
+            www.molescan.uk is a site operated by Dermme Health Limited ("we" or “us”). We are registered in England and Wales under company number 16906493. Our registered office address is 52 Thor Drive, Bedford, MK41 0WP and our email address is hello@molescan.uk
           </p>
 
           <h2>OUR SITE</h2>

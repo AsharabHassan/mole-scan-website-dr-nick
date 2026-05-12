@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     "Dermatologist-led skin lesion assessment reviewed by UK GPs with special interest and dermatologists. Dermoscopic imaging with results within 24 hours. For private clinics and NHS. Request a demo.",
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://molescan.co.uk"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://molescan.uk"
   ),
   openGraph: {
     type: "website",

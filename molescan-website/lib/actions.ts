@@ -11,6 +11,28 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+async function sendToGHL(payload: Record<string, unknown>): Promise<void> {
+  const webhookUrl = process.env.GHL_WEBHOOK_URL;
+  if (!webhookUrl) {
+    console.warn("GHL_WEBHOOK_URL not set; skipping webhook send.");
+    return;
+  }
+  try {
+    const response = await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(5000),
+    });
+    if (!response.ok) {
+      const body = await response.text().catch(() => "");
+      console.error(`GHL webhook returned ${response.status}: ${body}`);
+    }
+  } catch (err) {
+    console.error("GHL webhook failed:", err);
+  }
+}
+
 export async function submitDemoRequest(
   _prevState: FormState,
   formData: FormData
@@ -60,6 +82,18 @@ export async function submitDemoRequest(
     };
   }
 
+  await sendToGHL({
+    source_form: "demo_request",
+    submitted_at: new Date().toISOString(),
+    full_name: fullName,
+    email,
+    phone: phone || null,
+    organisation,
+    role,
+    message: message || null,
+    source_page: sourcePage || null,
+  });
+
   return {
     success: true,
     message: "Thank you. We'll be in touch within 24 hours.",
@@ -108,6 +142,15 @@ export async function submitContactForm(
       message: "Something went wrong. Please try again or email us directly.",
     };
   }
+
+  await sendToGHL({
+    source_form: "contact",
+    submitted_at: new Date().toISOString(),
+    full_name: fullName,
+    email,
+    subject,
+    message,
+  });
 
   return {
     success: true,
