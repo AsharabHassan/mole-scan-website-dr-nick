@@ -9,10 +9,13 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-async function sendToGHL(payload: Record<string, unknown>): Promise<boolean> {
-  const webhookUrl = process.env.GHL_WEBHOOK_URL;
+async function sendToGHL(
+  webhookUrl: string | undefined,
+  payload: Record<string, unknown>,
+  formLabel: string
+): Promise<boolean> {
   if (!webhookUrl) {
-    console.error("GHL_WEBHOOK_URL is not set; cannot submit form.");
+    console.error(`${formLabel} webhook URL is not set; cannot submit form.`);
     return false;
   }
   try {
@@ -24,12 +27,14 @@ async function sendToGHL(payload: Record<string, unknown>): Promise<boolean> {
     });
     if (!response.ok) {
       const body = await response.text().catch(() => "");
-      console.error(`GHL webhook returned ${response.status}: ${body}`);
+      console.error(
+        `${formLabel} webhook returned ${response.status}: ${body}`
+      );
       return false;
     }
     return true;
   } catch (err) {
-    console.error("GHL webhook failed:", err);
+    console.error(`${formLabel} webhook failed:`, err);
     return false;
   }
 }
@@ -63,17 +68,21 @@ export async function submitDemoRequest(
     return { success: false, message: "Please enter a valid email address." };
   }
 
-  const sent = await sendToGHL({
-    source_form: "demo_request",
-    submitted_at: new Date().toISOString(),
-    full_name: fullName,
-    email,
-    phone: phone || null,
-    organisation,
-    role,
-    message: message || null,
-    source_page: sourcePage || null,
-  });
+  const sent = await sendToGHL(
+    process.env.GHL_DEMO_WEBHOOK_URL,
+    {
+      source_form: "demo_request",
+      submitted_at: new Date().toISOString(),
+      full_name: fullName,
+      email,
+      phone: phone || null,
+      organisation,
+      role,
+      message: message || null,
+      source_page: sourcePage || null,
+    },
+    "Demo request"
+  );
 
   if (!sent) {
     return {
@@ -114,14 +123,20 @@ export async function submitContactForm(
     return { success: false, message: "Please enter a valid email address." };
   }
 
-  const sent = await sendToGHL({
-    source_form: "contact",
-    submitted_at: new Date().toISOString(),
-    full_name: fullName,
-    email,
-    subject,
-    message,
-  });
+  const contactWebhookUrl =
+    process.env.GHL_CONTACT_WEBHOOK_URL || process.env.GHL_WEBHOOK_URL;
+  const sent = await sendToGHL(
+    contactWebhookUrl,
+    {
+      source_form: "contact",
+      submitted_at: new Date().toISOString(),
+      full_name: fullName,
+      email,
+      subject,
+      message,
+    },
+    "Contact"
+  );
 
   if (!sent) {
     return {
