@@ -245,7 +245,7 @@ function StepCard({ step }: { step: StepData }) {
       <div className="relative w-full aspect-square bg-gradient-to-br from-[#f5f7fa] to-[#eef1f6] overflow-hidden">
         <Image
           src={step.image}
-          alt={step.title}
+          alt={`MoleScan clinic mole assessment pathway — step ${step.num}: ${step.title} (illustration)`}
           fill
           className="object-contain group-hover:scale-105 transition-transform duration-500"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
@@ -310,7 +310,7 @@ function RagStepCard({ step }: { step: RagStep }) {
       <div className="relative w-full aspect-square bg-gradient-to-br from-[#f5f7fa] to-[#eef1f6] overflow-hidden">
         <Image
           src={step.image}
-          alt={step.title}
+          alt={`MoleScan clinic mole assessment pathway — step ${step.num}: ${step.title} (illustration)`}
           fill
           className="object-contain group-hover:scale-105 transition-transform duration-500"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"

@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import SectionWrapper from "@/components/layout/SectionWrapper";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import {
+  generateBreadcrumbSchema,
+  generateWebPageSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Clinical Safety Statement",
@@ -7,8 +12,34 @@ export const metadata: Metadata = {
 };
 
 export default function ClinicalSafetyStatementPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Clinical Safety Statement", url: "/clinical-safety-statement" },
+  ]);
+  const webPageSchema = generateWebPageSchema(
+    "Clinical Safety Statement",
+    "MoleScan clinical safety statement. Our approach to clinical safety and risk management.",
+    "/clinical-safety-statement"
+  );
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Clinical Safety Statement" },
+        ]}
+      />
+
       <section className="bg-brand-deep-blue text-white py-16">
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-white text-4xl font-bold">Clinical Safety Statement</h1>

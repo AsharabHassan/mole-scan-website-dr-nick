@@ -120,15 +120,6 @@ const complianceBadges = [
     ),
   },
   {
-    label: "CQC Registered",
-    desc: "Regulated healthcare service under the Care Quality Commission.",
-    icon: (
-      <svg className="w-5 h-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-  },
-  {
     label: "GMC-Registered Doctors",
     desc: "All our doctors hold current UK GMC registration.",
     icon: (
@@ -288,7 +279,7 @@ export default function HomePage() {
             standards expected by both private clinics and NHS organisations.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
           {complianceBadges.map((badge) => (
             <Card key={badge.label} className="p-5 text-center">
               <div className="w-12 h-12 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center mx-auto mb-4">
@@ -308,7 +299,7 @@ export default function HomePage() {
         buttonHref="/request-demo"
         secondaryButtonLabel="Speak to our team"
         secondaryButtonHref="/contact"
-        trustItems={["Reports within 24 hours", "GMC-registered clinicians", "CQC-registered service"]}
+        trustItems={["Reports within 24 hours", "GMC-registered clinicians"]}
       />
     </>
   );

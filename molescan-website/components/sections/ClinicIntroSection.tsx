@@ -101,7 +101,7 @@ export default function ClinicIntroSection() {
                     Dermatologist-Led Assessment
                   </span>
                 </div>
-                <span className="text-xs text-gray-400">CQC Registered</span>
+                <span className="text-xs text-gray-400">GMC-Registered Doctors</span>
               </div>
             </div>
 
@@ -212,7 +212,7 @@ export default function ClinicIntroSection() {
               }`}
             >
               <p className="text-xs text-gray-400 leading-relaxed">
-                MoleScan is operated by Dermme Health Ltd. It is not a medical device — it is a dermatologist-led triage and assessment platform. CQC registered.
+                MoleScan is operated by Dermme Health Ltd. It is not a medical device — it is a dermatologist-led triage and assessment platform.
               </p>
             </div>
           </div>

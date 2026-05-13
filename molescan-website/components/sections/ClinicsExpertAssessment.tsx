@@ -145,9 +145,9 @@ export default function ClinicsExpertAssessment() {
 
             {/* Footer disclaimer */}
             <p className="text-xs text-brand-text/50 leading-relaxed border-t border-gray-100 pt-4">
-              MoleScan is operated by Dermme Health Ltd — a CQC-registered
-              provider. It is a clinician-led skin lesion assessment and triage
-              service, not a standalone diagnostic device.
+              MoleScan is operated by Dermme Health Ltd. It is a clinician-led
+              skin lesion assessment and triage service, not a standalone
+              diagnostic device.
             </p>
           </div>
         </div>

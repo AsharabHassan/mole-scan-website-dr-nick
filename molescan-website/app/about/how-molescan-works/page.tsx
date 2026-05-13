@@ -4,9 +4,9 @@ import SectionWrapper from "@/components/layout/SectionWrapper";
 import FAQSection from "@/components/sections/FAQSection";
 import CTABand from "@/components/sections/CTABand";
 import AssessmentPathway from "@/components/sections/AssessmentPathway";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
   generateBreadcrumbSchema,
-  generateHowToSchema,
   generateFAQSchema,
 } from "@/lib/schema";
 
@@ -146,15 +146,6 @@ export default function HowMoleScanWorksPage() {
     { name: "How MoleScan Works", url: "/about/how-molescan-works" },
   ]);
 
-  const howToSchema = generateHowToSchema(
-    "How MoleScan Clinician-Led Skin Lesion Assessment Works",
-    "A 6-step clinician-led process — every case reviewed by a UK GPwSI dermatology doctor — from image capture to clinician-reviewed report within 24 hours.",
-    processSteps.map((step) => ({
-      name: step.title,
-      text: step.description,
-    }))
-  );
-
   const faqSchema = generateFAQSchema(faqs);
 
   return (
@@ -163,9 +154,13 @@ export default function HowMoleScanWorksPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "About", href: "/about/how-molescan-works" },
+          { name: "How MoleScan Works" },
+        ]}
       />
 
       <Hero
@@ -207,7 +202,6 @@ export default function HowMoleScanWorksPage() {
         trustItems={[
           "24-hour report turnaround",
           "Reviewed by UK GPwSI dermatology clinicians",
-          "CQC-registered service",
         ]}
       />
     </>

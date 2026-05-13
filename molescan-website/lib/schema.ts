@@ -21,10 +21,11 @@ export function generateOrganizationSchema() {
       "mole assessment",
       "mole check",
       "skin lesion assessment",
-      "AI dermatology",
       "dermoscopy",
       "skin cancer triage",
+      "GPwSI dermatology review",
       "aesthetic clinic mole check",
+      "2-week-wait dermatology referral",
     ],
   };
 }
@@ -80,6 +81,32 @@ export function generateFAQSchema(faqs: { question: string; answer: string }[]) 
         text: faq.answer,
       },
     })),
+  };
+}
+
+export function generateWebPageSchema(
+  name: string,
+  description: string,
+  path: string
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name,
+    description,
+    url: `${SITE_URL}${path}`,
+    inLanguage: "en-GB",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "MoleScan",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "MoleScan",
+      url: SITE_URL,
+      logo: `${SITE_URL}/images/logo.svg`,
+    },
   };
 }
 

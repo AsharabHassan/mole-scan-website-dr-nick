@@ -17,7 +17,6 @@ interface CTABandProps {
 const DEFAULT_TRUST_ITEMS = [
   "24h report turnaround",
   "GMC registered doctors",
-  "CQC registered",
 ];
 
 export default function CTABand({

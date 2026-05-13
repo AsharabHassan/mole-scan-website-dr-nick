@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import SectionWrapper from "@/components/layout/SectionWrapper";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import {
+  generateBreadcrumbSchema,
+  generateWebPageSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "GDPR & Data Protection",
@@ -7,8 +12,34 @@ export const metadata: Metadata = {
 };
 
 export default function GDPRDataProtectionPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "GDPR & Data Protection", url: "/gdpr-data-protection" },
+  ]);
+  const webPageSchema = generateWebPageSchema(
+    "GDPR & Data Protection",
+    "How MoleScan complies with UK GDPR and data protection requirements.",
+    "/gdpr-data-protection"
+  );
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "GDPR & Data Protection" },
+        ]}
+      />
+
       <section className="bg-brand-deep-blue text-white py-16">
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-white text-4xl font-bold">GDPR & Data Protection</h1>

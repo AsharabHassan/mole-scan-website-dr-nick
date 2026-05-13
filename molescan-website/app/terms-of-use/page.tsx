@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import SectionWrapper from "@/components/layout/SectionWrapper";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import {
+  generateBreadcrumbSchema,
+  generateWebPageSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
@@ -7,8 +12,34 @@ export const metadata: Metadata = {
 };
 
 export default function TermsOfUsePage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Terms of Use", url: "/terms-of-use" },
+  ]);
+  const webPageSchema = generateWebPageSchema(
+    "Terms of Use",
+    "MoleScan website terms of use. Information regarding intellectual property, site rules, and disclaimers.",
+    "/terms-of-use"
+  );
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Terms of Use" },
+        ]}
+      />
+
       <section className="bg-brand-deep-blue text-white py-16">
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-white text-4xl font-bold">TERMS OF WEBSITE USE</h1>

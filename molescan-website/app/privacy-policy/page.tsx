@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import SectionWrapper from "@/components/layout/SectionWrapper";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import {
+  generateBreadcrumbSchema,
+  generateWebPageSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -7,8 +12,34 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPolicyPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Privacy Policy", url: "/privacy-policy" },
+  ]);
+  const webPageSchema = generateWebPageSchema(
+    "Privacy Policy",
+    "MoleScan privacy policy. How we collect, use, and protect your personal data.",
+    "/privacy-policy"
+  );
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Privacy Policy" },
+        ]}
+      />
+
       <section className="bg-brand-deep-blue text-white py-16">
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-white text-4xl font-bold">Website privacy notice</h1>

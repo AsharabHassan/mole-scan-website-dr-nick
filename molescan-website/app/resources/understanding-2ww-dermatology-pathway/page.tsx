@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/schema";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://molescan.uk";
@@ -105,6 +106,14 @@ export default function Page() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Resources", href: "/resources" },
+          { name: TITLE },
+        ]}
       />
 
       {/* ── Article Header ── */}

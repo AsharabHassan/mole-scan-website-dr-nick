@@ -1,8 +1,8 @@
 # MoleScan
 
-> Dermatologist-led mole and skin lesion assessment platform for aesthetic clinics, beauty therapists, podiatrists, and healthcare professionals across the UK. CQC registered.
+> Dermatologist-led mole and skin lesion assessment platform for aesthetic clinics, beauty therapists, podiatrists, and healthcare professionals across the UK.
 
-MoleScan combines AI-powered image analysis with UK consultant dermatologist review to deliver structured mole assessment reports within 24 hours. It is designed for practitioners who are not dermatologists but encounter moles and skin lesions during treatments.
+MoleScan is a structured, doctor-led skin lesion assessment platform. Every case is reviewed by a UK GMC-registered GP with special interest in dermatology (GPwSI) — and dermoscopic images, clinical history, and symptoms are assessed by a qualified clinician before a RAG-rated report is delivered within 24 hours. It is designed for practitioners who are not dermatologists but encounter moles and skin lesions during treatments. MoleScan is not a medical device and does not use AI to diagnose; the clinical opinion in every report is provided by a human GPwSI dermatology doctor.
 
 ## Key Facts
 
@@ -12,7 +12,6 @@ MoleScan combines AI-powered image analysis with UK consultant dermatologist rev
 - Practitioners capture a dermoscopic image — the dermatologist provides the clinical opinion
 - No medical training required to use the platform
 - Not a medical device — a dermatologist-led triage and assessment platform
-- CQC registered
 - GMC registered doctors review every case
 - Operated by Dermme Health Ltd, registered in England & Wales
 - GDPR compliant with UK-based data storage

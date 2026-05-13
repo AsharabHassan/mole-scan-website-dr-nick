@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import Ticker from "@/components/layout/Ticker";
 import CookieBanner from "@/components/layout/CookieBanner";
 import { Analytics } from "@vercel/analytics/next";
 import { generateOrganizationSchema } from "@/lib/schema";
@@ -76,6 +77,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans min-h-screen flex flex-col" suppressHydrationWarning>
+        <Ticker />
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

@@ -54,16 +54,16 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <h4 className="font-semibold mb-1">For Demo Requests</h4>
+                <h4 className="font-semibold mb-1">For Early Access</h4>
                 <p className="text-brand-text/70 mb-2">
-                  Want to see MoleScan in action? Visit our dedicated demo
-                  request page.
+                  Want to see MoleScan in action? Join our early access list and
+                  we&rsquo;ll be in touch within 24 hours.
                 </p>
                 <a
                   href="/request-demo"
                   className="text-brand-teal hover:text-brand-deep-teal font-medium transition-colors"
                 >
-                  Request a Demo &rarr;
+                  Get Early Access &rarr;
                 </a>
               </div>
 

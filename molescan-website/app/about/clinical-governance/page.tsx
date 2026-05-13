@@ -4,6 +4,7 @@ import SectionWrapper from "@/components/layout/SectionWrapper";
 import FAQSection from "@/components/sections/FAQSection";
 import CTABand from "@/components/sections/CTABand";
 import Card from "@/components/ui/Card";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -137,6 +138,14 @@ export default function ClinicalGovernancePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "About", href: "/about/how-molescan-works" },
+          { name: "Clinical Governance" },
+        ]}
+      />
+
       <Hero
         eyebrow="Safety & Compliance"
         title="Clinical Governance"
@@ -150,12 +159,11 @@ export default function ClinicalGovernancePage() {
         featureBar={[
           { icon: "shield", label: "DCB0129 Aligned", desc: "Clinical safety framework for digital health systems" },
           { icon: "lock", label: "GDPR Compliant", desc: "ICO registered with UK data residency and encryption at rest and in transit" },
-          { icon: "check", label: "CQC Registered", desc: "Care Quality Commission regulated service" },
           { icon: "users", label: "GMC-Registered Doctors", desc: "All doctors hold current GMC registration and relevant clinical experience" },
         ]}
         badges={{
           text: "",
-          items: ["DCB0129 Aligned", "GDPR Compliant", "CQC Registered", "GMC-Registered Doctors"],
+          items: ["DCB0129 Aligned", "GDPR Compliant", "GMC-Registered Doctors"],
         }}
       />
 

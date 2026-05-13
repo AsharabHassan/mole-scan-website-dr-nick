@@ -229,7 +229,7 @@ export default function Footer() {
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-gray-500 text-xs leading-relaxed text-center sm:text-left">
-              &copy; {new Date().getFullYear()} MoleScan<sup>TM</sup>. Operated
+              &copy; {new Date().getFullYear()} MoleScan&reg;. Operated
               by Dermme Health Ltd. Company registered in England &amp; Wales.
               All rights reserved.
             </p>
