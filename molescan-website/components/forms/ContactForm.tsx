@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { submitContactForm, type FormState } from "@/lib/actions";
+import { HONEYPOT_FIELD, HONEYPOT_INPUT_PROPS } from "@/lib/honeypot";
 import Button from "@/components/ui/Button";
 
 export default function ContactForm() {
@@ -34,7 +35,7 @@ export default function ContactForm() {
   return (
     <form action={formAction} className="space-y-6">
       <div className="absolute -left-[9999px]" aria-hidden="true">
-        <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+        <input {...HONEYPOT_INPUT_PROPS} name={HONEYPOT_FIELD} />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

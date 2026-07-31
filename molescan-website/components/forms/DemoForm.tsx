@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { submitDemoRequest, type FormState } from "@/lib/actions";
+import { HONEYPOT_FIELD, HONEYPOT_INPUT_PROPS } from "@/lib/honeypot";
 import Button from "@/components/ui/Button";
 
 interface DemoFormProps {
@@ -50,7 +51,7 @@ export default function DemoForm({ sourcePage = "request-demo" }: DemoFormProps)
       <input type="hidden" name="source_page" value={sourcePage} />
 
       <div className="absolute -left-[9999px]" aria-hidden="true">
-        <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+        <input {...HONEYPOT_INPUT_PROPS} name={HONEYPOT_FIELD} />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

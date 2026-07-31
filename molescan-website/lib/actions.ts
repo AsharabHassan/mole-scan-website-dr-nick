@@ -1,5 +1,7 @@
 "use server";
 
+import { HONEYPOT_FIELD } from "./honeypot";
+
 export type FormState = {
   success: boolean;
   message: string;
@@ -43,9 +45,11 @@ export async function submitDemoRequest(
   _prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
-  const honeypot = formData.get("website") as string;
+  const honeypot = formData.get(HONEYPOT_FIELD) as string;
   if (honeypot) {
-    // Silently reject bot submissions
+    // Silently reject bot submissions. Logged so a false positive is visible in
+    // the runtime logs rather than discarding a real lead without a trace.
+    console.warn("Demo request honeypot tripped; submission discarded.");
     return { success: true, message: "Thank you." };
   }
 
@@ -101,9 +105,11 @@ export async function submitContactForm(
   _prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
-  const honeypot = formData.get("website") as string;
+  const honeypot = formData.get(HONEYPOT_FIELD) as string;
   if (honeypot) {
-    // Silently reject bot submissions
+    // Silently reject bot submissions. Logged so a false positive is visible in
+    // the runtime logs rather than discarding a real lead without a trace.
+    console.warn("Contact honeypot tripped; submission discarded.");
     return { success: true, message: "Thank you." };
   }
 
