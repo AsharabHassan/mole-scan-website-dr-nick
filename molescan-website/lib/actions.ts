@@ -45,12 +45,11 @@ export async function submitDemoRequest(
   _prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
-  const honeypot = formData.get(HONEYPOT_FIELD) as string;
-  if (honeypot) {
-    // Silently reject bot submissions. Logged so a false positive is visible in
-    // the runtime logs rather than discarding a real lead without a trace.
-    console.warn("Demo request honeypot tripped; submission discarded.");
-    return { success: true, message: "Thank you." };
+  const suspectedSpam = Boolean(formData.get(HONEYPOT_FIELD));
+  if (suspectedSpam) {
+    console.warn(
+      "Demo request honeypot tripped; forwarding flagged as suspected spam."
+    );
   }
 
   const fullName = formData.get("full_name") as string;
@@ -76,6 +75,7 @@ export async function submitDemoRequest(
     process.env.GHL_DEMO_WEBHOOK_URL,
     {
       source_form: "demo_request",
+      suspected_spam: suspectedSpam,
       submitted_at: new Date().toISOString(),
       full_name: fullName,
       email,
@@ -105,12 +105,11 @@ export async function submitContactForm(
   _prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
-  const honeypot = formData.get(HONEYPOT_FIELD) as string;
-  if (honeypot) {
-    // Silently reject bot submissions. Logged so a false positive is visible in
-    // the runtime logs rather than discarding a real lead without a trace.
-    console.warn("Contact honeypot tripped; submission discarded.");
-    return { success: true, message: "Thank you." };
+  const suspectedSpam = Boolean(formData.get(HONEYPOT_FIELD));
+  if (suspectedSpam) {
+    console.warn(
+      "Contact honeypot tripped; forwarding flagged as suspected spam."
+    );
   }
 
   const fullName = formData.get("full_name") as string;
@@ -135,6 +134,7 @@ export async function submitContactForm(
     contactWebhookUrl,
     {
       source_form: "contact",
+      suspected_spam: suspectedSpam,
       submitted_at: new Date().toISOString(),
       full_name: fullName,
       email,
