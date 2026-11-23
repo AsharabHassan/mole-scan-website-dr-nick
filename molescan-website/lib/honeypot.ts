@@ -2,10 +2,11 @@
  * Shared honeypot config for the contact and demo forms.
  *
  * A filled honeypot is only ever a *hint*. It never blocks a submission — see
- * lib/actions.ts, which forwards the lead to GHL flagged as suspected_spam.
+ * lib/actions.ts, which still emails the lead to the team flagged as possible
+ * spam (but skips the Brevo list and the confirmation email).
  * Autofill has twice defeated attempts to make this signal trustworthy (first
  * as a field named "website", then as "ms_hp" with password-manager opt-outs),
- * so the value is treated as advisory and GHL does the filtering.
+ * so the value is treated as advisory and a person makes the final call.
  *
  * readOnly is the load-bearing part: browsers and password managers do not
  * autofill a readonly input, while a bot POSTing directly is unaffected by it.
