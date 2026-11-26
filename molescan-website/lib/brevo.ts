@@ -129,6 +129,26 @@ export function escapeHtml(value: string): string {
     .replace(/'/g, "&#39;");
 }
 
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://molescan.uk").replace(/\/$/, "");
+
+/**
+ * Wrap email content in the MoleScan header (logo + wordmark).
+ * The logo must be an absolute public URL: email clients can't load relative
+ * paths. It is served from public/images/molescan-email-logo.png (128px,
+ * shown at 56px for retina screens).
+ */
+export function emailLayout(inner: string): string {
+  return `<div style="font-family:Arial,sans-serif;max-width:600px">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 20px 0;border-collapse:collapse">
+<tr>
+<td style="padding:0 12px 0 0;vertical-align:middle"><a href="${SITE_URL}"><img src="${SITE_URL}/images/molescan-email-logo.png" width="56" height="56" alt="MoleScan" style="display:block;border:0;width:56px;height:56px"></a></td>
+<td style="vertical-align:middle;font-family:Arial,sans-serif;font-size:22px;font-weight:700;color:#26308f">MoleScan</td>
+</tr>
+</table>
+${inner}
+</div>`;
+}
+
 /** Render label/value rows as a simple HTML table for the team email. */
 export function detailsTable(rows: [string, string | null | undefined][]): string {
   const body = rows
