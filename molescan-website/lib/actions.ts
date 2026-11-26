@@ -3,7 +3,6 @@
 import { HONEYPOT_FIELD } from "./honeypot";
 import {
   detailsTable,
-  emailLayout,
   escapeHtml,
   listId,
   sendEmail,
@@ -48,15 +47,14 @@ type Lead = {
  */
 async function deliverLead(lead: Lead): Promise<boolean> {
   const flag = lead.suspectedSpam ? "[Possible spam] " : "";
-  const teamHtml = emailLayout(
+  const teamHtml =
     (lead.suspectedSpam
       ? `<p style="font-family:Arial,sans-serif;color:#b45309"><strong>Flagged as possible spam</strong> (hidden anti-spam field was filled). Check before following up.</p>`
       : "") +
     detailsTable([
       ...lead.details,
       ["Submitted", new Date().toISOString()],
-    ])
-  );
+    ]);
 
   const [notified, saved] = await Promise.all([
     sendEmail({
@@ -90,11 +88,11 @@ async function deliverLead(lead: Lead): Promise<boolean> {
 }
 
 function confirmationHtml(firstName: string, body: string): string {
-  return emailLayout(`<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#1f2937">
+  return `<div style="font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#1f2937">
 <p>Hi ${escapeHtml(firstName)},</p>
 ${body}
 <p>Kind regards,<br>The MoleScan team<br><a href="https://molescan.uk">molescan.uk</a></p>
-</div>`);
+</div>`;
 }
 
 export async function submitDemoRequest(
